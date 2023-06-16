@@ -10,3 +10,9 @@ Metacello new
 	load
 ```
 
+### Loading Lepiter database
+
+
+```
+BaselineOfDynaSpaceKnowledge loadLepiter
+```
