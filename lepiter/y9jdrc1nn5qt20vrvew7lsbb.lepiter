@@ -108,7 +108,7 @@
 								"__type" : "time",
 								"time" : {
 									"__type" : "dateAndTime",
-									"dateAndTimeString" : "2023-06-19T11:21:40.655705+02:00"
+									"dateAndTimeString" : "2023-06-19T15:25:03.098157+02:00"
 								}
 							},
 							"uid" : {
@@ -118,7 +118,7 @@
 							"paragraphStyle" : {
 								"__type" : "textStyle"
 							},
-							"string" : "Inicialmente vamos a partir de uno existente [[Knowledge Base]] .  Y tendremos que obtener los 3 snippets del tipo que nos interesa."
+							"string" : "Inicialmente vamos a partir de un Lepiter page existente [[Test Knowledge Page]] .  Y tendremos que obtener los 3 snippets del tipo que nos interesa."
 						},
 						{
 							"__type" : "pharoSnippet",
@@ -145,14 +145,14 @@
 								"__type" : "time",
 								"time" : {
 									"__type" : "dateAndTime",
-									"dateAndTimeString" : "2023-06-16T12:29:36.183067+02:00"
+									"dateAndTimeString" : "2023-06-19T15:25:09.561273+02:00"
 								}
 							},
 							"uid" : {
 								"__type" : "uid",
 								"uidString" : "t83mgHW6DQC58CpaB74TEA=="
 							},
-							"code" : "defaultDatabase := LeDatabasesRegistry defaultLogicalDatabase.\rtargetPage := defaultDatabase pageNamed: 'Knowledge Base'.\rcodeSnippets := targetPage\r\t\tallChildrenSnippetsMatching: [ :aSnippet | \r\t\t\"aSnippet isCodeSnippet no vale porque existen varios y sólo nos interesa los LePharoSnippet\"\r\t\taSnippet isKindOf: LePharoSnippet  ].\rself assert: codeSnippets size equals: 4.\rcodeSnippets"
+							"code" : "defaultDatabase := LeDatabasesRegistry defaultLogicalDatabase.\rtargetPageName := 'Test Knowledge Page'.\rtargetPage := defaultDatabase pageNamed: targetPageName.\rcodeSnippets := targetPage\r\t\tallChildrenSnippetsMatching: [ :aSnippet | \r\t\t\"aSnippet isCodeSnippet no vale porque existen varios y sólo nos interesa los LePharoSnippet\"\r\t\taSnippet isKindOf: LePharoSnippet  ].\rself assert: codeSnippets size equals: 4.\rcodeSnippets"
 						}
 					]
 				},
@@ -530,6 +530,80 @@
 								"__type" : "time",
 								"time" : {
 									"__type" : "dateAndTime",
+									"dateAndTimeString" : "2023-06-19T15:12:27.566667+02:00"
+								}
+							},
+							"editEmail" : {
+								"__type" : "email",
+								"emailString" : "<unknown>"
+							},
+							"editTime" : {
+								"__type" : "time",
+								"time" : {
+									"__type" : "dateAndTime",
+									"dateAndTimeString" : "2023-06-19T15:12:32.629572+02:00"
+								}
+							},
+							"uid" : {
+								"__type" : "uid",
+								"uidString" : "U57yBd26DQCva3ijAcelUw=="
+							},
+							"paragraphStyle" : {
+								"__type" : "textStyle"
+							},
+							"string" : "##Ejemplo"
+						},
+						{
+							"__type" : "textSnippet",
+							"children" : {
+								"__type" : "snippets",
+								"items" : [ ]
+							},
+							"createEmail" : {
+								"__type" : "email",
+								"emailString" : "<unknown>"
+							},
+							"createTime" : {
+								"__type" : "time",
+								"time" : {
+									"__type" : "dateAndTime",
+									"dateAndTimeString" : "2023-06-19T15:12:47.007429+02:00"
+								}
+							},
+							"editEmail" : {
+								"__type" : "email",
+								"emailString" : "<unknown>"
+							},
+							"editTime" : {
+								"__type" : "time",
+								"time" : {
+									"__type" : "dateAndTime",
+									"dateAndTimeString" : "2023-06-19T15:57:58.794172+02:00"
+								}
+							},
+							"uid" : {
+								"__type" : "uid",
+								"uidString" : "7kkbB926DQCwOBfoAcelUw=="
+							},
+							"paragraphStyle" : {
+								"__type" : "textStyle"
+							},
+							"string" : "Creamos un ejemplo que construya automáticamente la hoja [[Test Knowledge Page]], que se crea al asimilar el conocimiento de[[Crear LePage  ejemplo para prueba de construcción de conocimiento]] ."
+						},
+						{
+							"__type" : "textSnippet",
+							"children" : {
+								"__type" : "snippets",
+								"items" : [ ]
+							},
+							"createEmail" : {
+								"__type" : "email",
+								"emailString" : "<unknown>"
+							},
+							"createTime" : {
+								"__type" : "time",
+								"time" : {
+									"__type" : "dateAndTime",
 									"dateAndTimeString" : "2023-06-19T13:07:30.902541+02:00"
 								}
 							},
@@ -541,7 +615,7 @@
 								"__type" : "time",
 								"time" : {
 									"__type" : "dateAndTime",
-									"dateAndTimeString" : "2023-06-19T13:18:42.64903+02:00"
+									"dateAndTimeString" : "2023-06-19T15:12:47.033176+02:00"
 								}
 							},
 							"uid" : {
@@ -551,7 +625,7 @@
 							"paragraphStyle" : {
 								"__type" : "textStyle"
 							},
-							"string" : "Creamos un ejemplo que devuelva la hoja [[Knonwledge Base]] que se crea en[[Crear LePage  ejemplo para prueba de construcción de conocimiento]] . Si ya se creó anteriormente se puede borrar ejecutando:"
+							"string" : "Si ya se creó anteriormente se puede borrar ejecutando:"
 						},
 						{
 							"__type" : "pharoSnippet",
@@ -578,14 +652,483 @@
 								"__type" : "time",
 								"time" : {
 									"__type" : "dateAndTime",
-									"dateAndTimeString" : "2023-06-19T13:19:22.662737+02:00"
+									"dateAndTimeString" : "2023-06-19T15:10:45.55901+02:00"
 								}
 							},
 							"uid" : {
 								"__type" : "uid",
 								"uidString" : "pGOPb9u6DQCZyOKxBeyliw=="
 							},
-							"code" : "defaultDataBase "
+							"code" : "defaultDatabase\r\tpageNamed: targetPageName\r\tifPresent: [ :page | page removeSelf ]\r\tifAbsent: [  ]."
+						},
+						{
+							"__type" : "textSnippet",
+							"children" : {
+								"__type" : "snippets",
+								"items" : [ ]
+							},
+							"createEmail" : {
+								"__type" : "email",
+								"emailString" : "<unknown>"
+							},
+							"createTime" : {
+								"__type" : "time",
+								"time" : {
+									"__type" : "dateAndTime",
+									"dateAndTimeString" : "2023-06-19T15:49:35.130956+02:00"
+								}
+							},
+							"editEmail" : {
+								"__type" : "email",
+								"emailString" : "<unknown>"
+							},
+							"editTime" : {
+								"__type" : "time",
+								"time" : {
+									"__type" : "dateAndTime",
+									"dateAndTimeString" : "2023-06-19T15:49:43.687594+02:00"
+								}
+							},
+							"uid" : {
+								"__type" : "uid",
+								"uidString" : "FZW4it26DQCHmewbAcelUw=="
+							},
+							"paragraphStyle" : {
+								"__type" : "textStyle"
+							},
+							"string" : "Creamos una clase que contendrá los ejemplos"
+						},
+						{
+							"__type" : "pharoSnippet",
+							"children" : {
+								"__type" : "snippets",
+								"items" : [ ]
+							},
+							"createEmail" : {
+								"__type" : "email",
+								"emailString" : "<unknown>"
+							},
+							"createTime" : {
+								"__type" : "time",
+								"time" : {
+									"__type" : "dateAndTime",
+									"dateAndTimeString" : "2023-06-19T15:49:48.778848+02:00"
+								}
+							},
+							"editEmail" : {
+								"__type" : "email",
+								"emailString" : "<unknown>"
+							},
+							"editTime" : {
+								"__type" : "time",
+								"time" : {
+									"__type" : "dateAndTime",
+									"dateAndTimeString" : "2023-06-19T15:52:45.505708+02:00"
+								}
+							},
+							"uid" : {
+								"__type" : "uid",
+								"uidString" : "asuIi926DQCLbiYJAcelUw=="
+							},
+							"code" : "Object subclass: #KnowledgeAssimilatorExamples\r\tinstanceVariableNames: ''\r\tclassVariableNames: ''\r\tpackage: 'DynaSpaceKnowledge-Examples'."
+						},
+						{
+							"__type" : "textSnippet",
+							"children" : {
+								"__type" : "snippets",
+								"items" : [ ]
+							},
+							"createEmail" : {
+								"__type" : "email",
+								"emailString" : "<unknown>"
+							},
+							"createTime" : {
+								"__type" : "time",
+								"time" : {
+									"__type" : "dateAndTime",
+									"dateAndTimeString" : "2023-06-19T15:56:13.971491+02:00"
+								}
+							},
+							"editEmail" : {
+								"__type" : "email",
+								"emailString" : "<unknown>"
+							},
+							"editTime" : {
+								"__type" : "time",
+								"time" : {
+									"__type" : "dateAndTime",
+									"dateAndTimeString" : "2023-06-19T16:23:46.050978+02:00"
+								}
+							},
+							"uid" : {
+								"__type" : "uid",
+								"uidString" : "wmh+ot26DQCcaa3aAcelUw=="
+							},
+							"paragraphStyle" : {
+								"__type" : "textStyle"
+							},
+							"string" : "Creamos el ejemplo que devuelve la página Lepiter que se genera asimilando el conocimiento de[[Crear LePage  ejemplo para prueba de construcción de conocimiento]]"
+						},
+						{
+							"__type" : "pharoSnippet",
+							"children" : {
+								"__type" : "snippets",
+								"items" : [ ]
+							},
+							"createEmail" : {
+								"__type" : "email",
+								"emailString" : "<unknown>"
+							},
+							"createTime" : {
+								"__type" : "time",
+								"time" : {
+									"__type" : "dateAndTime",
+									"dateAndTimeString" : "2023-06-19T15:12:54.084134+02:00"
+								}
+							},
+							"editEmail" : {
+								"__type" : "email",
+								"emailString" : "<unknown>"
+							},
+							"editTime" : {
+								"__type" : "time",
+								"time" : {
+									"__type" : "dateAndTime",
+									"dateAndTimeString" : "2023-06-19T16:22:49.767849+02:00"
+								}
+							},
+							"uid" : {
+								"__type" : "uid",
+								"uidString" : "DESHB926DQCwZw/fAcelUw=="
+							},
+							"code" : "exampleCodeString := '\rtestKnowledgePage\r\t<gtExample>\r\t| knowledgeContainerPageName KnowledgeAssimilationResultPageName defaultDatabase page |\r\tknowledgeContainerPageName := ''Crear LePage  ejemplo para prueba de construcción de conocimiento''.\r\tKnowledgeAssimilationResultPageName := ''Test Knowledge Page''.\r\tdefaultDatabase := LeDatabasesRegistry defaultLogicalDatabase.\r\t\"Eliminamos la página resultado por si ya se había creado anteriormente\"\r\tdefaultDatabase\r\t\tpageNamed: KnowledgeAssimilationResultPageName\r\t\tifPresent: [ :page | page removeSelf ]\r\t\tifAbsent: [  ].\r\tpage := defaultDatabase pageNamed: knowledgeContainerPageName.\r\tKnowledgeAssimilator processPage: page.\r\t\"Comprobamos que se ha creado la página resultado de la asimiliación de conocimiento\"\r\t^ defaultDatabase pageNamed: KnowledgeAssimilationResultPageName\r'.\rKnowledgeAssimilatorExamples compile: exampleCodeString."
+						},
+						{
+							"__type" : "textSnippet",
+							"children" : {
+								"__type" : "snippets",
+								"items" : [ ]
+							},
+							"createEmail" : {
+								"__type" : "email",
+								"emailString" : "<unknown>"
+							},
+							"createTime" : {
+								"__type" : "time",
+								"time" : {
+									"__type" : "dateAndTime",
+									"dateAndTimeString" : "2023-06-19T16:01:56.350141+02:00"
+								}
+							},
+							"editEmail" : {
+								"__type" : "email",
+								"emailString" : "<unknown>"
+							},
+							"editTime" : {
+								"__type" : "time",
+								"time" : {
+									"__type" : "dateAndTime",
+									"dateAndTimeString" : "2023-06-19T16:02:10.034004+02:00"
+								}
+							},
+							"uid" : {
+								"__type" : "uid",
+								"uidString" : "hLDmtt26DQCvqK33AcelUw=="
+							},
+							"paragraphStyle" : {
+								"__type" : "textStyle"
+							},
+							"string" : "El ejemplo creado sería el siguiente:"
+						},
+						{
+							"__type" : "exampleSnippet",
+							"children" : {
+								"__type" : "snippets",
+								"items" : [ ]
+							},
+							"createEmail" : {
+								"__type" : "email",
+								"emailString" : "<unknown>"
+							},
+							"createTime" : {
+								"__type" : "time",
+								"time" : {
+									"__type" : "dateAndTime",
+									"dateAndTimeString" : "2023-06-19T15:58:52.369636+02:00"
+								}
+							},
+							"editEmail" : {
+								"__type" : "email",
+								"emailString" : "<unknown>"
+							},
+							"editTime" : {
+								"__type" : "time",
+								"time" : {
+									"__type" : "dateAndTime",
+									"dateAndTimeString" : "2023-06-19T15:58:52.369636+02:00"
+								}
+							},
+							"uid" : {
+								"__type" : "uid",
+								"uidString" : "21/vq926DQCnFUdPAcelUw=="
+							},
+							"exampleSelector" : "testKnowledgePage",
+							"previewHeight" : 200,
+							"previewShowSelector" : "gtViewsFor:",
+							"exampleBehaviorName" : "KnowledgeAssimilatorExamples",
+							"codeExpanded" : true,
+							"previewExpanded" : false,
+							"noCode" : false
+						},
+						{
+							"__type" : "textSnippet",
+							"children" : {
+								"__type" : "snippets",
+								"items" : [ ]
+							},
+							"createEmail" : {
+								"__type" : "email",
+								"emailString" : "<unknown>"
+							},
+							"createTime" : {
+								"__type" : "time",
+								"time" : {
+									"__type" : "dateAndTime",
+									"dateAndTimeString" : "2023-06-19T16:02:18.205138+02:00"
+								}
+							},
+							"editEmail" : {
+								"__type" : "email",
+								"emailString" : "<unknown>"
+							},
+							"editTime" : {
+								"__type" : "time",
+								"time" : {
+									"__type" : "dateAndTime",
+									"dateAndTimeString" : "2023-06-19T16:50:36.354032+02:00"
+								}
+							},
+							"uid" : {
+								"__type" : "uid",
+								"uidString" : "DSo0uN26DQC05jR3AcelUw=="
+							},
+							"paragraphStyle" : {
+								"__type" : "textStyle"
+							},
+							"string" : "El IDE nos avisa que el método {{gtMethod:KnowledgeAssimilator class>>processPage:}} no está implementado. Lo implementamos utilizando los código que hemos implementado en PS anteriores."
+						},
+						{
+							"__type" : "pharoSnippet",
+							"children" : {
+								"__type" : "snippets",
+								"items" : [ ]
+							},
+							"createEmail" : {
+								"__type" : "email",
+								"emailString" : "<unknown>"
+							},
+							"createTime" : {
+								"__type" : "time",
+								"time" : {
+									"__type" : "dateAndTime",
+									"dateAndTimeString" : "2023-06-19T16:34:45.816515+02:00"
+								}
+							},
+							"editEmail" : {
+								"__type" : "email",
+								"emailString" : "<unknown>"
+							},
+							"editTime" : {
+								"__type" : "time",
+								"time" : {
+									"__type" : "dateAndTime",
+									"dateAndTimeString" : "2023-06-19T16:48:10.087787+02:00"
+								}
+							},
+							"uid" : {
+								"__type" : "uid",
+								"uidString" : "klpKLN66DQCiUWG5AcelUw=="
+							},
+							"code" : "processMethodCode := '\rprocessPage: aLePage\r\t| knowledgeSnippets |\r\tknowledgeSnippets := self knowledgeSnippetsInPage: aLePage.\r\tself processKnowledgeSnippets: knowledgeSnippets\r'.\rKnowledgeAssimilator class compile: processMethodCode"
+						},
+						{
+							"__type" : "textSnippet",
+							"children" : {
+								"__type" : "snippets",
+								"items" : [ ]
+							},
+							"createEmail" : {
+								"__type" : "email",
+								"emailString" : "<unknown>"
+							},
+							"createTime" : {
+								"__type" : "time",
+								"time" : {
+									"__type" : "dateAndTime",
+									"dateAndTimeString" : "2023-06-19T16:50:03.183559+02:00"
+								}
+							},
+							"editEmail" : {
+								"__type" : "email",
+								"emailString" : "<unknown>"
+							},
+							"editTime" : {
+								"__type" : "time",
+								"time" : {
+									"__type" : "dateAndTime",
+									"dateAndTimeString" : "2023-06-19T16:51:50.845713+02:00"
+								}
+							},
+							"uid" : {
+								"__type" : "uid",
+								"uidString" : "Wj/4Yt66DQC7EgTRAcelUw=="
+							},
+							"paragraphStyle" : {
+								"__type" : "textStyle"
+							},
+							"string" : "Los métodos {{gtMethod:KnowledgeAssimilator class>>knowledgeSnippetsInPage}} y {{gtMethod:KnowledgeAssimilator class>> processKnowledgeSnippets}} se crean como sigue:"
+						},
+						{
+							"__type" : "pharoSnippet",
+							"children" : {
+								"__type" : "snippets",
+								"items" : [ ]
+							},
+							"createEmail" : {
+								"__type" : "email",
+								"emailString" : "<unknown>"
+							},
+							"createTime" : {
+								"__type" : "time",
+								"time" : {
+									"__type" : "dateAndTime",
+									"dateAndTimeString" : "2023-06-19T16:48:33.199095+02:00"
+								}
+							},
+							"editEmail" : {
+								"__type" : "email",
+								"emailString" : "<unknown>"
+							},
+							"editTime" : {
+								"__type" : "time",
+								"time" : {
+									"__type" : "dateAndTime",
+									"dateAndTimeString" : "2023-06-19T16:52:44.171754+02:00"
+								}
+							},
+							"uid" : {
+								"__type" : "uid",
+								"uidString" : "yjWbXd66DQC1Lz5tAcelUw=="
+							},
+							"code" : "knowledgeSnippetsInPageMethodCode := '\rknowledgeSnippetsInPage: aLePage\r\t| codeSnippets |\r\tcodeSnippets := aLePage\r\t\t\tallChildrenSnippetsMatching: [ :aSnippet \"aSnippet isCodeSnippet no vale porque existen varios y sólo nos interesa los LePharoSnippet\" | aSnippet isKindOf: LePharoSnippet ].\r\tcodeSnippets.\r\t^ codeSnippets\r'.\rKnowledgeAssimilator class compile: knowledgeSnippetsInPageMethodCode"
+						},
+						{
+							"__type" : "pharoSnippet",
+							"children" : {
+								"__type" : "snippets",
+								"items" : [ ]
+							},
+							"createEmail" : {
+								"__type" : "email",
+								"emailString" : "<unknown>"
+							},
+							"createTime" : {
+								"__type" : "time",
+								"time" : {
+									"__type" : "dateAndTime",
+									"dateAndTimeString" : "2023-06-19T16:48:49.763198+02:00"
+								}
+							},
+							"editEmail" : {
+								"__type" : "email",
+								"emailString" : "<unknown>"
+							},
+							"editTime" : {
+								"__type" : "time",
+								"time" : {
+									"__type" : "dateAndTime",
+									"dateAndTimeString" : "2023-06-19T16:52:49.139417+02:00"
+								}
+							},
+							"uid" : {
+								"__type" : "uid",
+								"uidString" : "oPKXXt66DQC25qhRAcelUw=="
+							},
+							"code" : "processKnowledgeSnippetsMethodCode := '\rprocessKnowledgeSnippets: codeSnippets\r\t| commonSharedVariablesBindings |\r\tcommonSharedVariablesBindings := GtSharedVariablesBindings new.\r\tcodeSnippets\r\t\tdo: [ :codeSnippet | \r\t\t\t| coderUIModel |\r\t\t\tcoderUIModel := codeSnippet coder asCoderViewModel.\r\t\t\tcoderUIModel sharedBindings: commonSharedVariablesBindings.\r\t\t\tGtCoderCodeExecutor doIt\r\t\t\t\tcoderViewModel: coderUIModel;\r\t\t\t\telement: BlElement new;\r\t\t\t\texecute ]\r'.\rKnowledgeAssimilator class compile: processKnowledgeSnippetsMethodCode"
+						},
+						{
+							"__type" : "exampleSnippet",
+							"children" : {
+								"__type" : "snippets",
+								"items" : [ ]
+							},
+							"createEmail" : {
+								"__type" : "email",
+								"emailString" : "<unknown>"
+							},
+							"createTime" : {
+								"__type" : "time",
+								"time" : {
+									"__type" : "dateAndTime",
+									"dateAndTimeString" : "2023-06-19T16:55:10.269158+02:00"
+								}
+							},
+							"editEmail" : {
+								"__type" : "email",
+								"emailString" : "<unknown>"
+							},
+							"editTime" : {
+								"__type" : "time",
+								"time" : {
+									"__type" : "dateAndTime",
+									"dateAndTimeString" : "2023-06-19T16:55:10.269158+02:00"
+								}
+							},
+							"uid" : {
+								"__type" : "uid",
+								"uidString" : "nAhGdd66DQCU2g5nAcelUw=="
+							},
+							"exampleSelector" : "testKnowledgePage",
+							"previewHeight" : 200,
+							"previewShowSelector" : "gtViewsFor:",
+							"exampleBehaviorName" : "KnowledgeAssimilatorExamples",
+							"codeExpanded" : true,
+							"previewExpanded" : false,
+							"noCode" : false
+						},
+						{
+							"__type" : "pharoSnippet",
+							"children" : {
+								"__type" : "snippets",
+								"items" : [ ]
+							},
+							"createEmail" : {
+								"__type" : "email",
+								"emailString" : "<unknown>"
+							},
+							"createTime" : {
+								"__type" : "time",
+								"time" : {
+									"__type" : "dateAndTime",
+									"dateAndTimeString" : "2023-06-19T17:03:52.39101+02:00"
+								}
+							},
+							"editEmail" : {
+								"__type" : "email",
+								"emailString" : "<unknown>"
+							},
+							"editTime" : {
+								"__type" : "time",
+								"time" : {
+									"__type" : "dateAndTime",
+									"dateAndTimeString" : "2023-06-19T17:10:37.194992+02:00"
+								}
+							},
+							"uid" : {
+								"__type" : "uid",
+								"uidString" : "ZPhklN66DQCX/KYAAcelUw=="
+							},
+							"code" : "\r\tknowledgeContainerPageName := 'Crear LePage  ejemplo para prueba de construcción de conocimiento'.\r\tknowledgeAssimilationResultPageName := 'Test Knowledge Page'.\r\tdefaultDatabase := LeDatabasesRegistry defaultLogicalDatabase.\r\t\"Eliminamos la página resultado por si ya se había creado anteriormente\"\r\tdefaultDatabase\r\t\tpageNamed: knowledgeAssimilationResultPageName\r\t\tifPresent: [ :aPage | aPage removeSelf ]\r\t\tifAbsent: [  ].\r\tpage := defaultDatabase pageNamed: knowledgeContainerPageName.\r\tKnowledgeAssimilator processPage: page.\r"
 						}
 					]
 				},

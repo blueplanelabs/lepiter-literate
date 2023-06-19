@@ -177,14 +177,14 @@
 					"__type" : "time",
 					"time" : {
 						"__type" : "dateAndTime",
-						"dateAndTimeString" : "2023-06-15T22:48:32.836965+02:00"
+						"dateAndTimeString" : "2023-06-19T15:24:30.567147+02:00"
 					}
 				},
 				"uid" : {
 					"__type" : "uid",
 					"uidString" : "+Hso0pG6DQCNb5K2B74TEA=="
 				},
-				"code" : "testPage := thisSnippet database pageBuilder uniqueTitle; add.\rtestPage updateTitle: 'Knowledge Base'."
+				"code" : "testPage := thisSnippet database pageBuilder uniqueTitle; add.\rtestPage updateTitle: 'Test Knowledge Base'."
 			},
 			{
 				"__type" : "textSnippet",
@@ -643,7 +643,7 @@
 					"__type" : "time",
 					"time" : {
 						"__type" : "dateAndTime",
-						"dateAndTimeString" : "2023-06-19T13:23:51.442862+02:00"
+						"dateAndTimeString" : "2023-06-19T13:24:01.99785+02:00"
 					}
 				},
 				"uid" : {
@@ -653,7 +653,7 @@
 				"paragraphStyle" : {
 					"__type" : "textStyle"
 				},
-				"string" : "A continuación creamos un `PS` que, al ejecutarlo creará una clase. Nota:  para escapar *'* dentro de un {{gtClass:String}} será con ''"
+				"string" : "A continuación creamos un `PS` que, al ejecutarlo creará una clase. Nota:  para escapar *'* dentro de un {{gtClass:String}} será con *''*"
 			},
 			{
 				"__type" : "pharoSnippet",
