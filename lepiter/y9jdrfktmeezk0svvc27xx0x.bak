@@ -643,7 +643,7 @@
 					"__type" : "time",
 					"time" : {
 						"__type" : "dateAndTime",
-						"dateAndTimeString" : "2023-06-19T13:24:01.99785+02:00"
+						"dateAndTimeString" : "2023-06-19T13:23:51.442862+02:00"
 					}
 				},
 				"uid" : {
@@ -653,7 +653,7 @@
 				"paragraphStyle" : {
 					"__type" : "textStyle"
 				},
-				"string" : "A continuación creamos un `PS` que, al ejecutarlo creará una clase. Nota:  para escapar *'* dentro de un {{gtClass:String}} será con *''*"
+				"string" : "A continuación creamos un `PS` que, al ejecutarlo creará una clase. Nota:  para escapar *'* dentro de un {{gtClass:String}} será con ''"
 			},
 			{
 				"__type" : "pharoSnippet",
