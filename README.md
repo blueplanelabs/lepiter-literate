@@ -5,8 +5,8 @@ DynaSpace Knowledge
 
 ```
 Metacello new
-	repository: 'github://blueplanelabs/dynaspace-knowledge:master/src';
-	baseline: 'DynaspaceKnowledge';
+	repository: 'github://blueplanelabs/dynaspace-knowledge:main/src';
+	baseline: 'DynaSpaceKnowledge';
 	load
 ```
 
