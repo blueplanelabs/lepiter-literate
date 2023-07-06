@@ -2494,14 +2494,14 @@
 					"__type" : "time",
 					"time" : {
 						"__type" : "dateAndTime",
-						"dateAndTimeString" : "2023-06-19T16:52:49.139417+02:00"
+						"dateAndTimeString" : "2023-07-06T16:06:55.789221+02:00"
 					}
 				},
 				"uid" : {
 					"__type" : "uid",
 					"uidString" : "oPKXXt66DQC25qhRAcelUw=="
 				},
-				"code" : "processKnowledgeSnippetsMethodCode := '\rprocessKnowledgeSnippets: codeSnippets\r\t| commonSharedVariablesBindings |\r\tcommonSharedVariablesBindings := GtSharedVariablesBindings new.\r\tcodeSnippets\r\t\tdo: [ :codeSnippet | \r\t\t\t| coderUIModel |\r\t\t\tcoderUIModel := codeSnippet coder asCoderViewModel.\r\t\t\tcoderUIModel sharedBindings: commonSharedVariablesBindings.\r\t\t\tGtCoderCodeExecutor doIt\r\t\t\t\tcoderViewModel: coderUIModel;\r\t\t\t\telement: BlElement new;\r\t\t\t\texecute ]\r'.\rKnowledgeAssimilator class compile: processKnowledgeSnippetsMethodCode"
+				"code" : "processKnowledgeSnippetsMethodCode := '\rprocessKnowledgeSnippets: codeSnippets\r\t| sharedBindingsToAdd |\r\tsharedBindingsToAdd := OrderedCollection empty.\r\tcodeSnippets\r\t\tdo: [ :aSnippet | \r\t\t\t| context localBindingsToAdd bindingsToAdd snippetEvaluationResult |\r\t\t\tlocalBindingsToAdd := OrderedCollection\r\t\t\t\t\twith: (GtLocalVariablesBindings new localAt: #thisSnippet put: aSnippet).\r\t\t\tbindingsToAdd := sharedBindingsToAdd copyWithAll: localBindingsToAdd.\r\t\t\tcontext := aSnippet coder evaluationContext.\r\t\t\tbindingsToAdd do: [ :aBindingToAdd | context addBindings: aBindingToAdd ].\r\t\t\tsnippetEvaluationResult := aSnippet coder doItInContext: context.\r\t\t\tsharedBindingsToAdd := snippetEvaluationResult evaluationContext bindingStrategy bindings\r\t\t\t\t\tselect: [ :aBinding | aBinding isKindOf: GtSharedVariablesBindings ] ]\r'.\rKnowledgeAssimilator class compile: processKnowledgeSnippetsMethodCode"
 			},
 			{
 				"__type" : "exampleSnippet",
