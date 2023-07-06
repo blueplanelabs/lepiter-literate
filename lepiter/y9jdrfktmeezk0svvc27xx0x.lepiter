@@ -103,7 +103,7 @@
 					"__type" : "time",
 					"time" : {
 						"__type" : "dateAndTime",
-						"dateAndTimeString" : "2023-06-15T20:39:11.448475+02:00"
+						"dateAndTimeString" : "2023-07-05T18:58:24.482985+02:00"
 					}
 				},
 				"uid" : {
@@ -113,7 +113,7 @@
 				"paragraphStyle" : {
 					"__type" : "textStyle"
 				},
-				"string" : "La construcción del conocimiento automática consistirá en la ejecuación de los fragmentos de código de manera secuencial, como si el lector fuera pulsando sobre los {{gtMethod:BrGlamorousVectorIcons class>>play}} "
+				"string" : "La construcción del conocimiento automática consistirá, inicialmente, en la ejecuación de los fragmentos de código de manera secuencial, como si el lector fuera pulsando sobre los iconos de evaluar ( {{gtMethod:BrGlamorousVectorIcons class>>play}})  de los {{gtClass:LePharoSnippet}}."
 			},
 			{
 				"__type" : "textSnippet",
@@ -211,7 +211,7 @@
 					"__type" : "time",
 					"time" : {
 						"__type" : "dateAndTime",
-						"dateAndTimeString" : "2023-06-15T20:53:29.018244+02:00"
+						"dateAndTimeString" : "2023-07-05T19:13:47.092401+02:00"
 					}
 				},
 				"uid" : {
@@ -221,7 +221,7 @@
 				"paragraphStyle" : {
 					"__type" : "textStyle"
 				},
-				"string" : "A continuación le añadiremos varios {{gtClass:LeSnippet}} de diferentes tipo. En principio, el código que nos interesará para la construcción del conocimiento serán del tipo {{gtClass:LePharoSnippet}}"
+				"string" : "A continuación le añadiremos varios {{gtClass:LeSnippet}} de diferentes tipo. En principio, los snippets que nos interesará para la construcción del conocimiento serán del tipo {{gtClass:LePharoSnippet}}"
 			},
 			{
 				"__type" : "textSnippet",
@@ -330,6 +330,43 @@
 					"uidString" : "URSggZG6DQCMNBWtB74TEA=="
 				},
 				"code" : "initialSnippetClasses := LeSnippet allSubclasses reject: [ :snippetClass | snippetClass isAbstract or: [ {LeMockedSnippet. LeYoutubeReferenceSnippet. LeJenkinsSnippet. LeDockerSnippet. LeUnknownSnippet. LePharoSnippet} includes: snippetClass ] ].\rinitialSnippetClasses do: [ :snippetClass | \rtestPage addSnippet: snippetClass new ].\rtestPage"
+			},
+			{
+				"__type" : "textSnippet",
+				"children" : {
+					"__type" : "snippets",
+					"items" : [ ]
+				},
+				"createEmail" : {
+					"__type" : "email",
+					"emailString" : "<unknown>"
+				},
+				"createTime" : {
+					"__type" : "time",
+					"time" : {
+						"__type" : "dateAndTime",
+						"dateAndTimeString" : "2023-07-05T18:59:49.111713+02:00"
+					}
+				},
+				"editEmail" : {
+					"__type" : "email",
+					"emailString" : "<unknown>"
+				},
+				"editTime" : {
+					"__type" : "time",
+					"time" : {
+						"__type" : "dateAndTime",
+						"dateAndTimeString" : "2023-07-05T19:03:03.044464+02:00"
+					}
+				},
+				"uid" : {
+					"__type" : "uid",
+					"uidString" : "N/tmECK8DQCzxyGJDJzarA=="
+				},
+				"paragraphStyle" : {
+					"__type" : "textStyle"
+				},
+				"string" : "Al evaluar {{gtClass:LePharoSnippet}} manualmente en un {{gtClass:LePage}}, se comparten variables entre ellos y también poseen un atributo *thisSnippet* que apunta a él mismo. Todo esto queremos que ocurra igual al construir el conocimiento automaticament."
 			},
 			{
 				"__type" : "textSnippet",
@@ -501,7 +538,7 @@
 					"__type" : "time",
 					"time" : {
 						"__type" : "dateAndTime",
-						"dateAndTimeString" : "2023-06-15T23:33:08.747078+02:00"
+						"dateAndTimeString" : "2023-07-05T19:16:05.28682+02:00"
 					}
 				},
 				"uid" : {
@@ -511,7 +548,7 @@
 				"paragraphStyle" : {
 					"__type" : "textStyle"
 				},
-				"string" : "Creamos otro PS donde no se declare la variable `a`, pero sí se utilice. Si evaluamos el `PS` resultante, se lanzará una excepción al no estar definida la variable."
+				"string" : "Creamos otro PS donde no se declare la variable *a*, pero sí se utilice. Si evaluamos el `PS` resultante, se lanzará una excepción al no estar definida la variable."
 			},
 			{
 				"__type" : "pharoSnippet",
@@ -680,14 +717,14 @@
 					"__type" : "time",
 					"time" : {
 						"__type" : "dateAndTime",
-						"dateAndTimeString" : "2023-06-16T00:10:49.886532+02:00"
+						"dateAndTimeString" : "2023-07-05T19:20:31.680319+02:00"
 					}
 				},
 				"uid" : {
 					"__type" : "uid",
 					"uidString" : "aqJFsJO6DQCHQVt0B74TEA=="
 				},
-				"code" : "codeString := \r'Object subclass: #Dummy\r\tinstanceVariableNames: ''''\r\tclassVariableNames: ''''\r\tpackage: ''GToolkit-Demo-Ludo-Model'''.\rcreateClassPS := LePharoSnippet code: codeString."
+				"code" : "codeString := \r'Object subclass: #Dummy\r\tinstanceVariableNames: ''''\r\tclassVariableNames: ''''\r\tpackage: ''DynaSpaceKnowledge'''.\rcreateClassPS := LePharoSnippet code: codeString."
 			},
 			{
 				"__type" : "textSnippet",
@@ -714,7 +751,7 @@
 					"__type" : "time",
 					"time" : {
 						"__type" : "dateAndTime",
-						"dateAndTimeString" : "2023-06-16T00:09:47.13526+02:00"
+						"dateAndTimeString" : "2023-07-05T19:18:08.420793+02:00"
 					}
 				},
 				"uid" : {
@@ -785,7 +822,7 @@
 					"__type" : "time",
 					"time" : {
 						"__type" : "dateAndTime",
-						"dateAndTimeString" : "2023-06-16T00:21:49.09044+02:00"
+						"dateAndTimeString" : "2023-07-05T19:17:50.220024+02:00"
 					}
 				},
 				"uid" : {
@@ -795,7 +832,7 @@
 				"paragraphStyle" : {
 					"__type" : "textStyle"
 				},
-				"string" : "Igual que ocurría con la variable `a`, `Dummy` aparecerá  {{gtMethod:BrGlamorousVectorIcons class>>repair}}"
+				"string" : "Igual que ocurría con la variable *a*, *Dummy* aparecerá  {{gtMethod:BrGlamorousVectorIcons class>>repair}}"
 			},
 			{
 				"__type" : "textSnippet",
