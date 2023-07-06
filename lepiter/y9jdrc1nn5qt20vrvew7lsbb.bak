@@ -140,14 +140,14 @@
 					"__type" : "time",
 					"time" : {
 						"__type" : "dateAndTime",
-						"dateAndTimeString" : "2023-06-19T13:07:19.940024+02:00"
+						"dateAndTimeString" : "2023-07-06T16:34:19.271329+02:00"
 					}
 				},
 				"uid" : {
 					"__type" : "uid",
 					"uidString" : "DOpwLdu6DQCnXGTRBeyliw=="
 				},
-				"code" : "Object subclass: #KnowledgeAssimilator\r\tinstanceVariableNames: ''\r\tclassVariableNames: ''\r\tpackage: 'DynaSpaceKnowledge'."
+				"code" : "Object subclass: #KnowledgeAssimilator\r\tinstanceVariableNames: ''\r\tclassVariableNames: ''\r\tpackage: 'DynaSpaceKnowledge-Core'."
 			},
 			{
 				"__type" : "textSnippet",
@@ -2494,14 +2494,14 @@
 					"__type" : "time",
 					"time" : {
 						"__type" : "dateAndTime",
-						"dateAndTimeString" : "2023-07-06T16:06:55.789221+02:00"
+						"dateAndTimeString" : "2023-07-06T16:38:04.981719+02:00"
 					}
 				},
 				"uid" : {
 					"__type" : "uid",
 					"uidString" : "oPKXXt66DQC25qhRAcelUw=="
 				},
-				"code" : "processKnowledgeSnippetsMethodCode := '\rprocessKnowledgeSnippets: codeSnippets\r\t| sharedBindingsToAdd |\r\tsharedBindingsToAdd := OrderedCollection empty.\r\tcodeSnippets\r\t\tdo: [ :aSnippet | \r\t\t\t| context localBindingsToAdd bindingsToAdd snippetEvaluationResult |\r\t\t\tlocalBindingsToAdd := OrderedCollection\r\t\t\t\t\twith: (GtLocalVariablesBindings new localAt: #thisSnippet put: aSnippet).\r\t\t\tbindingsToAdd := sharedBindingsToAdd copyWithAll: localBindingsToAdd.\r\t\t\tcontext := aSnippet coder evaluationContext.\r\t\t\tbindingsToAdd do: [ :aBindingToAdd | context addBindings: aBindingToAdd ].\r\t\t\tsnippetEvaluationResult := aSnippet coder doItInContext: context.\r\t\t\tsharedBindingsToAdd := snippetEvaluationResult evaluationContext bindingStrategy bindings\r\t\t\t\t\tselect: [ :aBinding | aBinding isKindOf: GtSharedVariablesBindings ] ]\r'.\rKnowledgeAssimilator class compile: processKnowledgeSnippetsMethodCode"
+				"code" : "processKnowledgeSnippetsMethodCode := '\rprocessKnowledgeSnippets: codeSnippets\r\t| sharedBindingsToAdd |\r\tsharedBindingsToAdd := OrderedCollection empty.\r\tcodeSnippets\r\t\tdo: [ :aSnippet | \r\t\t\t| context localBindingsToAdd bindingsToAdd snippetEvaluationResult |\r\t\t\tlocalBindingsToAdd := OrderedCollection\r\t\t\t\t\twith: (GtLocalVariablesBindings new localAt: #thisSnippet put: aSnippet).\r\t\t\tbindingsToAdd := sharedBindingsToAdd copyWithAll: localBindingsToAdd.\r\t\t\tcontext := aSnippet coder evaluationContext.\r\t\t\tbindingsToAdd do: [ :aBindingToAdd | context addBindings: aBindingToAdd ].\r\t\t\tsnippetEvaluationResult := aSnippet coder doItInContext: context.\r\t\t\tsharedBindingsToAdd := snippetEvaluationResult evaluationContext bindingStrategy bindings\r\t\t\t\t\tselect: [ :aBinding | aBinding isKindOf: GtSharedVariablesBindings ] ]\r'.\rKnowledgeAssimilator class compile: processKnowledgeSnippetsMethodCode classified: "
 			},
 			{
 				"__type" : "exampleSnippet",
