@@ -11,7 +11,7 @@ BaselineOfLepiterLiterate class >> defaultKnowledgeBasePathName [
 
 { #category : #'lepiter-store' }
 BaselineOfLepiterLiterate class >> loadKnowledgeBase [
-	self loadKnowledgeBaseForRepositoryNamed: 'dynaspace-knowledge'
+	self loadKnowledgeBaseForRepositoryNamed: self repositoryName
 ]
 
 { #category : #'lepiter-store' }
@@ -31,6 +31,11 @@ BaselineOfLepiterLiterate class >> loadKnowledgeBaseForRepositoryNamed: aReposit
 				addRegisteredDirectory: aRepository repositoryDirectory / aPathName.
 			defaultDatabase reload ]
 		ifNone: [ self inform: 'Repository ', aRepositoryName, ' not found.' ]
+]
+
+{ #category : #'lepiter-store' }
+BaselineOfLepiterLiterate class >> repositoryName [
+	^ 'lepiter-literate'
 ]
 
 { #category : #baseline }
