@@ -1,26 +1,26 @@
 Class {
-	#name : #BaselineOfDynaSpaceKnowledge,
+	#name : #BaselineOfLepiterLiterate,
 	#superclass : #BaselineOf,
-	#category : #BaselineOfDynaSpaceKnowledge
+	#category : #BaselineOfLepiterLiterate
 }
 
 { #category : #accessing }
-BaselineOfDynaSpaceKnowledge class >> defaultKnowledgeBasePathName [
+BaselineOfLepiterLiterate class >> defaultKnowledgeBasePathName [
 	^ 'lepiter'
 ]
 
 { #category : #'lepiter-store' }
-BaselineOfDynaSpaceKnowledge class >> loadKnowledgeBase [
+BaselineOfLepiterLiterate class >> loadKnowledgeBase [
 	self loadKnowledgeBaseForRepositoryNamed: 'dynaspace-knowledge'
 ]
 
 { #category : #'lepiter-store' }
-BaselineOfDynaSpaceKnowledge class >> loadKnowledgeBaseForRepositoryNamed: aRepositoryName [
+BaselineOfLepiterLiterate class >> loadKnowledgeBaseForRepositoryNamed: aRepositoryName [
 	self loadKnowledgeBaseForRepositoryNamed: aRepositoryName andPath: self defaultKnowledgeBasePathName
 ]
 
 { #category : #'lepiter-store' }
-BaselineOfDynaSpaceKnowledge class >> loadKnowledgeBaseForRepositoryNamed: aRepositoryName andPath: aPathName [
+BaselineOfLepiterLiterate class >> loadKnowledgeBaseForRepositoryNamed: aRepositoryName andPath: aPathName [
 	IceRepository registry
 		detect: [ :aRepository | aRepository name = aRepositoryName ]
 		ifFound: [ :aRepository | 
@@ -34,9 +34,9 @@ BaselineOfDynaSpaceKnowledge class >> loadKnowledgeBaseForRepositoryNamed: aRepo
 ]
 
 { #category : #baseline }
-BaselineOfDynaSpaceKnowledge >> baseline: spec [
+BaselineOfLepiterLiterate >> baseline: spec [
 	<baseline>
 		^ spec for: #common do: [
-			spec package: 'DynaSpaceKnowledge'
+			spec package: 'Lepiter-Literate'
 		]
 ]
