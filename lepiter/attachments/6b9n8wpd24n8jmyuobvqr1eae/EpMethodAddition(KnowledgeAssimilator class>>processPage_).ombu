@@ -1,1 +1,22 @@
-OmEntry {	#tags : {		#author : 'GlamorousAuthor',		#time : DateAndTime [ '2023-07-06T15:41:41.419634+02:00' ],		#prior : OmReference [ 'Pharo10-SNAPSHOT-64bit-179ef65.itiyeg3klh87lymreeyupsmb', '2' ],		#self : OmReference [ '1' ]	},	#content : EpMethodAddition {		#method : RGMethodDefinition {			#annotations : IdentityDictionary {				#className : #'KnowledgeAssimilator class',				#isMetaSide : true			},			#name : #'processPage:',			#protocol : #'as yet unclassified',			#sourceCode : 'processPage: aLePage\r\t| knowledgeSnippets |\r\tknowledgeSnippets := self knowledgeSnippetsInPage: aLePage.\r\tself processKnowledgeSnippets: knowledgeSnippets',			#stamp : 'GlamorousAuthor 7/6/2023 15:41',			#package : #DynaSpaceKnowledge		}	}}
+OmEntry {
+	#tags : {
+		#author : 'GlamorousAuthor',
+		#time : DateAndTime [ '2023-07-06T15:41:41.419634+02:00' ],
+		#prior : OmReference [ 'Pharo10-SNAPSHOT-64bit-179ef65.itiyeg3klh87lymreeyupsmb', '2' ],
+		#self : OmReference [ '1' ]
+	},
+	#content : EpMethodAddition {
+		#method : RGMethodDefinition {
+			#annotations : IdentityDictionary {
+				#className : #'KnowledgeAssimilator class',
+				#isMetaSide : true
+			},
+			#name : #'processPage:',
+			#protocol : #'processing knowledge',
+			#sourceCode : 'processPage: aLePage\r\t| knowledgeSnippets |\r\tknowledgeSnippets := self knowledgeSnippetsInPage: aLePage.\r\tself processKnowledgeSnippets: knowledgeSnippets',
+			#stamp : 'GlamorousAuthor 7/6/2023 15:41',
+			#package : #DynaSpaceKnowledge
+		}
+	}
+}
+

@@ -140,14 +140,14 @@
 					"__type" : "time",
 					"time" : {
 						"__type" : "dateAndTime",
-						"dateAndTimeString" : "2023-07-06T16:34:19.271329+02:00"
+						"dateAndTimeString" : "2023-07-07T14:22:32.406358+02:00"
 					}
 				},
 				"uid" : {
 					"__type" : "uid",
 					"uidString" : "DOpwLdu6DQCnXGTRBeyliw=="
 				},
-				"code" : "Object subclass: #KnowledgeAssimilator\r\tinstanceVariableNames: ''\r\tclassVariableNames: ''\r\tpackage: 'DynaSpaceKnowledge-Core'."
+				"code" : "Object subclass: #KnowledgeAssimilator\r\tinstanceVariableNames: ''\r\tclassVariableNames: ''\r\tpackage: 'Lepiter-Literate-Core'."
 			},
 			{
 				"__type" : "textSnippet",
@@ -211,14 +211,14 @@
 					"__type" : "time",
 					"time" : {
 						"__type" : "dateAndTime",
-						"dateAndTimeString" : "2023-06-19T15:52:45.505708+02:00"
+						"dateAndTimeString" : "2023-07-07T14:22:44.213345+02:00"
 					}
 				},
 				"uid" : {
 					"__type" : "uid",
 					"uidString" : "asuIi926DQCLbiYJAcelUw=="
 				},
-				"code" : "Object subclass: #KnowledgeAssimilatorExamples\r\tinstanceVariableNames: ''\r\tclassVariableNames: ''\r\tpackage: 'DynaSpaceKnowledge-Examples'."
+				"code" : "Object subclass: #KnowledgeAssimilatorExamples\r\tinstanceVariableNames: ''\r\tclassVariableNames: ''\r\tpackage: 'Lepiter-Literate-Examples'."
 			},
 			{
 				"__type" : "textSnippet",
@@ -867,7 +867,7 @@
 								"__type" : "time",
 								"time" : {
 									"__type" : "dateAndTime",
-									"dateAndTimeString" : "2023-07-06T15:46:18.272849+02:00"
+									"dateAndTimeString" : "2023-07-07T16:35:08.295943+02:00"
 								}
 							},
 							"uid" : {
@@ -1220,7 +1220,7 @@
 								"__type" : "time",
 								"time" : {
 									"__type" : "dateAndTime",
-									"dateAndTimeString" : "2023-06-14T19:06:52.475881+02:00"
+									"dateAndTimeString" : "2023-07-07T14:12:30.494359+02:00"
 								}
 							},
 							"editEmail" : {
@@ -1231,7 +1231,7 @@
 								"__type" : "time",
 								"time" : {
 									"__type" : "dateAndTime",
-									"dateAndTimeString" : "2023-07-06T15:47:21.690543+02:00"
+									"dateAndTimeString" : "2023-07-07T14:12:30.499169+02:00"
 								}
 							},
 							"uid" : {
@@ -1241,7 +1241,7 @@
 							"paragraphStyle" : {
 								"__type" : "textStyle"
 							},
-							"string" : "Sin embargo da un error al no compartirse las variables entre playgrounds."
+							"string" : "Sin embargo da un error porque la variable *a* no está inicializada, al no compartirse las variables entre playgrounds."
 						},
 						{
 							"__type" : "textSnippet",
@@ -1583,7 +1583,7 @@
 											"__type" : "time",
 											"time" : {
 												"__type" : "dateAndTime",
-												"dateAndTimeString" : "2023-07-06T10:10:15.123977+02:00"
+												"dateAndTimeString" : "2023-07-07T14:14:54.493666+02:00"
 											}
 										},
 										"editEmail" : {
@@ -1594,7 +1594,7 @@
 											"__type" : "time",
 											"time" : {
 												"__type" : "dateAndTime",
-												"dateAndTimeString" : "2023-07-06T10:17:04.309926+02:00"
+												"dateAndTimeString" : "2023-07-07T14:14:54.497193+02:00"
 											}
 										},
 										"uid" : {
@@ -1604,7 +1604,7 @@
 										"paragraphStyle" : {
 											"__type" : "textStyle"
 										},
-										"string" : "Si evaluamos el *snippetB* añadiendo las variables compartidas del resultado de evaluar el *snippetA* alcanzaremos nuestro objetivo."
+										"string" : "Si evaluamos el *snippetB* añadiendo las variables compartidas del resultado de evaluar el *snippetA* mediante {{gtMethod:GtPharoSourceCoderEvaluationContext>>addBindings:}} alcanzaremos nuestro objetivo."
 									},
 									{
 										"__type" : "pharoSnippet",
@@ -1781,6 +1781,118 @@
 											"uidString" : "EFIisy+8DQCGyFysDWwdXw=="
 										},
 										"code" : "snippetsToProcess := {snippetA. snippetB}.\rprocessKnowledgeSnippets value: snippetsToProcess"
+									},
+									{
+										"__type" : "textSnippet",
+										"children" : {
+											"__type" : "snippets",
+											"items" : [ ]
+										},
+										"createEmail" : {
+											"__type" : "email",
+											"emailString" : "<unknown>"
+										},
+										"createTime" : {
+											"__type" : "time",
+											"time" : {
+												"__type" : "dateAndTime",
+												"dateAndTimeString" : "2023-07-07T16:42:55.845142+02:00"
+											}
+										},
+										"editEmail" : {
+											"__type" : "email",
+											"emailString" : "<unknown>"
+										},
+										"editTime" : {
+											"__type" : "time",
+											"time" : {
+												"__type" : "dateAndTime",
+												"dateAndTimeString" : "2023-07-07T16:43:22.133089+02:00"
+											}
+										},
+										"uid" : {
+											"__type" : "uid",
+											"uidString" : "E1ukYki8DQCKyXBbDI6OuQ=="
+										},
+										"paragraphStyle" : {
+											"__type" : "textStyle"
+										},
+										"string" : "Ya podemos implementar el método con el código que hemos probado en el bloque."
+									},
+									{
+										"__type" : "changesSnippet",
+										"children" : {
+											"__type" : "snippets",
+											"items" : [ ]
+										},
+										"createEmail" : {
+											"__type" : "email",
+											"emailString" : "<unknown>"
+										},
+										"createTime" : {
+											"__type" : "time",
+											"time" : {
+												"__type" : "dateAndTime",
+												"dateAndTimeString" : "2023-07-07T16:26:20.75117+02:00"
+											}
+										},
+										"editEmail" : {
+											"__type" : "email",
+											"emailString" : "<unknown>"
+										},
+										"editTime" : {
+											"__type" : "time",
+											"time" : {
+												"__type" : "dateAndTime",
+												"dateAndTimeString" : "2023-07-07T16:26:20.75117+02:00"
+											}
+										},
+										"uid" : {
+											"__type" : "uid",
+											"uidString" : "p25UJ0i8DQCH4ke0DI6OuQ=="
+										},
+										"previewHeight" : 200,
+										"fileName" : "attachments/ajoqir4le7lcou6velizx5t4u/EpMethodAddition(KnowledgeAssimilator>>processKnowledgeSnippets_).ombu"
+									},
+									{
+										"__type" : "exampleSnippet",
+										"children" : {
+											"__type" : "snippets",
+											"items" : [ ]
+										},
+										"createEmail" : {
+											"__type" : "email",
+											"emailString" : "<unknown>"
+										},
+										"createTime" : {
+											"__type" : "time",
+											"time" : {
+												"__type" : "dateAndTime",
+												"dateAndTimeString" : "2023-07-07T16:43:34.554277+02:00"
+											}
+										},
+										"editEmail" : {
+											"__type" : "email",
+											"emailString" : "<unknown>"
+										},
+										"editTime" : {
+											"__type" : "time",
+											"time" : {
+												"__type" : "dateAndTime",
+												"dateAndTimeString" : "2023-07-07T16:43:34.554277+02:00"
+											}
+										},
+										"uid" : {
+											"__type" : "uid",
+											"uidString" : "dALzZEi8DQCMXa57DI6OuQ=="
+										},
+										"exampleSelector" : "exampleProcessTestKnowledgePage",
+										"previewHeight" : 200,
+										"previewShowSelector" : "gtViewsFor:",
+										"exampleBehaviorName" : "KnowledgeAssimilatorExamples",
+										"codeExpanded" : true,
+										"previewExpanded" : false,
+										"noCode" : false
 									}
 								]
 							},
@@ -2494,14 +2606,14 @@
 					"__type" : "time",
 					"time" : {
 						"__type" : "dateAndTime",
-						"dateAndTimeString" : "2023-07-06T16:38:04.981719+02:00"
+						"dateAndTimeString" : "2023-07-06T16:39:27.703095+02:00"
 					}
 				},
 				"uid" : {
 					"__type" : "uid",
 					"uidString" : "oPKXXt66DQC25qhRAcelUw=="
 				},
-				"code" : "processKnowledgeSnippetsMethodCode := '\rprocessKnowledgeSnippets: codeSnippets\r\t| sharedBindingsToAdd |\r\tsharedBindingsToAdd := OrderedCollection empty.\r\tcodeSnippets\r\t\tdo: [ :aSnippet | \r\t\t\t| context localBindingsToAdd bindingsToAdd snippetEvaluationResult |\r\t\t\tlocalBindingsToAdd := OrderedCollection\r\t\t\t\t\twith: (GtLocalVariablesBindings new localAt: #thisSnippet put: aSnippet).\r\t\t\tbindingsToAdd := sharedBindingsToAdd copyWithAll: localBindingsToAdd.\r\t\t\tcontext := aSnippet coder evaluationContext.\r\t\t\tbindingsToAdd do: [ :aBindingToAdd | context addBindings: aBindingToAdd ].\r\t\t\tsnippetEvaluationResult := aSnippet coder doItInContext: context.\r\t\t\tsharedBindingsToAdd := snippetEvaluationResult evaluationContext bindingStrategy bindings\r\t\t\t\t\tselect: [ :aBinding | aBinding isKindOf: GtSharedVariablesBindings ] ]\r'.\rKnowledgeAssimilator class compile: processKnowledgeSnippetsMethodCode classified: "
+				"code" : "processKnowledgeSnippetsMethodCode := '\rprocessKnowledgeSnippets: codeSnippets\r\t| sharedBindingsToAdd |\r\tsharedBindingsToAdd := OrderedCollection empty.\r\tcodeSnippets\r\t\tdo: [ :aSnippet | \r\t\t\t| context localBindingsToAdd bindingsToAdd snippetEvaluationResult |\r\t\t\tlocalBindingsToAdd := OrderedCollection\r\t\t\t\t\twith: (GtLocalVariablesBindings new localAt: #thisSnippet put: aSnippet).\r\t\t\tbindingsToAdd := sharedBindingsToAdd copyWithAll: localBindingsToAdd.\r\t\t\tcontext := aSnippet coder evaluationContext.\r\t\t\tbindingsToAdd do: [ :aBindingToAdd | context addBindings: aBindingToAdd ].\r\t\t\tsnippetEvaluationResult := aSnippet coder doItInContext: context.\r\t\t\tsharedBindingsToAdd := snippetEvaluationResult evaluationContext bindingStrategy bindings\r\t\t\t\t\tselect: [ :aBinding | aBinding isKindOf: GtSharedVariablesBindings ] ]\r'.\rKnowledgeAssimilator class compile: processKnowledgeSnippetsMethodCode classified: 'processing'"
 			},
 			{
 				"__type" : "exampleSnippet",
