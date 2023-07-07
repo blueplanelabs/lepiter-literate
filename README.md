@@ -1,18 +1,18 @@
-# dynaspace-knowledge
-DynaSpace Knowledge
+# Lepiter Literate
+
+Use Lepiter knowledge base for moldable literate programming.
 
 ## Installation
 
 ```
 Metacello new
-	repository: 'github://blueplanelabs/dynaspace-knowledge:main/src';
-	baseline: 'DynaSpaceKnowledge';
+	repository: 'github://blueplanelabs/lepiter-literate:main/src';
+	baseline: 'LepiterLiterate';
 	load
 ```
 
-### Loading Lepiter database
-
+### Loading Lepiter-Literate knowledge base
 
 ```
-BaselineOfDynaSpaceKnowledge loadLepiter
+BaselineOfLepiterLiterate loadKnowledgeBase
 ```
