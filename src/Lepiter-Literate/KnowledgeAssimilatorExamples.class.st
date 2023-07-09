@@ -4,6 +4,18 @@ Class {
 	#category : #'Lepiter-Literate-Examples'
 }
 
+{ #category : #support }
+KnowledgeAssimilatorExamples >> exampleBuildTestKnowledgePage [
+	<gtExample>
+	| defaultDatabase |
+	defaultDatabase := LeDatabasesRegistry defaultLogicalDatabase.
+	self removeIfNecessary.
+	KnowledgeAssimilator
+		processPage: (defaultDatabase
+				pageNamed: 'Crear LePage  ejemplo para prueba de construcción de conocimiento').
+	^ defaultDatabase pageNamed: 'Test Knowledge Page'
+]
+
 { #category : #example }
 KnowledgeAssimilatorExamples >> exampleProcessTestKnowledgePage [
 	<gtExample>
@@ -33,4 +45,12 @@ KnowledgeAssimilatorExamples >> exampleTestKnowledgePageSnippetsToProcess [
 	snippetsToProcess := KnowledgeAssimilator knowledgeSnippetsInPage: testPage.
 	self assert: snippetsToProcess size equals: 4.
 	^ snippetsToProcess
+]
+
+{ #category : #support }
+KnowledgeAssimilatorExamples >> removeIfNecessary [
+	LeDatabasesRegistry defaultLogicalDatabase
+		pageNamed: 'Test Knowledge Page'
+		ifPresent: [ :page | page removeSelf ]
+		ifAbsent: [  ]
 ]

@@ -25,7 +25,6 @@ KnowledgeAssimilator class >> processKnowledgeSnippets: codeSnippets [
 			snippetEvaluationResult := aSnippet coder doItInContext: context.
 			sharedBindingsToAdd := snippetEvaluationResult evaluationContext bindingStrategy bindings
 					select: [ :aBinding | aBinding isKindOf: GtSharedVariablesBindings ] ]
-
 ]
 
 { #category : #'processing knowledge' }
