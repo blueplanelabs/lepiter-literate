@@ -717,14 +717,14 @@
 					"__type" : "time",
 					"time" : {
 						"__type" : "dateAndTime",
-						"dateAndTimeString" : "2023-07-05T19:20:31.680319+02:00"
+						"dateAndTimeString" : "2023-07-09T19:10:31.72355+02:00"
 					}
 				},
 				"uid" : {
 					"__type" : "uid",
 					"uidString" : "aqJFsJO6DQCHQVt0B74TEA=="
 				},
-				"code" : "codeString := \r'Object subclass: #Dummy\r\tinstanceVariableNames: ''''\r\tclassVariableNames: ''''\r\tpackage: ''DynaSpaceKnowledge'''.\rcreateClassPS := LePharoSnippet code: codeString."
+				"code" : "codeString := \r'Object subclass: #Dummy\r\tinstanceVariableNames: ''''\r\tclassVariableNames: ''''\r\tpackage: ''Lepiter-Literate-Examples'''.\rcreateClassPS := LePharoSnippet code: codeString."
 			},
 			{
 				"__type" : "textSnippet",
@@ -788,14 +788,14 @@
 					"__type" : "time",
 					"time" : {
 						"__type" : "dateAndTime",
-						"dateAndTimeString" : "2023-06-16T00:10:52.349115+02:00"
+						"dateAndTimeString" : "2023-07-09T19:08:29.330291+02:00"
 					}
 				},
 				"uid" : {
 					"__type" : "uid",
 					"uidString" : "xTSBEJS6DQCPchvbB74TEA=="
 				},
-				"code" : "createMethodPS := LePharoSnippet code: 'Dummy compile: ''doit ^ 42'''."
+				"code" : "createMethodPS := LePharoSnippet code: 'Dummy class compile: ''doit ^ 42'''."
 			},
 			{
 				"__type" : "textSnippet",
@@ -975,43 +975,6 @@
 					"uidString" : "7syZQZ26DQCqTluRB74TEA=="
 				},
 				"code" : "testPage"
-			},
-			{
-				"__type" : "textSnippet",
-				"children" : {
-					"__type" : "snippets",
-					"items" : [ ]
-				},
-				"createEmail" : {
-					"__type" : "email",
-					"emailString" : "<unknown>"
-				},
-				"createTime" : {
-					"__type" : "time",
-					"time" : {
-						"__type" : "dateAndTime",
-						"dateAndTimeString" : "2023-06-16T00:22:15.715354+02:00"
-					}
-				},
-				"editEmail" : {
-					"__type" : "email",
-					"emailString" : "<unknown>"
-				},
-				"editTime" : {
-					"__type" : "time",
-					"time" : {
-						"__type" : "dateAndTime",
-						"dateAndTimeString" : "2023-06-16T00:22:15.715354+02:00"
-					}
-				},
-				"uid" : {
-					"__type" : "uid",
-					"uidString" : "81nUPJS6DQCTv1sBB74TEA=="
-				},
-				"paragraphStyle" : {
-					"__type" : "textStyle"
-				},
-				"string" : ""
 			}
 		]
 	},
