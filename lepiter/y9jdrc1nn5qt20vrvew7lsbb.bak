@@ -140,14 +140,14 @@
 					"__type" : "time",
 					"time" : {
 						"__type" : "dateAndTime",
-						"dateAndTimeString" : "2023-07-07T14:22:32.406358+02:00"
+						"dateAndTimeString" : "2023-07-07T18:34:55.415484+02:00"
 					}
 				},
 				"uid" : {
 					"__type" : "uid",
 					"uidString" : "DOpwLdu6DQCnXGTRBeyliw=="
 				},
-				"code" : "Object subclass: #KnowledgeAssimilator\r\tinstanceVariableNames: ''\r\tclassVariableNames: ''\r\tpackage: 'Lepiter-Literate-Core'."
+				"code" : "knowledgeAssimilatorClass := Object subclass: #KnowledgeAssimilator\r\tinstanceVariableNames: ''\r\tclassVariableNames: ''\r\tpackage: 'Lepiter-Literate'.\r\t\rknowledgeAssimilatorClass tagWith: #Core"
 			},
 			{
 				"__type" : "textSnippet",
@@ -1247,6 +1247,43 @@
 							"__type" : "textSnippet",
 							"children" : {
 								"__type" : "snippets",
+								"items" : [ ]
+							},
+							"createEmail" : {
+								"__type" : "email",
+								"emailString" : "<unknown>"
+							},
+							"createTime" : {
+								"__type" : "time",
+								"time" : {
+									"__type" : "dateAndTime",
+									"dateAndTimeString" : "2023-07-07T18:43:15.476034+02:00"
+								}
+							},
+							"editEmail" : {
+								"__type" : "email",
+								"emailString" : "<unknown>"
+							},
+							"editTime" : {
+								"__type" : "time",
+								"time" : {
+									"__type" : "dateAndTime",
+									"dateAndTimeString" : "2023-07-07T18:44:02.668443+02:00"
+								}
+							},
+							"uid" : {
+								"__type" : "uid",
+								"uidString" : "I+S/D0q8DQCZ5ziNAbHjYQ=="
+							},
+							"paragraphStyle" : {
+								"__type" : "textStyle"
+							},
+							"string" : "Se puede encontrar información relevante para la evaluación de *PS* en la página *Programmatic code evaluation* de *Glamorous Toolkit Book*."
+						},
+						{
+							"__type" : "textSnippet",
+							"children" : {
+								"__type" : "snippets",
 								"items" : [
 									{
 										"__type" : "textSnippet",
@@ -1852,7 +1889,44 @@
 											"uidString" : "p25UJ0i8DQCH4ke0DI6OuQ=="
 										},
 										"previewHeight" : 200,
-										"fileName" : "attachments/ajoqir4le7lcou6velizx5t4u/EpMethodAddition(KnowledgeAssimilator>>processKnowledgeSnippets_).ombu"
+										"fileName" : "attachments/ajoqir4le7lcou6velizx5t4u/EpMethodAddition(KnowledgeAssimilator class>>processKnowledgeSnippets_).ombu"
+									},
+									{
+										"__type" : "textSnippet",
+										"children" : {
+											"__type" : "snippets",
+											"items" : [ ]
+										},
+										"createEmail" : {
+											"__type" : "email",
+											"emailString" : "<unknown>"
+										},
+										"createTime" : {
+											"__type" : "time",
+											"time" : {
+												"__type" : "dateAndTime",
+												"dateAndTimeString" : "2023-07-07T16:45:29.936182+02:00"
+											}
+										},
+										"editEmail" : {
+											"__type" : "email",
+											"emailString" : "<unknown>"
+										},
+										"editTime" : {
+											"__type" : "time",
+											"time" : {
+												"__type" : "dateAndTime",
+												"dateAndTimeString" : "2023-07-07T16:45:53.585757+02:00"
+											}
+										},
+										"uid" : {
+											"__type" : "uid",
+											"uidString" : "tJjTa0i8DQCMeqKkDI6OuQ=="
+										},
+										"paragraphStyle" : {
+											"__type" : "textStyle"
+										},
+										"string" : "Y tendríamos el ejemplo funcionando."
 									},
 									{
 										"__type" : "exampleSnippet",
@@ -1994,7 +2068,7 @@
 											"__type" : "time",
 											"time" : {
 												"__type" : "dateAndTime",
-												"dateAndTimeString" : "2023-07-06T11:43:15.561945+02:00"
+												"dateAndTimeString" : "2023-07-07T18:57:56.714225+02:00"
 											}
 										},
 										"uid" : {
@@ -2004,7 +2078,7 @@
 										"paragraphStyle" : {
 											"__type" : "textStyle"
 										},
-										"string" : "Esta variable se establece correctamente al evaluar el PS manualmente, como podemos ver al evaluar el siguiente código."
+										"string" : "Esta variable se establece correctamente al evaluar el PS manualmente, como podemos ver al evaluar el siguiente código, que comprueba el código del primer snippet utilizando la variable *snippetA* que se estableció dentro del mismo como *thisSnippet*,"
 									},
 									{
 										"__type" : "pharoSnippet",
@@ -2065,7 +2139,7 @@
 											"__type" : "time",
 											"time" : {
 												"__type" : "dateAndTime",
-												"dateAndTimeString" : "2023-07-06T11:43:49.77578+02:00"
+												"dateAndTimeString" : "2023-07-07T19:08:31.801219+02:00"
 											}
 										},
 										"uid" : {
@@ -2075,7 +2149,150 @@
 										"paragraphStyle" : {
 											"__type" : "textStyle"
 										},
-										"string" : "Sin embargo, aún debemos implementarlo en nuestra"
+										"string" : "Sin embargo, aún debemos implementarlo en nuestra ejecución programática de los PS. El siguiente código dara error considera *snippetA* como *nil*."
+									},
+									{
+										"__type" : "pharoSnippet",
+										"children" : {
+											"__type" : "snippets",
+											"items" : [ ]
+										},
+										"createEmail" : {
+											"__type" : "email",
+											"emailString" : "<unknown>"
+										},
+										"createTime" : {
+											"__type" : "time",
+											"time" : {
+												"__type" : "dateAndTime",
+												"dateAndTimeString" : "2023-07-07T19:04:24.076686+02:00"
+											}
+										},
+										"editEmail" : {
+											"__type" : "email",
+											"emailString" : "<unknown>"
+										},
+										"editTime" : {
+											"__type" : "time",
+											"time" : {
+												"__type" : "dateAndTime",
+												"dateAndTimeString" : "2023-07-07T19:12:18.835775+02:00"
+											}
+										},
+										"uid" : {
+											"__type" : "uid",
+											"uidString" : "DHyUXEq8DQCji8aVAbHjYQ=="
+										},
+										"code" : "snippetsToProcess := {snippetA. snippetB. snippetC}.\rKnowledgeAssimilator processKnowledgeSnippets: snippetsToProcess."
+									},
+									{
+										"__type" : "textSnippet",
+										"children" : {
+											"__type" : "snippets",
+											"items" : [ ]
+										},
+										"createEmail" : {
+											"__type" : "email",
+											"emailString" : "<unknown>"
+										},
+										"createTime" : {
+											"__type" : "time",
+											"time" : {
+												"__type" : "dateAndTime",
+												"dateAndTimeString" : "2023-07-07T19:12:50.310792+02:00"
+											}
+										},
+										"editEmail" : {
+											"__type" : "email",
+											"emailString" : "<unknown>"
+										},
+										"editTime" : {
+											"__type" : "time",
+											"time" : {
+												"__type" : "dateAndTime",
+												"dateAndTimeString" : "2023-07-07T19:24:24.790796+02:00"
+											}
+										},
+										"uid" : {
+											"__type" : "uid",
+											"uidString" : "AdyVdEq8DQCl1KHdAbHjYQ=="
+										},
+										"paragraphStyle" : {
+											"__type" : "textStyle"
+										},
+										"string" : "Este tipo de variables locales al *PS* se añaden como {{gtClass:GtLocalVariablesBindings}}, como vemos en el ejemplo que aparece en *Programmatic code evaluation* de *Glamorous Toolkit Book*. Modificaremos el método de procesar snippets para que se añada también al contexto de evaluación antes de evaluar cada snippet."
+									},
+									{
+										"__type" : "changesSnippet",
+										"children" : {
+											"__type" : "snippets",
+											"items" : [ ]
+										},
+										"createEmail" : {
+											"__type" : "email",
+											"emailString" : "<unknown>"
+										},
+										"createTime" : {
+											"__type" : "time",
+											"time" : {
+												"__type" : "dateAndTime",
+												"dateAndTimeString" : "2023-07-07T19:24:30.645191+02:00"
+											}
+										},
+										"editEmail" : {
+											"__type" : "email",
+											"emailString" : "<unknown>"
+										},
+										"editTime" : {
+											"__type" : "time",
+											"time" : {
+												"__type" : "dateAndTime",
+												"dateAndTimeString" : "2023-07-07T19:24:30.645191+02:00"
+											}
+										},
+										"uid" : {
+											"__type" : "uid",
+											"uidString" : "i0B/pEq8DQCl5Pj5CJbKpA=="
+										},
+										"previewHeight" : 200,
+										"fileName" : "attachments/9r7u4elkc70gqz3319jk0zqjb/EpMethodModification(KnowledgeAssimilator class>>processKnowledgeSnippets_).ombu"
+									},
+									{
+										"__type" : "textSnippet",
+										"children" : {
+											"__type" : "snippets",
+											"items" : [ ]
+										},
+										"createEmail" : {
+											"__type" : "email",
+											"emailString" : "<unknown>"
+										},
+										"createTime" : {
+											"__type" : "time",
+											"time" : {
+												"__type" : "dateAndTime",
+												"dateAndTimeString" : "2023-07-07T19:26:49.655161+02:00"
+											}
+										},
+										"editEmail" : {
+											"__type" : "email",
+											"emailString" : "<unknown>"
+										},
+										"editTime" : {
+											"__type" : "time",
+											"time" : {
+												"__type" : "dateAndTime",
+												"dateAndTimeString" : "2023-07-07T19:27:41.135737+02:00"
+											}
+										},
+										"uid" : {
+											"__type" : "uid",
+											"uidString" : "OmLIrEq8DQCmB0HPCJbKpA=="
+										},
+										"paragraphStyle" : {
+											"__type" : "textStyle"
+										},
+										"string" : "Si volvemos a ejecutar, tras aplicar el cambio anterior, el snippet de prueba *snippetC* veremos que ya no da error."
 									}
 								]
 							},
@@ -2276,7 +2493,7 @@
 					"__type" : "time",
 					"time" : {
 						"__type" : "dateAndTime",
-						"dateAndTimeString" : "2023-06-19T15:57:58.794172+02:00"
+						"dateAndTimeString" : "2023-07-07T20:25:29.063334+02:00"
 					}
 				},
 				"uid" : {
@@ -2286,7 +2503,42 @@
 				"paragraphStyle" : {
 					"__type" : "textStyle"
 				},
-				"string" : "Creamos un ejemplo que construya automáticamente la hoja [[Test Knowledge Page]], que se crea al asimilar el conocimiento de[[Crear LePage  ejemplo para prueba de construcción de conocimiento]] ."
+				"string" : "Creamos un ejemplo que construya automáticamente la hoja [[Test Knowledge Page]], que se crea al asimilar el conocimiento de[[Crear LePage  ejemplo para prueba de construcción de conocimiento]] y contiene *PS* con variables compartidas entre ellos y otros que utilizan *thisSnippet*."
+			},
+			{
+				"__type" : "changesSnippet",
+				"children" : {
+					"__type" : "snippets",
+					"items" : [ ]
+				},
+				"createEmail" : {
+					"__type" : "email",
+					"emailString" : "<unknown>"
+				},
+				"createTime" : {
+					"__type" : "time",
+					"time" : {
+						"__type" : "dateAndTime",
+						"dateAndTimeString" : "2023-07-07T19:44:17.74459+02:00"
+					}
+				},
+				"editEmail" : {
+					"__type" : "email",
+					"emailString" : "<unknown>"
+				},
+				"editTime" : {
+					"__type" : "time",
+					"time" : {
+						"__type" : "dateAndTime",
+						"dateAndTimeString" : "2023-07-07T19:44:17.74459+02:00"
+					}
+				},
+				"uid" : {
+					"__type" : "uid",
+					"uidString" : "fvhA60q8DQCFKVm5CQR8Lw=="
+				},
+				"previewHeight" : 200,
+				"fileName" : "attachments/2t7b1p51ti5zkq8txqd9re8qf/EpMethodAddition(KnowledgeAssimilatorExamples>>exampleBuildTestKnowledgePage).ombu"
 			},
 			{
 				"__type" : "textSnippet",
@@ -2313,7 +2565,7 @@
 					"__type" : "time",
 					"time" : {
 						"__type" : "dateAndTime",
-						"dateAndTimeString" : "2023-06-19T15:12:47.033176+02:00"
+						"dateAndTimeString" : "2023-07-07T19:46:34.484122+02:00"
 					}
 				},
 				"uid" : {
@@ -2323,10 +2575,10 @@
 				"paragraphStyle" : {
 					"__type" : "textStyle"
 				},
-				"string" : "Si ya se creó anteriormente se puede borrar ejecutando:"
+				"string" : "Primero borraremos la página *Test Knowledge Page* si ya se creó anteriormente."
 			},
 			{
-				"__type" : "pharoSnippet",
+				"__type" : "changesSnippet",
 				"children" : {
 					"__type" : "snippets",
 					"items" : [ ]
@@ -2339,7 +2591,7 @@
 					"__type" : "time",
 					"time" : {
 						"__type" : "dateAndTime",
-						"dateAndTimeString" : "2023-06-19T13:18:49.512479+02:00"
+						"dateAndTimeString" : "2023-07-07T19:54:02.289017+02:00"
 					}
 				},
 				"editEmail" : {
@@ -2350,14 +2602,15 @@
 					"__type" : "time",
 					"time" : {
 						"__type" : "dateAndTime",
-						"dateAndTimeString" : "2023-06-19T15:10:45.55901+02:00"
+						"dateAndTimeString" : "2023-07-07T19:54:02.289017+02:00"
 					}
 				},
 				"uid" : {
 					"__type" : "uid",
-					"uidString" : "pGOPb9u6DQCZyOKxBeyliw=="
+					"uidString" : "6mgYDku8DQC+1TQhAGkLdA=="
 				},
-				"code" : "defaultDatabase\r\tpageNamed: targetPageName\r\tifPresent: [ :page | page removeSelf ]\r\tifAbsent: [  ]."
+				"previewHeight" : 200,
+				"fileName" : "attachments/6vboak5ejs6e5h1g29pl4x1l9/EpMethodAddition(KnowledgeAssimilatorExamples>>removeIfNecessary).ombu"
 			},
 			{
 				"__type" : "textSnippet",
@@ -2373,7 +2626,7 @@
 					"__type" : "time",
 					"time" : {
 						"__type" : "dateAndTime",
-						"dateAndTimeString" : "2023-06-19T15:56:13.971491+02:00"
+						"dateAndTimeString" : "2023-07-07T20:25:41.531898+02:00"
 					}
 				},
 				"editEmail" : {
@@ -2384,17 +2637,17 @@
 					"__type" : "time",
 					"time" : {
 						"__type" : "dateAndTime",
-						"dateAndTimeString" : "2023-06-19T16:23:46.050978+02:00"
+						"dateAndTimeString" : "2023-07-07T20:26:12.028285+02:00"
 					}
 				},
 				"uid" : {
 					"__type" : "uid",
-					"uidString" : "wmh+ot26DQCcaa3aAcelUw=="
+					"uidString" : "cYgWf0u8DQCfJP8kCPGX6g=="
 				},
 				"paragraphStyle" : {
 					"__type" : "textStyle"
 				},
-				"string" : "Creamos el ejemplo que devuelve la página Lepiter que se genera asimilando el conocimiento de[[Crear LePage  ejemplo para prueba de construcción de conocimiento]]"
+				"string" : "Comprobamos que se vuelve a crear la página *Test Knowledge Page*."
 			},
 			{
 				"__type" : "pharoSnippet",
@@ -2410,7 +2663,7 @@
 					"__type" : "time",
 					"time" : {
 						"__type" : "dateAndTime",
-						"dateAndTimeString" : "2023-06-19T15:12:54.084134+02:00"
+						"dateAndTimeString" : "2023-07-07T20:26:15.29946+02:00"
 					}
 				},
 				"editEmail" : {
@@ -2421,14 +2674,14 @@
 					"__type" : "time",
 					"time" : {
 						"__type" : "dateAndTime",
-						"dateAndTimeString" : "2023-06-19T16:22:49.767849+02:00"
+						"dateAndTimeString" : "2023-07-07T20:26:49.390889+02:00"
 					}
 				},
 				"uid" : {
 					"__type" : "uid",
-					"uidString" : "DESHB926DQCwZw/fAcelUw=="
+					"uidString" : "Z8RPgUu8DQCgzL2aCPGX6g=="
 				},
-				"code" : "exampleCodeString := '\rtestKnowledgePage\r\t<gtExample>\r\t| knowledgeContainerPageName KnowledgeAssimilationResultPageName defaultDatabase page |\r\tknowledgeContainerPageName := ''Crear LePage  ejemplo para prueba de construcción de conocimiento''.\r\tKnowledgeAssimilationResultPageName := ''Test Knowledge Page''.\r\tdefaultDatabase := LeDatabasesRegistry defaultLogicalDatabase.\r\t\"Eliminamos la página resultado por si ya se había creado anteriormente\"\r\tdefaultDatabase\r\t\tpageNamed: KnowledgeAssimilationResultPageName\r\t\tifPresent: [ :page | page removeSelf ]\r\t\tifAbsent: [  ].\r\tpage := defaultDatabase pageNamed: knowledgeContainerPageName.\r\tKnowledgeAssimilator processPage: page.\r\t\"Comprobamos que se ha creado la página resultado de la asimiliación de conocimiento\"\r\t^ defaultDatabase pageNamed: KnowledgeAssimilationResultPageName\r'.\rKnowledgeAssimilatorExamples compile: exampleCodeString."
+				"code" : "KnowledgeAssimilatorExamples new exampleBuildTestKnowledgePage."
 			},
 			{
 				"__type" : "textSnippet",
