@@ -5,6 +5,43 @@
 		"__type" : "snippets",
 		"items" : [
 			{
+				"__type" : "textSnippet",
+				"children" : {
+					"__type" : "snippets",
+					"items" : [ ]
+				},
+				"createEmail" : {
+					"__type" : "email",
+					"emailString" : "<unknown>"
+				},
+				"createTime" : {
+					"__type" : "time",
+					"time" : {
+						"__type" : "dateAndTime",
+						"dateAndTimeString" : "2023-07-10T12:04:24.748484+02:00"
+					}
+				},
+				"editEmail" : {
+					"__type" : "email",
+					"emailString" : "<unknown>"
+				},
+				"editTime" : {
+					"__type" : "time",
+					"time" : {
+						"__type" : "dateAndTime",
+						"dateAndTimeString" : "2023-07-10T12:04:24.748484+02:00"
+					}
+				},
+				"uid" : {
+					"__type" : "uid",
+					"uidString" : "6WUb2IC8DQCPH0p/D7eBAQ=="
+				},
+				"paragraphStyle" : {
+					"__type" : "textStyle"
+				},
+				"string" : ""
+			},
+			{
 				"__type" : "pictureSnippet",
 				"children" : {
 					"__type" : "snippets",
@@ -18,7 +55,7 @@
 					"__type" : "time",
 					"time" : {
 						"__type" : "dateAndTime",
-						"dateAndTimeString" : "2023-07-09T19:11:39.939498+02:00"
+						"dateAndTimeString" : "2023-07-10T12:04:27.719552+02:00"
 					}
 				},
 				"editEmail" : {
@@ -29,12 +66,12 @@
 					"__type" : "time",
 					"time" : {
 						"__type" : "dateAndTime",
-						"dateAndTimeString" : "2023-07-09T19:11:39.939498+02:00"
+						"dateAndTimeString" : "2023-07-10T12:04:27.719552+02:00"
 					}
 				},
 				"uid" : {
 					"__type" : "uid",
-					"uidString" : "4v49snK8DQCqjYbuBu45JQ=="
+					"uidString" : "rrtI2IC8DQCPIUNVD7eBAQ=="
 				},
 				"url" : "",
 				"caption" : "",
@@ -54,7 +91,7 @@
 					"__type" : "time",
 					"time" : {
 						"__type" : "dateAndTime",
-						"dateAndTimeString" : "2023-07-09T19:11:39.939937+02:00"
+						"dateAndTimeString" : "2023-07-10T12:04:27.720454+02:00"
 					}
 				},
 				"editEmail" : {
@@ -65,12 +102,12 @@
 					"__type" : "time",
 					"time" : {
 						"__type" : "dateAndTime",
-						"dateAndTimeString" : "2023-07-09T19:11:39.939937+02:00"
+						"dateAndTimeString" : "2023-07-10T12:04:27.720454+02:00"
 					}
 				},
 				"uid" : {
 					"__type" : "uid",
-					"uidString" : "uwA+snK8DQCqjqDwBu45JQ=="
+					"uidString" : "JL9I2IC8DQCPIsKKD7eBAQ=="
 				},
 				"wordString" : ""
 			},
@@ -88,7 +125,7 @@
 					"__type" : "time",
 					"time" : {
 						"__type" : "dateAndTime",
-						"dateAndTimeString" : "2023-07-09T19:11:39.940281+02:00"
+						"dateAndTimeString" : "2023-07-10T12:04:27.720758+02:00"
 					}
 				},
 				"editEmail" : {
@@ -99,12 +136,12 @@
 					"__type" : "time",
 					"time" : {
 						"__type" : "dateAndTime",
-						"dateAndTimeString" : "2023-07-09T19:11:39.940281+02:00"
+						"dateAndTimeString" : "2023-07-10T12:04:27.720758+02:00"
 					}
 				},
 				"uid" : {
 					"__type" : "uid",
-					"uidString" : "+AE+snK8DQCqj/HkBu45JQ=="
+					"uidString" : "UsBI2IC8DQCPIxQwD7eBAQ=="
 				},
 				"wardleyMapDictionary" : {
 					"edges" : [ ],
@@ -126,7 +163,7 @@
 					"__type" : "time",
 					"time" : {
 						"__type" : "dateAndTime",
-						"dateAndTimeString" : "2023-07-09T19:11:39.940491+02:00"
+						"dateAndTimeString" : "2023-07-10T12:04:27.721001+02:00"
 					}
 				},
 				"editEmail" : {
@@ -137,12 +174,12 @@
 					"__type" : "time",
 					"time" : {
 						"__type" : "dateAndTime",
-						"dateAndTimeString" : "2023-07-09T19:11:39.940491+02:00"
+						"dateAndTimeString" : "2023-07-10T12:04:27.721001+02:00"
 					}
 				},
 				"uid" : {
 					"__type" : "uid",
-					"uidString" : "lQI+snK8DQCqkLlnBu45JQ=="
+					"uidString" : "PsRI2IC8DQCPJHz9D7eBAQ=="
 				},
 				"previewHeight" : 200,
 				"previewShowSelector" : "gtViewsFor:",
@@ -164,7 +201,7 @@
 					"__type" : "time",
 					"time" : {
 						"__type" : "dateAndTime",
-						"dateAndTimeString" : "2023-07-09T19:11:39.9406+02:00"
+						"dateAndTimeString" : "2023-07-10T12:04:27.722023+02:00"
 					}
 				},
 				"editEmail" : {
@@ -175,12 +212,12 @@
 					"__type" : "time",
 					"time" : {
 						"__type" : "dateAndTime",
-						"dateAndTimeString" : "2023-07-09T19:11:39.9406+02:00"
+						"dateAndTimeString" : "2023-07-10T12:04:27.722023+02:00"
 					}
 				},
 				"uid" : {
 					"__type" : "uid",
-					"uidString" : "/gI+snK8DQCqkUybBu45JQ=="
+					"uidString" : "PsVI2IC8DQCPJcbzD7eBAQ=="
 				},
 				"previewHeight" : 200,
 				"fileName" : ""
@@ -199,7 +236,7 @@
 					"__type" : "time",
 					"time" : {
 						"__type" : "dateAndTime",
-						"dateAndTimeString" : "2023-07-09T19:11:39.940705+02:00"
+						"dateAndTimeString" : "2023-07-10T12:04:27.722126+02:00"
 					}
 				},
 				"editEmail" : {
@@ -210,13 +247,15 @@
 					"__type" : "time",
 					"time" : {
 						"__type" : "dateAndTime",
-						"dateAndTimeString" : "2023-07-09T19:11:39.940705+02:00"
+						"dateAndTimeString" : "2023-07-10T12:04:27.722126+02:00"
 					}
 				},
 				"uid" : {
 					"__type" : "uid",
-					"uidString" : "aAM+snK8DQCqkn4rBu45JQ=="
+					"uidString" : "lcVI2IC8DQCPJqLKD7eBAQ=="
 				},
+				"search" : "nil",
+				"replace" : "nil",
 				"isMethodPattern" : false
 			},
 			{
@@ -233,7 +272,7 @@
 					"__type" : "time",
 					"time" : {
 						"__type" : "dateAndTime",
-						"dateAndTimeString" : "2023-07-09T19:11:39.940845+02:00"
+						"dateAndTimeString" : "2023-07-10T12:04:27.722192+02:00"
 					}
 				},
 				"editEmail" : {
@@ -244,13 +283,15 @@
 					"__type" : "time",
 					"time" : {
 						"__type" : "dateAndTime",
-						"dateAndTimeString" : "2023-07-09T19:11:39.940845+02:00"
+						"dateAndTimeString" : "2023-07-10T12:04:27.722192+02:00"
 					}
 				},
 				"uid" : {
 					"__type" : "uid",
-					"uidString" : "BAQ+snK8DQCqk0BoBu45JQ=="
-				}
+					"uidString" : "1sVI2IC8DQCPJ5bvD7eBAQ=="
+				},
+				"search" : "nil",
+				"replace" : "nil"
 			},
 			{
 				"__type" : "GraphQL",
@@ -266,7 +307,7 @@
 					"__type" : "time",
 					"time" : {
 						"__type" : "dateAndTime",
-						"dateAndTimeString" : "2023-07-09T19:11:39.940968+02:00"
+						"dateAndTimeString" : "2023-07-10T12:04:27.72225+02:00"
 					}
 				},
 				"editEmail" : {
@@ -277,13 +318,16 @@
 					"__type" : "time",
 					"time" : {
 						"__type" : "dateAndTime",
-						"dateAndTimeString" : "2023-07-09T19:11:39.940968+02:00"
+						"dateAndTimeString" : "2023-07-10T12:04:27.72225+02:00"
 					}
 				},
 				"uid" : {
 					"__type" : "uid",
-					"uidString" : "bgQ+snK8DQCqlHUhBu45JQ=="
-				}
+					"uidString" : "D8ZI2IC8DQCPKFuSD7eBAQ=="
+				},
+				"operation" : "nil",
+				"input" : "",
+				"resultVariableName" : ""
 			},
 			{
 				"__type" : "textSnippet",
@@ -299,7 +343,7 @@
 					"__type" : "time",
 					"time" : {
 						"__type" : "dateAndTime",
-						"dateAndTimeString" : "2023-07-09T19:11:39.941069+02:00"
+						"dateAndTimeString" : "2023-07-10T12:04:27.722304+02:00"
 					}
 				},
 				"editEmail" : {
@@ -310,12 +354,12 @@
 					"__type" : "time",
 					"time" : {
 						"__type" : "dateAndTime",
-						"dateAndTimeString" : "2023-07-09T19:11:39.941069+02:00"
+						"dateAndTimeString" : "2023-07-10T12:04:27.722304+02:00"
 					}
 				},
 				"uid" : {
 					"__type" : "uid",
-					"uidString" : "1AQ+snK8DQCqlQmHBu45JQ=="
+					"uidString" : "RsZI2IC8DQCPKe4ED7eBAQ=="
 				},
 				"paragraphStyle" : {
 					"__type" : "textStyle"
@@ -336,7 +380,7 @@
 					"__type" : "time",
 					"time" : {
 						"__type" : "dateAndTime",
-						"dateAndTimeString" : "2023-07-09T19:11:39.94182+02:00"
+						"dateAndTimeString" : "2023-07-10T12:04:27.723151+02:00"
 					}
 				},
 				"editEmail" : {
@@ -347,12 +391,12 @@
 					"__type" : "time",
 					"time" : {
 						"__type" : "dateAndTime",
-						"dateAndTimeString" : "2023-07-09T19:11:39.94182+02:00"
+						"dateAndTimeString" : "2023-07-10T12:04:27.723151+02:00"
 					}
 				},
 				"uid" : {
 					"__type" : "uid",
-					"uidString" : "yAc+snK8DQCqlqVOBu45JQ=="
+					"uidString" : "mclI2IC8DQCPKmNID7eBAQ=="
 				},
 				"ownerName" : "",
 				"projectName" : "",
@@ -372,7 +416,7 @@
 					"__type" : "time",
 					"time" : {
 						"__type" : "dateAndTime",
-						"dateAndTimeString" : "2023-07-09T19:11:39.941969+02:00"
+						"dateAndTimeString" : "2023-07-10T12:04:27.723282+02:00"
 					}
 				},
 				"editEmail" : {
@@ -383,12 +427,12 @@
 					"__type" : "time",
 					"time" : {
 						"__type" : "dateAndTime",
-						"dateAndTimeString" : "2023-07-09T19:11:39.941969+02:00"
+						"dateAndTimeString" : "2023-07-10T12:04:27.723282+02:00"
 					}
 				},
 				"uid" : {
 					"__type" : "uid",
-					"uidString" : "Wgg+snK8DQCql9vqBu45JQ=="
+					"uidString" : "GcpI2IC8DQCPKyEED7eBAQ=="
 				},
 				"ownerName" : "",
 				"projectName" : "",
@@ -408,7 +452,7 @@
 					"__type" : "time",
 					"time" : {
 						"__type" : "dateAndTime",
-						"dateAndTimeString" : "2023-07-09T19:11:39.942136+02:00"
+						"dateAndTimeString" : "2023-07-10T12:04:27.72341+02:00"
 					}
 				},
 				"editEmail" : {
@@ -419,12 +463,12 @@
 					"__type" : "time",
 					"time" : {
 						"__type" : "dateAndTime",
-						"dateAndTimeString" : "2023-07-09T19:11:39.942136+02:00"
+						"dateAndTimeString" : "2023-07-10T12:04:27.72341+02:00"
 					}
 				},
 				"uid" : {
 					"__type" : "uid",
-					"uidString" : "AQk+snK8DQCqmBfOBu45JQ=="
+					"uidString" : "mspI2IC8DQCPLMN1D7eBAQ=="
 				},
 				"code" : "",
 				"elementHeight" : 100,
@@ -445,7 +489,7 @@
 					"__type" : "time",
 					"time" : {
 						"__type" : "dateAndTime",
-						"dateAndTimeString" : "2023-07-09T19:11:39.944739+02:00"
+						"dateAndTimeString" : "2023-07-10T12:04:27.72581+02:00"
 					}
 				},
 				"editEmail" : {
@@ -456,12 +500,12 @@
 					"__type" : "time",
 					"time" : {
 						"__type" : "dateAndTime",
-						"dateAndTimeString" : "2023-07-09T19:11:39.944739+02:00"
+						"dateAndTimeString" : "2023-07-10T12:04:27.72581+02:00"
 					}
 				},
 				"uid" : {
 					"__type" : "uid",
-					"uidString" : "MRM+snK8DQCqmQeeBu45JQ=="
+					"uidString" : "/dNI2IC8DQCPLTbDD7eBAQ=="
 				},
 				"elementHeight" : 100,
 				"codeHeight" : 50,
@@ -489,7 +533,7 @@
 					"__type" : "time",
 					"time" : {
 						"__type" : "dateAndTime",
-						"dateAndTimeString" : "2023-07-09T19:11:39.944949+02:00"
+						"dateAndTimeString" : "2023-07-10T12:04:27.726006+02:00"
 					}
 				},
 				"editEmail" : {
@@ -500,12 +544,12 @@
 					"__type" : "time",
 					"time" : {
 						"__type" : "dateAndTime",
-						"dateAndTimeString" : "2023-07-09T19:11:40.121571+02:00"
+						"dateAndTimeString" : "2023-07-10T12:04:27.765533+02:00"
 					}
 				},
 				"uid" : {
 					"__type" : "uid",
-					"uidString" : "/hM+snK8DQCqmiQVBu45JQ=="
+					"uidString" : "vtRI2IC8DQCPLmtjD7eBAQ=="
 				},
 				"code" : ""
 			},
@@ -523,7 +567,7 @@
 					"__type" : "time",
 					"time" : {
 						"__type" : "dateAndTime",
-						"dateAndTimeString" : "2023-07-09T19:11:39.945113+02:00"
+						"dateAndTimeString" : "2023-07-10T12:04:27.726157+02:00"
 					}
 				},
 				"editEmail" : {
@@ -534,12 +578,12 @@
 					"__type" : "time",
 					"time" : {
 						"__type" : "dateAndTime",
-						"dateAndTimeString" : "2023-07-09T19:11:40.25112+02:00"
+						"dateAndTimeString" : "2023-07-10T12:04:27.772644+02:00"
 					}
 				},
 				"uid" : {
 					"__type" : "uid",
-					"uidString" : "oRQ+snK8DQCqm/JrBu45JQ=="
+					"uidString" : "VNVI2IC8DQCPL1geD7eBAQ=="
 				},
 				"code" : ""
 			},
@@ -557,7 +601,7 @@
 					"__type" : "time",
 					"time" : {
 						"__type" : "dateAndTime",
-						"dateAndTimeString" : "2023-07-09T19:11:39.948355+02:00"
+						"dateAndTimeString" : "2023-07-10T12:04:27.726291+02:00"
 					}
 				},
 				"editEmail" : {
@@ -568,12 +612,12 @@
 					"__type" : "time",
 					"time" : {
 						"__type" : "dateAndTime",
-						"dateAndTimeString" : "2023-07-09T19:11:40.322472+02:00"
+						"dateAndTimeString" : "2023-07-10T12:04:27.786949+02:00"
 					}
 				},
 				"uid" : {
 					"__type" : "uid",
-					"uidString" : "XCE+snK8DQCqnFbQBu45JQ=="
+					"uidString" : "29VI2IC8DQCPMFiaD7eBAQ=="
 				},
 				"code" : ""
 			},
@@ -591,7 +635,7 @@
 					"__type" : "time",
 					"time" : {
 						"__type" : "dateAndTime",
-						"dateAndTimeString" : "2023-07-09T19:11:39.948544+02:00"
+						"dateAndTimeString" : "2023-07-10T12:04:27.726393+02:00"
 					}
 				},
 				"editEmail" : {
@@ -602,12 +646,12 @@
 					"__type" : "time",
 					"time" : {
 						"__type" : "dateAndTime",
-						"dateAndTimeString" : "2023-07-09T19:11:40.404302+02:00"
+						"dateAndTimeString" : "2023-07-10T12:04:28.018059+02:00"
 					}
 				},
 				"uid" : {
 					"__type" : "uid",
-					"uidString" : "CCI+snK8DQCqnXf3Bu45JQ=="
+					"uidString" : "QNZI2IC8DQCPMfmcD7eBAQ=="
 				},
 				"code" : ""
 			},
@@ -625,7 +669,7 @@
 					"__type" : "time",
 					"time" : {
 						"__type" : "dateAndTime",
-						"dateAndTimeString" : "2023-07-09T19:11:39.952566+02:00"
+						"dateAndTimeString" : "2023-07-10T12:04:34.741081+02:00"
 					}
 				},
 				"editEmail" : {
@@ -636,12 +680,12 @@
 					"__type" : "time",
 					"time" : {
 						"__type" : "dateAndTime",
-						"dateAndTimeString" : "2023-07-09T19:11:39.952566+02:00"
+						"dateAndTimeString" : "2023-07-10T12:04:34.741081+02:00"
 					}
 				},
 				"uid" : {
 					"__type" : "uid",
-					"uidString" : "zzE+snK8DQCqngDZBu45JQ=="
+					"uidString" : "fd+z2IC8DQCPMnPuD7eBAQ=="
 				},
 				"code" : "a := 4"
 			},
@@ -659,7 +703,7 @@
 					"__type" : "time",
 					"time" : {
 						"__type" : "dateAndTime",
-						"dateAndTimeString" : "2023-07-09T19:11:39.952953+02:00"
+						"dateAndTimeString" : "2023-07-10T12:04:34.741989+02:00"
 					}
 				},
 				"editEmail" : {
@@ -670,12 +714,12 @@
 					"__type" : "time",
 					"time" : {
 						"__type" : "dateAndTime",
-						"dateAndTimeString" : "2023-07-09T19:11:39.952953+02:00"
+						"dateAndTimeString" : "2023-07-10T12:04:34.741989+02:00"
 					}
 				},
 				"uid" : {
 					"__type" : "uid",
-					"uidString" : "UTM+snK8DQCqn+elBu45JQ=="
+					"uidString" : "DeOz2IC8DQCPMydsD7eBAQ=="
 				},
 				"code" : "self assert: (a + 5) equals: 9"
 			},
@@ -693,7 +737,7 @@
 					"__type" : "time",
 					"time" : {
 						"__type" : "dateAndTime",
-						"dateAndTimeString" : "2023-07-09T19:11:39.955788+02:00"
+						"dateAndTimeString" : "2023-07-10T12:04:49.037956+02:00"
 					}
 				},
 				"editEmail" : {
@@ -704,12 +748,12 @@
 					"__type" : "time",
 					"time" : {
 						"__type" : "dateAndTime",
-						"dateAndTimeString" : "2023-07-09T19:11:39.955788+02:00"
+						"dateAndTimeString" : "2023-07-10T12:04:49.037956+02:00"
 					}
 				},
 				"uid" : {
 					"__type" : "uid",
-					"uidString" : "iz4+snK8DQCqoBlcBu45JQ=="
+					"uidString" : "tgaO2YC8DQCPNDulD7eBAQ=="
 				},
 				"code" : "Object subclass: #Dummy\r\tinstanceVariableNames: ''\r\tclassVariableNames: ''\r\tpackage: 'Lepiter-Literate-Examples'"
 			},
@@ -727,7 +771,7 @@
 					"__type" : "time",
 					"time" : {
 						"__type" : "dateAndTime",
-						"dateAndTimeString" : "2023-07-09T19:11:39.95609+02:00"
+						"dateAndTimeString" : "2023-07-10T12:04:49.038774+02:00"
 					}
 				},
 				"editEmail" : {
@@ -738,14 +782,49 @@
 					"__type" : "time",
 					"time" : {
 						"__type" : "dateAndTime",
-						"dateAndTimeString" : "2023-07-09T19:11:39.95609+02:00"
+						"dateAndTimeString" : "2023-07-10T12:04:49.038774+02:00"
 					}
 				},
 				"uid" : {
 					"__type" : "uid",
-					"uidString" : "kD8+snK8DQCqoRzFBu45JQ=="
+					"uidString" : "FAqO2YC8DQCPNet3D7eBAQ=="
 				},
 				"code" : "Dummy class compile: 'doit ^ 42'"
+			},
+			{
+				"__type" : "changesSnippet",
+				"children" : {
+					"__type" : "snippets",
+					"items" : [ ]
+				},
+				"createEmail" : {
+					"__type" : "email",
+					"emailString" : "<unknown>"
+				},
+				"createTime" : {
+					"__type" : "time",
+					"time" : {
+						"__type" : "dateAndTime",
+						"dateAndTimeString" : "2023-07-10T12:04:52.100869+02:00"
+					}
+				},
+				"editEmail" : {
+					"__type" : "email",
+					"emailString" : "<unknown>"
+				},
+				"editTime" : {
+					"__type" : "time",
+					"time" : {
+						"__type" : "dateAndTime",
+						"dateAndTimeString" : "2023-07-10T12:04:52.100869+02:00"
+					}
+				},
+				"uid" : {
+					"__type" : "uid",
+					"uidString" : "OsO82YC8DQCPNgeBD7eBAQ=="
+				},
+				"previewHeight" : 200,
+				"fileName" : "attachments/37lq6kxon058subdguij8o2s/EpMethodAddition(Dummy class>>methodCreatedByChangesSnippet).ombu"
 			}
 		]
 	},
@@ -757,7 +836,7 @@
 		"__type" : "time",
 		"time" : {
 			"__type" : "dateAndTime",
-			"dateAndTimeString" : "2023-07-09T19:11:39.925852+02:00"
+			"dateAndTimeString" : "2023-07-10T12:04:24.432245+02:00"
 		}
 	},
 	"editEmail" : {
@@ -768,7 +847,7 @@
 		"__type" : "time",
 		"time" : {
 			"__type" : "dateAndTime",
-			"dateAndTimeString" : "2023-07-09T19:11:39.931896+02:00"
+			"dateAndTimeString" : "2023-07-10T12:04:24.438602+02:00"
 		}
 	},
 	"pageType" : {
@@ -777,6 +856,6 @@
 	},
 	"uid" : {
 		"__type" : "uuid",
-		"uuid" : "e1c73db2-72bc-0d00-aa8c-09f806ee3925"
+		"uuid" : "b19116d8-80bc-0d00-8f1e-8a010fb78101"
 	}
 }

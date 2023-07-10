@@ -919,6 +919,77 @@
 					"__type" : "time",
 					"time" : {
 						"__type" : "dateAndTime",
+						"dateAndTimeString" : "2023-07-10T11:58:40.978293+02:00"
+					}
+				},
+				"editEmail" : {
+					"__type" : "email",
+					"emailString" : "<unknown>"
+				},
+				"editTime" : {
+					"__type" : "time",
+					"time" : {
+						"__type" : "dateAndTime",
+						"dateAndTimeString" : "2023-07-10T12:03:01.623377+02:00"
+					}
+				},
+				"uid" : {
+					"__type" : "uid",
+					"uidString" : "n8udw4C8DQCINcv7D7eBAQ=="
+				},
+				"paragraphStyle" : {
+					"__type" : "textStyle"
+				},
+				"string" : "Crearemos también un {{gtClass:LeChangesSnippet}} , que al aplicarlo, añadirá otro métod de clase a *Dummy* y lo añadiremos a la página."
+			},
+			{
+				"__type" : "pharoSnippet",
+				"children" : {
+					"__type" : "snippets",
+					"items" : [ ]
+				},
+				"createEmail" : {
+					"__type" : "email",
+					"emailString" : "<unknown>"
+				},
+				"createTime" : {
+					"__type" : "time",
+					"time" : {
+						"__type" : "dateAndTime",
+						"dateAndTimeString" : "2023-07-10T12:01:01.840318+02:00"
+					}
+				},
+				"editEmail" : {
+					"__type" : "email",
+					"emailString" : "<unknown>"
+				},
+				"editTime" : {
+					"__type" : "time",
+					"time" : {
+						"__type" : "dateAndTime",
+						"dateAndTimeString" : "2023-07-10T12:03:25.595689+02:00"
+					}
+				},
+				"uid" : {
+					"__type" : "uid",
+					"uidString" : "ZjoDzIC8DQCMRIJdD7eBAQ=="
+				},
+				"code" : "createMethodChangeSnippet := LeChangesSnippet empty.\rcreateMethodChangeSnippet fileName: 'attachments/37lq6kxon058subdguij8o2s/EpMethodAddition(Dummy class>>methodCreatedByChangesSnippet).ombu'.\rtestPage addSnippet: createMethodChangeSnippet."
+			},
+			{
+				"__type" : "textSnippet",
+				"children" : {
+					"__type" : "snippets",
+					"items" : [ ]
+				},
+				"createEmail" : {
+					"__type" : "email",
+					"emailString" : "<unknown>"
+				},
+				"createTime" : {
+					"__type" : "time",
+					"time" : {
+						"__type" : "dateAndTime",
 						"dateAndTimeString" : "2023-06-16T11:07:30.161041+02:00"
 					}
 				},

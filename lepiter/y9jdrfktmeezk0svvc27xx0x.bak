@@ -717,14 +717,14 @@
 					"__type" : "time",
 					"time" : {
 						"__type" : "dateAndTime",
-						"dateAndTimeString" : "2023-07-05T19:20:31.680319+02:00"
+						"dateAndTimeString" : "2023-07-09T19:10:31.72355+02:00"
 					}
 				},
 				"uid" : {
 					"__type" : "uid",
 					"uidString" : "aqJFsJO6DQCHQVt0B74TEA=="
 				},
-				"code" : "codeString := \r'Object subclass: #Dummy\r\tinstanceVariableNames: ''''\r\tclassVariableNames: ''''\r\tpackage: ''DynaSpaceKnowledge'''.\rcreateClassPS := LePharoSnippet code: codeString."
+				"code" : "codeString := \r'Object subclass: #Dummy\r\tinstanceVariableNames: ''''\r\tclassVariableNames: ''''\r\tpackage: ''Lepiter-Literate-Examples'''.\rcreateClassPS := LePharoSnippet code: codeString."
 			},
 			{
 				"__type" : "textSnippet",
@@ -904,6 +904,77 @@
 					"uidString" : "QmKODJS6DQCN/QpIB74TEA=="
 				},
 				"code" : "testPage addSnippet: createClassPS.\rtestPage addSnippet: createMethodPS."
+			},
+			{
+				"__type" : "textSnippet",
+				"children" : {
+					"__type" : "snippets",
+					"items" : [ ]
+				},
+				"createEmail" : {
+					"__type" : "email",
+					"emailString" : "<unknown>"
+				},
+				"createTime" : {
+					"__type" : "time",
+					"time" : {
+						"__type" : "dateAndTime",
+						"dateAndTimeString" : "2023-07-10T11:58:40.978293+02:00"
+					}
+				},
+				"editEmail" : {
+					"__type" : "email",
+					"emailString" : "<unknown>"
+				},
+				"editTime" : {
+					"__type" : "time",
+					"time" : {
+						"__type" : "dateAndTime",
+						"dateAndTimeString" : "2023-07-10T12:03:01.623377+02:00"
+					}
+				},
+				"uid" : {
+					"__type" : "uid",
+					"uidString" : "n8udw4C8DQCINcv7D7eBAQ=="
+				},
+				"paragraphStyle" : {
+					"__type" : "textStyle"
+				},
+				"string" : "Crearemos también un {{gtClass:LeChangesSnippet}} , que al aplicarlo, añadirá otro métod de clase a *Dummy* y lo añadiremos a la página."
+			},
+			{
+				"__type" : "pharoSnippet",
+				"children" : {
+					"__type" : "snippets",
+					"items" : [ ]
+				},
+				"createEmail" : {
+					"__type" : "email",
+					"emailString" : "<unknown>"
+				},
+				"createTime" : {
+					"__type" : "time",
+					"time" : {
+						"__type" : "dateAndTime",
+						"dateAndTimeString" : "2023-07-10T12:01:01.840318+02:00"
+					}
+				},
+				"editEmail" : {
+					"__type" : "email",
+					"emailString" : "<unknown>"
+				},
+				"editTime" : {
+					"__type" : "time",
+					"time" : {
+						"__type" : "dateAndTime",
+						"dateAndTimeString" : "2023-07-10T12:03:18.008152+02:00"
+					}
+				},
+				"uid" : {
+					"__type" : "uid",
+					"uidString" : "ZjoDzIC8DQCMRIJdD7eBAQ=="
+				},
+				"code" : "createMethodChangeSnippet := LeChangesSnippet empty.\rcreateMethodChangeSnippet fileName: 'attachments/37lq6kxon058subdguij8o2s/EpMethodAddition(Dummy class>>methodCreatedByChangesSnippet).ombu'.\rtestPage add"
 			},
 			{
 				"__type" : "textSnippet",
