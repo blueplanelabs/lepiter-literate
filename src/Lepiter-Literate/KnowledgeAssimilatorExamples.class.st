@@ -43,7 +43,7 @@ KnowledgeAssimilatorExamples >> exampleTestKnowledgePageSnippetsToProcess [
 	| testPage snippetsToProcess |
 	testPage := self exampleTestKnowledgePage.
 	snippetsToProcess := KnowledgeAssimilator knowledgeSnippetsInPage: testPage.
-	self assert: snippetsToProcess size equals: 4.
+	self assert: snippetsToProcess size equals: 6.
 	^ snippetsToProcess
 ]
 

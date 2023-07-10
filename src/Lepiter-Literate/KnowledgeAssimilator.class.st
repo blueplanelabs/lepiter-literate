@@ -7,7 +7,7 @@ Class {
 { #category : #'processing knowledge' }
 KnowledgeAssimilator class >> knowledgeSnippetsInPage: aLePage [
 	^ aLePage
-		allChildrenSnippetsMatching: [ :aSnippet | aSnippet isKindOf: LePharoSnippet ]
+		allChildrenSnippetsMatching: [ :aSnippet | aSnippet isKnowledge ]
 ]
 
 { #category : #'processing knowledge' }
