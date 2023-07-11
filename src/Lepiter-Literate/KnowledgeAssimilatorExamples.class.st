@@ -20,10 +20,12 @@ KnowledgeAssimilatorExamples >> exampleBuildTestKnowledgePage [
 KnowledgeAssimilatorExamples >> exampleProcessTestKnowledgePage [
 	<gtExample>
 	| page |
+	self removeDummyClass.
 	page := self exampleTestKnowledgePage.
 	KnowledgeAssimilator processPage: page.
-	"Comprobamos que se ha creado la página resultado de la asimiliación de conocimiento"
+	"Comprobamos que se ha creado la clase y el método resultado de la asimiliación de conocimiento"
 	self assert: Dummy doit equals: 42.
+	self assert: Dummy methodCreatedByChangesSnippet.
 	^ page
 
 ]
@@ -45,6 +47,11 @@ KnowledgeAssimilatorExamples >> exampleTestKnowledgePageSnippetsToProcess [
 	snippetsToProcess := KnowledgeAssimilator knowledgeSnippetsInPage: testPage.
 	self assert: snippetsToProcess size equals: 6.
 	^ snippetsToProcess
+]
+
+{ #category : #support }
+KnowledgeAssimilatorExamples >> removeDummyClass [
+	(SmalltalkImage current classNamed: #Dummy) ifNotNil: [ :classToRemove | classToRemove removeFromSystem ].
 ]
 
 { #category : #support }
