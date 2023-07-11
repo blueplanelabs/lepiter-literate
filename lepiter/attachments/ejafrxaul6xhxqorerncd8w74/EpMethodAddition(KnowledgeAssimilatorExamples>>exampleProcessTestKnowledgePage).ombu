@@ -1,1 +1,21 @@
-OmEntry {	#tags : {		#author : 'GlamorousAuthor',		#time : DateAndTime [ '2023-07-06T13:47:32.2765+02:00' ],		#prior : OmReference [ 'Pharo10-SNAPSHOT-64bit-179ef65.4dioqctyq9akkllab82nc9ujk', '1' ],		#self : OmReference [ '1' ]	},	#content : EpMethodAddition {		#method : RGMethodDefinition {			#annotations : IdentityDictionary {				#className : #KnowledgeAssimilatorExamples,				#isMetaSide : false			},			#name : #exampleProcessTestKnowledgePage,			#protocol : #example,			#sourceCode : 'exampleProcessTestKnowledgePage\r\t<gtExample>\r\t| page |\r\tpage := self exampleTestKnowledgePage.\r\tKnowledgeAssimilator processPage: page.\r\t"Comprobamos que se ha creado la página resultado de la asimiliación de conocimiento"\r\tself assert: Dummy doit equals: 42.\r\t^ page\r',			#stamp : 'GlamorousAuthor 7/6/2023 13:47',			#package : #DynaSpaceKnowledge		}	}}
+OmEntry {
+	#tags : {
+		#author : 'GlamorousAuthor',
+		#time : DateAndTime [ '2023-07-11T12:33:30.161274+02:00' ],
+		#prior : OmReference [ 'Pharo10-SNAPSHOT-64bit-179ef65.46ax59uklsoxdrfrdgmlvc7bo', '2' ],
+		#self : OmReference [ '1' ]
+	},
+	#content : EpMethodAddition {
+		#method : RGMethodDefinition {
+			#annotations : IdentityDictionary {
+				#className : #KnowledgeAssimilatorExamples,
+				#isMetaSide : false
+			},
+			#name : #exampleProcessTestKnowledgePage,
+			#protocol : #example,
+			#sourceCode : 'exampleProcessTestKnowledgePage\r\t<gtExample>\r\t| page |\r\tself removeDummyClass.\r\tpage := self exampleTestKnowledgePage.\r\tKnowledgeAssimilator processPage: page.\r\t"Comprobamos que se ha creado la clase y el método resultado de la asimiliación de conocimiento"\r\tself assert: Dummy doit equals: 42.\r\t^ page\r',
+			#stamp : '',
+			#package : #Lepiter-Literate
+		}
+	}
+}

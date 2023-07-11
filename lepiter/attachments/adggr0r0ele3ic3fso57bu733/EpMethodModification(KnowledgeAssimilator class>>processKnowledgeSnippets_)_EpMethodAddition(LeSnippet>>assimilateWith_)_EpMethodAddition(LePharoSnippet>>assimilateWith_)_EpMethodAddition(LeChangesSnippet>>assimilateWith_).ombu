@@ -1,0 +1,100 @@
+OmEntry {
+	#tags : {
+		#author : 'GlamorousAuthor',
+		#time : DateAndTime [ '2023-07-11T13:43:46.648634+02:00' ],
+		#prior : OmReference [ 'Pharo10-SNAPSHOT-64bit-179ef65.4opbxvdbtzld7u2hdueys0nwd', '1' ],
+		#self : OmReference [ '1' ]
+	},
+	#content : EpMethodModification {
+		#oldMethod : RGMethodDefinition {
+			#annotations : IdentityDictionary {
+				#className : #'KnowledgeAssimilator class',
+				#isMetaSide : true
+			},
+			#name : #'processKnowledgeSnippets:',
+			#protocol : #'processing knowledge',
+			#sourceCode : 'processKnowledgeSnippets: codeSnippets\r\tself initializeSharedBindings.\r\tcodeSnippets\r\t\tdo: [ :aSnippet | \r\t\t\t(aSnippet isKindOf: LePharoSnippet)\r\t\t\t\tifTrue: [ self processPharoSnippet: aSnippet ].\r\t\t\t(aSnippet isKindOf: LeChangesSnippet)\r\t\t\t\tifTrue: [ self processChangesSnippet: aSnippet ] ]',
+			#stamp : '',
+			#package : #Lepiter-Literate
+		},
+		#newMethod : RGMethodDefinition {
+			#annotations : IdentityDictionary {
+				#className : #'KnowledgeAssimilator class',
+				#isMetaSide : true
+			},
+			#name : #'processKnowledgeSnippets:',
+			#protocol : #'processing knowledge',
+			#sourceCode : 'processKnowledgeSnippets: codeSnippets\r\tself initializeSharedBindings.\r\tcodeSnippets do: [ :aSnippet | aSnippet assimilateWith: self ]',
+			#stamp : '',
+			#package : #Lepiter-Literate
+		},
+		#classPackageName : #Lepiter-Literate
+	}
+}
+
+OmEntry {
+	#tags : {
+		#author : 'GlamorousAuthor',
+		#time : DateAndTime [ '2023-07-11T13:47:41.144138+02:00' ],
+		#prior : OmReference [ '1' ],
+		#self : OmReference [ '2' ]
+	},
+	#content : EpMethodAddition {
+		#method : RGMethodDefinition {
+			#annotations : IdentityDictionary {
+				#className : #LeSnippet,
+				#isMetaSide : false
+			},
+			#name : #'assimilateWith:',
+			#protocol : #'*Lepiter-Literate',
+			#sourceCode : 'assimilateWith: aKnowledgeAssimilatorClass\r\t"Do nothing if snippet type is not knowledge"\r\t"Implement for knowledge snippet type"',
+			#stamp : '',
+			#package : #Lepiter-Literate
+		}
+	}
+}
+
+OmEntry {
+	#tags : {
+		#author : 'GlamorousAuthor',
+		#time : DateAndTime [ '2023-07-11T13:48:42.633821+02:00' ],
+		#prior : OmReference [ '2' ],
+		#self : OmReference [ '3' ]
+	},
+	#content : EpMethodAddition {
+		#method : RGMethodDefinition {
+			#annotations : IdentityDictionary {
+				#className : #LePharoSnippet,
+				#isMetaSide : false
+			},
+			#name : #'assimilateWith:',
+			#protocol : #'*Lepiter-Literate',
+			#sourceCode : 'assimilateWith: aKnowledgeAssimilatorClass\r\taKnowledgeAssimilatorClass processPharoSnippet: self',
+			#stamp : '',
+			#package : #Lepiter-Literate
+		}
+	}
+}
+
+OmEntry {
+	#tags : {
+		#author : 'GlamorousAuthor',
+		#time : DateAndTime [ '2023-07-11T13:49:11.575831+02:00' ],
+		#prior : OmReference [ '3' ],
+		#self : OmReference [ '4' ]
+	},
+	#content : EpMethodAddition {
+		#method : RGMethodDefinition {
+			#annotations : IdentityDictionary {
+				#className : #LeChangesSnippet,
+				#isMetaSide : false
+			},
+			#name : #'assimilateWith:',
+			#protocol : #'*Lepiter-Literate',
+			#sourceCode : 'assimilateWith: aKnowledgeAssimilatorClass\r\taKnowledgeAssimilatorClass processChangesSnippet: self',
+			#stamp : '',
+			#package : #Lepiter-Literate
+		}
+	}
+}
+
