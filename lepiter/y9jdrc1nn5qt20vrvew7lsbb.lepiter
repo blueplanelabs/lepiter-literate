@@ -4263,7 +4263,7 @@
 								"__type" : "time",
 								"time" : {
 									"__type" : "dateAndTime",
-									"dateAndTimeString" : "2023-07-11T16:07:14.919013+02:00"
+									"dateAndTimeString" : "2023-07-13T01:24:12.667369+02:00"
 								}
 							},
 							"uid" : {
@@ -4273,7 +4273,7 @@
 							"paragraphStyle" : {
 								"__type" : "textStyle"
 							},
-							"string" : "Y podemos comprobar que el ejemplo sigue siendo correcto evaluando el *PS* como antes."
+							"string" : "Y podemos comprobar que el ejemplo sigue siendo correcto evaluando el *PS* como antes. "
 						},
 						{
 							"__type" : "textSnippet",

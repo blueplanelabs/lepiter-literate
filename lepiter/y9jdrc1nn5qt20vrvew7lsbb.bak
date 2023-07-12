@@ -71,14 +71,14 @@
 								"__type" : "time",
 								"time" : {
 									"__type" : "dateAndTime",
-									"dateAndTimeString" : "2023-07-11T16:15:09.440491+02:00"
+									"dateAndTimeString" : "2023-07-11T16:15:45.853782+02:00"
 								}
 							},
 							"uid" : {
 								"__type" : "uid",
 								"uidString" : "QIiudpi8DQCm2sKIBR7o+Q=="
 							},
-							"code" : ""
+							"code" : "KnowledgeAssimilator package removeFromSystem"
 						}
 					]
 				},
