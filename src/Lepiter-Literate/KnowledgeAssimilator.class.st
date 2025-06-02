@@ -24,18 +24,6 @@ KnowledgeAssimilator class >> processChangesSnippet: aChangesSnippet [
 		ifNotNil: [ :someChanges | someChanges applyChanges ]
 ]
 
-{ #category : #accessing }
-KnowledgeAssimilator class >> processDatabaseTableOfContentsLinks: aLeDatabase [
-| toc tocOutgoingLinks tocOutgoingPageTitles|
-toc := aLeDatabase tableOfContents.
-toc ifNotNil: [
-tocOutgoingLinks := toc allOutgoingExplicitLinks.
-tocOutgoingPageTitles := tocOutgoingLinks items collect: #targetPageTitle.
-tocOutgoingPageTitles do: [ :pageTitle | 
-	KnowledgeAssimilator processPage: (aLeDatabase pageNamed: pageTitle)] 
-]
-]
-
 { #category : #'processing knowledge' }
 KnowledgeAssimilator class >> processKnowledgeSnippets: codeSnippets [
 	self initializeSharedBindings.

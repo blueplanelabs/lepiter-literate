@@ -1,6 +1,6 @@
 Extension { #name : #LeDatabase }
 
 { #category : #'*Lepiter-Literate' }
-LeDatabase >> tangleTableOfContentsOutgoingLinks [
-	KnowledgeAssimilator processDatabaseTableOfContentsLinks: self.
+LeDatabase >> processKnowledge [
+	self tableOfContentsNodes first processKnowledge
 ]

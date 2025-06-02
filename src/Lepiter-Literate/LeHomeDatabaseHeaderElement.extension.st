@@ -29,6 +29,6 @@ LeHomeDatabaseHeaderElement >> newTangleButton [
 			beTinySize;
 			label: 'Tangle ToC pages';
 			icon: BrGlamorousVectorIcons play;
-			action: [ :aButton | self database tangleTableOfContentsOutgoingLinks ];
+			action: [ :aButton | self database processKnowledge ];
 			margin: (BlInsets left: 10)
 ]
