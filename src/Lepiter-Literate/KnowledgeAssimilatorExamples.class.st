@@ -1,10 +1,12 @@
 Class {
-	#name : #KnowledgeAssimilatorExamples,
-	#superclass : #Object,
-	#category : #'Lepiter-Literate-Examples'
+	#name : 'KnowledgeAssimilatorExamples',
+	#superclass : 'Object',
+	#category : 'Lepiter-Literate-Examples',
+	#package : 'Lepiter-Literate',
+	#tag : 'Examples'
 }
 
-{ #category : #support }
+{ #category : 'support' }
 KnowledgeAssimilatorExamples >> exampleBuildTestKnowledgePage [
 	<gtExample>
 	| defaultDatabase |
@@ -16,7 +18,7 @@ KnowledgeAssimilatorExamples >> exampleBuildTestKnowledgePage [
 	^ defaultDatabase pageNamed: 'Test Knowledge Page'
 ]
 
-{ #category : #example }
+{ #category : 'example' }
 KnowledgeAssimilatorExamples >> exampleProcessTestKnowledgePage [
 	<gtExample>
 	| page |
@@ -30,7 +32,7 @@ KnowledgeAssimilatorExamples >> exampleProcessTestKnowledgePage [
 
 ]
 
-{ #category : #example }
+{ #category : 'example' }
 KnowledgeAssimilatorExamples >> exampleTestKnowledgePage [
 	<gtExample>
 	| defaultDatabase targetPageName |
@@ -39,7 +41,7 @@ KnowledgeAssimilatorExamples >> exampleTestKnowledgePage [
 	^ defaultDatabase pageNamed: targetPageName
 ]
 
-{ #category : #example }
+{ #category : 'example' }
 KnowledgeAssimilatorExamples >> exampleTestKnowledgePageSnippetsToProcess [
 	<gtExample>
 	| testPage snippetsToProcess |
@@ -49,12 +51,12 @@ KnowledgeAssimilatorExamples >> exampleTestKnowledgePageSnippetsToProcess [
 	^ snippetsToProcess
 ]
 
-{ #category : #support }
+{ #category : 'support' }
 KnowledgeAssimilatorExamples >> removeDummyClass [
 	(SmalltalkImage current classNamed: #Dummy) ifNotNil: [ :classToRemove | classToRemove removeFromSystem ].
 ]
 
-{ #category : #support }
+{ #category : 'support' }
 KnowledgeAssimilatorExamples >> removeIfNecessary [
 	LeDatabasesRegistry defaultLogicalDatabase
 		pageNamed: 'Test Knowledge Page'

@@ -1,11 +1,11 @@
-Extension { #name : #LePharoSnippet }
+Extension { #name : 'LePharoSnippet' }
 
-{ #category : #'*Lepiter-Literate' }
+{ #category : '*Lepiter-Literate' }
 LePharoSnippet >> assimilateWith: aKnowledgeAssimilatorClass [
 	aKnowledgeAssimilatorClass processPharoSnippet: self
 ]
 
-{ #category : #'*Lepiter-Literate' }
+{ #category : '*Lepiter-Literate' }
 LePharoSnippet >> isKnowledge [
 	^ true
 ]

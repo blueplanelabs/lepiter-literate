@@ -1,6 +1,6 @@
-Extension { #name : #LeDatabase }
+Extension { #name : 'LeDatabase' }
 
-{ #category : #'*Lepiter-Literate' }
+{ #category : '*Lepiter-Literate' }
 LeDatabase >> processKnowledge [
 	self tableOfContentsNodes first processKnowledge
 ]

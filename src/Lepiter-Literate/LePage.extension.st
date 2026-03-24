@@ -1,6 +1,6 @@
-Extension { #name : #LePage }
+Extension { #name : 'LePage' }
 
-{ #category : #'*Lepiter-Literate' }
+{ #category : '*Lepiter-Literate' }
 LePage >> gtTangleActionFor: anAction [
 	<lePageAction>
 
@@ -10,7 +10,7 @@ LePage >> gtTangleActionFor: anAction [
 		action: [ :aButton | self tangle ]
 ]
 
-{ #category : #'*Lepiter-Literate' }
+{ #category : '*Lepiter-Literate' }
 LePage >> tangle [
 	KnowledgeAssimilator processPage: self.
 ]

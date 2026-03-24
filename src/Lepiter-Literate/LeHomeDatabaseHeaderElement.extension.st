@@ -1,6 +1,6 @@
-Extension { #name : #LeHomeDatabaseHeaderElement }
+Extension { #name : 'LeHomeDatabaseHeaderElement' }
 
-{ #category : #'*Lepiter-Literate' }
+{ #category : '*Lepiter-Literate' }
 LeHomeDatabaseHeaderElement >> initialize [
 	super initialize.
 	self initializeEditableTitleElement.
@@ -22,7 +22,7 @@ LeHomeDatabaseHeaderElement >> initialize [
 		vAnyToFitContent: self toolbarElement).
 ]
 
-{ #category : #'*Lepiter-Literate' }
+{ #category : '*Lepiter-Literate' }
 LeHomeDatabaseHeaderElement >> newTangleButton [
 		^ BrButton new
 			aptitude: BrGlamorousButtonWithIconAptitude;

@@ -1,7 +1,10 @@
-Extension { #name : #LeTableOfContentsNode }
+Extension { #name : 'LeTableOfContentsNode' }
 
-{ #category : #'*Lepiter-Literate' }
+{ #category : '*Lepiter-Literate' }
 LeTableOfContentsNode >> processKnowledge [
 	KnowledgeAssimilator processPage: self page.
-	self childrenDo: [ :node | node processKnowledge ]
+	self
+		childrenDo: [ :node | 
+			(node page title includesSubstring: KnowledgeAssimilator NoTangleDirective)
+				ifFalse: [ node processKnowledge ] ]
 ]
