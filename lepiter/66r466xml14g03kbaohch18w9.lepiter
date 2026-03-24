@@ -1,0 +1,1808 @@
+{
+	"__schema": "4.1",
+	"__type": "page",
+	"children": {
+		"__type": "snippets",
+		"items": [
+			{
+				"__type": "textSnippet",
+				"children": {
+					"__type": "snippets",
+					"items": []
+				},
+				"createEmail": {
+					"__type": "email",
+					"emailString": "<unknown>"
+				},
+				"createTime": {
+					"__type": "time",
+					"time": {
+						"__type": "dateAndTime",
+						"dateAndTimeString": "2026-03-23T09:52:14.785934+01:00"
+					}
+				},
+				"editEmail": {
+					"__type": "email",
+					"emailString": "<unknown>"
+				},
+				"editTime": {
+					"__type": "time",
+					"time": {
+						"__type": "dateAndTime",
+						"dateAndTimeString": "2026-03-23T09:52:14.785934+01:00"
+					}
+				},
+				"uid": {
+					"__type": "uid",
+					"uidString": "cUW2527iSYSTD7apJx8ckQ=="
+				},
+				"paragraphStyle": {
+					"__type": "textStyle"
+				},
+				"string": "Esta página implementa `LpLtPageLiveDiffElement` y `LpLtSnippetDiffRowElement`, una vista **\"Live Diff (two panes)\"** para el inspector de `IceNode` que, cuando el nodo corresponde a un fichero `.lepiter`, muestra un diff side-by-side visual renderizando los snippets en lugar del JSON crudo.\n\nEl diff actual (`Diff (two panes)`, priority 19) muestra el JSON serializado de las páginas Lepiter, que es difícil de leer. La nueva vista (priority 18) parsea ambas versiones con `LeJsonV4`, compara los snippets por UID y muestra cada par coloreado según su estado: sin cambios, modificado, añadido o eliminado. Los snippets modificados incluyen un `GtDiffElement` con highlighting rojo/verde sobre el texto del snippet.\n\nLas clases se crean en el paquete `Lepiter-Literate-Diff` del repositorio `lepiter-literate`."
+			},
+			{
+				"__type": "textSnippet",
+				"children": {
+					"__type": "snippets",
+					"items": []
+				},
+				"createEmail": {
+					"__type": "email",
+					"emailString": "<unknown>"
+				},
+				"createTime": {
+					"__type": "time",
+					"time": {
+						"__type": "dateAndTime",
+						"dateAndTimeString": "2026-03-23T09:52:21.042158+01:00"
+					}
+				},
+				"editEmail": {
+					"__type": "email",
+					"emailString": "<unknown>"
+				},
+				"editTime": {
+					"__type": "time",
+					"time": {
+						"__type": "dateAndTime",
+						"dateAndTimeString": "2026-03-23T09:52:21.042158+01:00"
+					}
+				},
+				"uid": {
+					"__type": "uid",
+					"uidString": "c0P4QV05RdeSd/y1CUEUuA=="
+				},
+				"paragraphStyle": {
+					"__type": "textStyle"
+				},
+				"string": "## Exploración interactiva"
+			},
+			{
+				"__type": "textSnippet",
+				"children": {
+					"__type": "snippets",
+					"items": []
+				},
+				"createEmail": {
+					"__type": "email",
+					"emailString": "<unknown>"
+				},
+				"createTime": {
+					"__type": "time",
+					"time": {
+						"__type": "dateAndTime",
+						"dateAndTimeString": "2026-03-23T09:52:27.852475+01:00"
+					}
+				},
+				"editEmail": {
+					"__type": "email",
+					"emailString": "<unknown>"
+				},
+				"editTime": {
+					"__type": "time",
+					"time": {
+						"__type": "dateAndTime",
+						"dateAndTimeString": "2026-03-23T09:52:27.852475+01:00"
+					}
+				},
+				"uid": {
+					"__type": "uid",
+					"uidString": "tbBkeNswRuafibdXZf84Lg=="
+				},
+				"paragraphStyle": {
+					"__type": "textStyle"
+				},
+				"string": "### Parsear dos versiones de una página desde JSON\n\nEl contenido de un nodo Iceberg de tipo `.lepiter` es el JSON serializado de la página. `LeJsonV4 default deserialize: jsonString readStream` parsea ese JSON a un `LePage` con sus snippets, sin necesidad de base de datos. Creamos dos versiones de prueba: la versión \"from\" (repositorio) tiene un snippet sin cambios, uno que luego se modifica y uno que se elimina. La versión \"to\" (working copy) tiene el mismo snippet sin cambios, el modificado y uno nuevo añadido."
+			},
+			{
+				"__type": "pharoSnippet",
+				"children": {
+					"__type": "snippets",
+					"items": []
+				},
+				"createEmail": {
+					"__type": "email",
+					"emailString": "<unknown>"
+				},
+				"createTime": {
+					"__type": "time",
+					"time": {
+						"__type": "dateAndTime",
+						"dateAndTimeString": "2026-03-23T09:52:43.842824+01:00"
+					}
+				},
+				"editEmail": {
+					"__type": "email",
+					"emailString": "<unknown>"
+				},
+				"editTime": {
+					"__type": "time",
+					"time": {
+						"__type": "dateAndTime",
+						"dateAndTimeString": "2026-03-23T09:52:43.842824+01:00"
+					}
+				},
+				"uid": {
+					"__type": "uid",
+					"uidString": "fzceDR6yTaerr6ZttV4XBw=="
+				},
+				"code": "| fromJson toJson fromPage toPage |\nfromJson := '{\n  \"__schema\": \"4.1\", \"__type\": \"page\",\n  \"children\": { \"__type\": \"snippets\", \"items\": [\n    { \"__type\": \"textSnippet\", \"string\": \"Introduccion\", \"uid\": { \"__type\": \"uuid\", \"uuid\": \"00000000-0000-0000-0001-000000000001\" }, \"editTime\": { \"__type\": \"time\", \"time\": { \"__type\": \"dateAndTime\", \"dateAndTimeString\": \"2024-01-01T00:00:00+00:00\" } }, \"createTime\": { \"__type\": \"time\", \"time\": { \"__type\": \"dateAndTime\", \"dateAndTimeString\": \"2024-01-01T00:00:00+00:00\" } } },\n    { \"__type\": \"textSnippet\", \"string\": \"Texto original\", \"uid\": { \"__type\": \"uuid\", \"uuid\": \"00000000-0000-0000-0002-000000000001\" }, \"editTime\": { \"__type\": \"time\", \"time\": { \"__type\": \"dateAndTime\", \"dateAndTimeString\": \"2024-01-01T00:00:00+00:00\" } }, \"createTime\": { \"__type\": \"time\", \"time\": { \"__type\": \"dateAndTime\", \"dateAndTimeString\": \"2024-01-01T00:00:00+00:00\" } } },\n    { \"__type\": \"textSnippet\", \"string\": \"Snippet eliminado\", \"uid\": { \"__type\": \"uuid\", \"uuid\": \"00000000-0000-0000-0003-000000000001\" }, \"editTime\": { \"__type\": \"time\", \"time\": { \"__type\": \"dateAndTime\", \"dateAndTimeString\": \"2024-01-01T00:00:00+00:00\" } }, \"createTime\": { \"__type\": \"time\", \"time\": { \"__type\": \"dateAndTime\", \"dateAndTimeString\": \"2024-01-01T00:00:00+00:00\" } } }\n  ] },\n  \"createEmail\": { \"__type\": \"email\", \"emailString\": \"<unknown>\" },\n  \"createTime\": { \"__type\": \"time\", \"time\": { \"__type\": \"dateAndTime\", \"dateAndTimeString\": \"2024-01-01T00:00:00+00:00\" } },\n  \"editEmail\": { \"__type\": \"email\", \"emailString\": \"<unknown>\" },\n  \"editTime\": { \"__type\": \"time\", \"time\": { \"__type\": \"dateAndTime\", \"dateAndTimeString\": \"2024-01-01T00:00:00+00:00\" } },\n  \"pageType\": { \"__type\": \"namedPage\", \"title\": \"From Version\" },\n  \"uid\": { \"__type\": \"uuid\", \"uuid\": \"ffff0000-0000-0000-0000-000000000001\" }\n}'.\ntoJson := '{\n  \"__schema\": \"4.1\", \"__type\": \"page\",\n  \"children\": { \"__type\": \"snippets\", \"items\": [\n    { \"__type\": \"textSnippet\", \"string\": \"Introduccion\", \"uid\": { \"__type\": \"uuid\", \"uuid\": \"00000000-0000-0000-0001-000000000001\" }, \"editTime\": { \"__type\": \"time\", \"time\": { \"__type\": \"dateAndTime\", \"dateAndTimeString\": \"2024-01-01T00:00:00+00:00\" } }, \"createTime\": { \"__type\": \"time\", \"time\": { \"__type\": \"dateAndTime\", \"dateAndTimeString\": \"2024-01-01T00:00:00+00:00\" } } },\n    { \"__type\": \"textSnippet\", \"string\": \"Texto modificado\", \"uid\": { \"__type\": \"uuid\", \"uuid\": \"00000000-0000-0000-0002-000000000001\" }, \"editTime\": { \"__type\": \"time\", \"time\": { \"__type\": \"dateAndTime\", \"dateAndTimeString\": \"2024-01-01T00:00:00+00:00\" } }, \"createTime\": { \"__type\": \"time\", \"time\": { \"__type\": \"dateAndTime\", \"dateAndTimeString\": \"2024-01-01T00:00:00+00:00\" } } },\n    { \"__type\": \"textSnippet\", \"string\": \"Snippet anadido\", \"uid\": { \"__type\": \"uuid\", \"uuid\": \"00000000-0000-0000-0004-000000000001\" }, \"editTime\": { \"__type\": \"time\", \"time\": { \"__type\": \"dateAndTime\", \"dateAndTimeString\": \"2024-01-01T00:00:00+00:00\" } }, \"createTime\": { \"__type\": \"time\", \"time\": { \"__type\": \"dateAndTime\", \"dateAndTimeString\": \"2024-01-01T00:00:00+00:00\" } } }\n  ] },\n  \"createEmail\": { \"__type\": \"email\", \"emailString\": \"<unknown>\" },\n  \"createTime\": { \"__type\": \"time\", \"time\": { \"__type\": \"dateAndTime\", \"dateAndTimeString\": \"2024-01-01T00:00:00+00:00\" } },\n  \"editEmail\": { \"__type\": \"email\", \"emailString\": \"<unknown>\" },\n  \"editTime\": { \"__type\": \"time\", \"time\": { \"__type\": \"dateAndTime\", \"dateAndTimeString\": \"2024-01-01T00:00:00+00:00\" } },\n  \"pageType\": { \"__type\": \"namedPage\", \"title\": \"To Version\" },\n  \"uid\": { \"__type\": \"uuid\", \"uuid\": \"ffff0000-0000-0000-0000-000000000002\" }\n}'.\nfromPage := LeJsonV4 default deserialize: fromJson readStream.\ntoPage := LeJsonV4 default deserialize: toJson readStream.\n{ 'from snippets: ' , fromPage children size printString.\n  'to snippets: ' , toPage children size printString.\n  'from UIDs: ' , (fromPage children collect: [:s | s uid printString]) printString }"
+			},
+			{
+				"__type": "textSnippet",
+				"children": {
+					"__type": "snippets",
+					"items": []
+				},
+				"createEmail": {
+					"__type": "email",
+					"emailString": "<unknown>"
+				},
+				"createTime": {
+					"__type": "time",
+					"time": {
+						"__type": "dateAndTime",
+						"dateAndTimeString": "2026-03-23T09:52:48.981511+01:00"
+					}
+				},
+				"editEmail": {
+					"__type": "email",
+					"emailString": "<unknown>"
+				},
+				"editTime": {
+					"__type": "time",
+					"time": {
+						"__type": "dateAndTime",
+						"dateAndTimeString": "2026-03-23T15:55:28.650105+01:00"
+					}
+				},
+				"uid": {
+					"__type": "uid",
+					"uidString": "0Hkcg4lJQWKhhfLXBVirnQ=="
+				},
+				"paragraphStyle": {
+					"__type": "textStyle"
+				},
+				"string": "### Calcular el diff de snippets por UID\n\nIndexamos los snippets de cada versión por `uid printString`. El orden de las filas sigue la posición original en `fromPage`, intercalando los eliminados en su lugar exacto. Antes de añadir cada snippet común, se insertan los añadidos de `toPage` que aparecen antes de ese punto. Cada par se clasifica como `#unchanged`, `#modified`, `#added` o `#removed` comparando el texto del snippet."
+			},
+			{
+				"__type": "textSnippet",
+				"children": {
+					"__type": "snippets",
+					"items": []
+				},
+				"paragraphStyle": {
+					"__type": "textStyle"
+				},
+				"string": "El caso base: `fromPage` tiene [0001-unchanged, 0002-modified, 0003-removed] y `toPage` tiene [0001-unchanged, 0002-modified, 0004-added]. El eliminado (0003) aparece entre 0002 y 0004, que es su posición original en `fromPage`."
+			},
+			{
+				"__type": "pharoSnippet",
+				"children": {
+					"__type": "snippets",
+					"items": []
+				},
+				"createEmail": {
+					"__type": "email",
+					"emailString": "<unknown>"
+				},
+				"createTime": {
+					"__type": "time",
+					"time": {
+						"__type": "dateAndTime",
+						"dateAndTimeString": "2026-03-23T09:53:05.468116+01:00"
+					}
+				},
+				"editEmail": {
+					"__type": "email",
+					"emailString": "<unknown>"
+				},
+				"editTime": {
+					"__type": "time",
+					"time": {
+						"__type": "dateAndTime",
+						"dateAndTimeString": "2026-03-23T15:55:46.952342+01:00"
+					}
+				},
+				"uid": {
+					"__type": "uid",
+					"uidString": "3OIQoOupSIe2U25vr5pEHw=="
+				},
+				"code": "| fromJson toJson fromPage toPage fromIndex toIndex fromUIDs toUIDs toSet result toIdx |\nfromJson := '{\n  \"__schema\": \"4.1\", \"__type\": \"page\",\n  \"children\": { \"__type\": \"snippets\", \"items\": [\n    { \"__type\": \"textSnippet\", \"string\": \"Introduccion\", \"uid\": { \"__type\": \"uuid\", \"uuid\": \"00000000-0000-0000-0001-000000000001\" }, \"editTime\": { \"__type\": \"time\", \"time\": { \"__type\": \"dateAndTime\", \"dateAndTimeString\": \"2024-01-01T00:00:00+00:00\" } }, \"createTime\": { \"__type\": \"time\", \"time\": { \"__type\": \"dateAndTime\", \"dateAndTimeString\": \"2024-01-01T00:00:00+00:00\" } } },\n    { \"__type\": \"textSnippet\", \"string\": \"Texto original\", \"uid\": { \"__type\": \"uuid\", \"uuid\": \"00000000-0000-0000-0002-000000000001\" }, \"editTime\": { \"__type\": \"time\", \"time\": { \"__type\": \"dateAndTime\", \"dateAndTimeString\": \"2024-01-01T00:00:00+00:00\" } }, \"createTime\": { \"__type\": \"time\", \"time\": { \"__type\": \"dateAndTime\", \"dateAndTimeString\": \"2024-01-01T00:00:00+00:00\" } } },\n    { \"__type\": \"textSnippet\", \"string\": \"Snippet eliminado\", \"uid\": { \"__type\": \"uuid\", \"uuid\": \"00000000-0000-0000-0003-000000000001\" }, \"editTime\": { \"__type\": \"time\", \"time\": { \"__type\": \"dateAndTime\", \"dateAndTimeString\": \"2024-01-01T00:00:00+00:00\" } }, \"createTime\": { \"__type\": \"time\", \"time\": { \"__type\": \"dateAndTime\", \"dateAndTimeString\": \"2024-01-01T00:00:00+00:00\" } } }\n  ] },\n  \"createEmail\": { \"__type\": \"email\", \"emailString\": \"<unknown>\" },\n  \"createTime\": { \"__type\": \"time\", \"time\": { \"__type\": \"dateAndTime\", \"dateAndTimeString\": \"2024-01-01T00:00:00+00:00\" } },\n  \"editEmail\": { \"__type\": \"email\", \"emailString\": \"<unknown>\" },\n  \"editTime\": { \"__type\": \"time\", \"time\": { \"__type\": \"dateAndTime\", \"dateAndTimeString\": \"2024-01-01T00:00:00+00:00\" } },\n  \"pageType\": { \"__type\": \"namedPage\", \"title\": \"From Version\" },\n  \"uid\": { \"__type\": \"uuid\", \"uuid\": \"ffff0000-0000-0000-0000-000000000001\" }\n}'.\ntoJson := '{\n  \"__schema\": \"4.1\", \"__type\": \"page\",\n  \"children\": { \"__type\": \"snippets\", \"items\": [\n    { \"__type\": \"textSnippet\", \"string\": \"Introduccion\", \"uid\": { \"__type\": \"uuid\", \"uuid\": \"00000000-0000-0000-0001-000000000001\" }, \"editTime\": { \"__type\": \"time\", \"time\": { \"__type\": \"dateAndTime\", \"dateAndTimeString\": \"2024-01-01T00:00:00+00:00\" } }, \"createTime\": { \"__type\": \"time\", \"time\": { \"__type\": \"dateAndTime\", \"dateAndTimeString\": \"2024-01-01T00:00:00+00:00\" } } },\n    { \"__type\": \"textSnippet\", \"string\": \"Texto modificado\", \"uid\": { \"__type\": \"uuid\", \"uuid\": \"00000000-0000-0000-0002-000000000001\" }, \"editTime\": { \"__type\": \"time\", \"time\": { \"__type\": \"dateAndTime\", \"dateAndTimeString\": \"2024-01-01T00:00:00+00:00\" } }, \"createTime\": { \"__type\": \"time\", \"time\": { \"__type\": \"dateAndTime\", \"dateAndTimeString\": \"2024-01-01T00:00:00+00:00\" } } },\n    { \"__type\": \"textSnippet\", \"string\": \"Snippet anadido\", \"uid\": { \"__type\": \"uuid\", \"uuid\": \"00000000-0000-0000-0004-000000000001\" }, \"editTime\": { \"__type\": \"time\", \"time\": { \"__type\": \"dateAndTime\", \"dateAndTimeString\": \"2024-01-01T00:00:00+00:00\" } }, \"createTime\": { \"__type\": \"time\", \"time\": { \"__type\": \"dateAndTime\", \"dateAndTimeString\": \"2024-01-01T00:00:00+00:00\" } } }\n  ] },\n  \"createEmail\": { \"__type\": \"email\", \"emailString\": \"<unknown>\" },\n  \"createTime\": { \"__type\": \"time\", \"time\": { \"__type\": \"dateAndTime\", \"dateAndTimeString\": \"2024-01-01T00:00:00+00:00\" } },\n  \"editEmail\": { \"__type\": \"email\", \"emailString\": \"<unknown>\" },\n  \"editTime\": { \"__type\": \"time\", \"time\": { \"__type\": \"dateAndTime\", \"dateAndTimeString\": \"2024-01-01T00:00:00+00:00\" } },\n  \"pageType\": { \"__type\": \"namedPage\", \"title\": \"To Version\" },\n  \"uid\": { \"__type\": \"uuid\", \"uuid\": \"ffff0000-0000-0000-0000-000000000002\" }\n}'.\nfromPage := LeJsonV4 default deserialize: fromJson readStream.\ntoPage := LeJsonV4 default deserialize: toJson readStream.\n\nfromIndex := Dictionary new.\nfromPage children do: [:s | fromIndex at: s uid printString put: s].\ntoIndex := Dictionary new.\ntoPage children do: [:s | toIndex at: s uid printString put: s].\n\nfromUIDs := fromPage children collect: [:s | s uid printString].\ntoUIDs := toPage children collect: [:s | s uid printString].\ntoSet := Set withAll: toUIDs.\nresult := OrderedCollection new.\ntoIdx := 1.\n\nfromUIDs do: [:uid |\n    | from to status |\n    (toSet includes: uid)\n        ifTrue: [\n            [toIdx <= toUIDs size and: [(toUIDs at: toIdx) ~= uid]] whileTrue: [\n                result add: (toUIDs at: toIdx) -> #added.\n                toIdx := toIdx + 1].\n            from := fromIndex at: uid.\n            to := toIndex at: uid.\n            status := from string = to string ifTrue: [#unchanged] ifFalse: [#modified].\n            result add: uid -> status.\n            toIdx := toIdx + 1]\n        ifFalse: [\n            result add: uid -> #removed]].\n[toIdx <= toUIDs size] whileTrue: [\n    result add: (toUIDs at: toIdx) -> #added.\n    toIdx := toIdx + 1].\nresult"
+			},
+			{
+				"__type": "textSnippet",
+				"children": {
+					"__type": "snippets",
+					"items": []
+				},
+				"paragraphStyle": {
+					"__type": "textStyle"
+				},
+				"string": "Cuando hay varios snippets añadidos consecutivos entre dos comunes, el algoritmo los inserta antes del segundo punto común. Aquí `fromPage` tiene [A, B, C] y `toPage` tiene [A, X, Y, B, C]: X e Y aparecen justo antes de B."
+			},
+			{
+				"__type": "pharoSnippet",
+				"children": {
+					"__type": "snippets",
+					"items": []
+				},
+				"code": "| fromUIDs toUIDs toSet result toIdx |\nfromUIDs := #('A' 'B' 'C').\ntoUIDs   := #('A' 'X' 'Y' 'B' 'C').\ntoSet := Set withAll: toUIDs.\nresult := OrderedCollection new.\ntoIdx := 1.\nfromUIDs do: [:uid |\n    | status |\n    (toSet includes: uid)\n        ifTrue: [\n            [toIdx <= toUIDs size and: [(toUIDs at: toIdx) ~= uid]] whileTrue: [\n                result add: (toUIDs at: toIdx) -> #added.\n                toIdx := toIdx + 1].\n            status := #unchanged.\n            result add: uid -> status.\n            toIdx := toIdx + 1]\n        ifFalse: [\n            result add: uid -> #removed]].\n[toIdx <= toUIDs size] whileTrue: [\n    result add: (toUIDs at: toIdx) -> #added.\n    toIdx := toIdx + 1].\nresult"
+			},
+			{
+				"__type": "textSnippet",
+				"children": {
+					"__type": "snippets",
+					"items": []
+				},
+				"paragraphStyle": {
+					"__type": "textStyle"
+				},
+				"string": "Cuando hay varios snippets eliminados consecutivos, aparecen en su posición original. Aquí `fromPage` tiene [A, B, C, D] y `toPage` tiene [A, D, X]: B y C aparecen entre A y D, y X al final."
+			},
+			{
+				"__type": "pharoSnippet",
+				"children": {
+					"__type": "snippets",
+					"items": []
+				},
+				"code": "| fromUIDs toUIDs toSet result toIdx |\nfromUIDs := #('A' 'B' 'C' 'D').\ntoUIDs   := #('A' 'D' 'X').\ntoSet := Set withAll: toUIDs.\nresult := OrderedCollection new.\ntoIdx := 1.\nfromUIDs do: [:uid |\n    | status |\n    (toSet includes: uid)\n        ifTrue: [\n            [toIdx <= toUIDs size and: [(toUIDs at: toIdx) ~= uid]] whileTrue: [\n                result add: (toUIDs at: toIdx) -> #added.\n                toIdx := toIdx + 1].\n            status := #unchanged.\n            result add: uid -> status.\n            toIdx := toIdx + 1]\n        ifFalse: [\n            result add: uid -> #removed]].\n[toIdx <= toUIDs size] whileTrue: [\n    result add: (toUIDs at: toIdx) -> #added.\n    toIdx := toIdx + 1].\nresult"
+			},
+			{
+				"__type": "textSnippet",
+				"children": {
+					"__type": "snippets",
+					"items": []
+				},
+				"createEmail": {
+					"__type": "email",
+					"emailString": "<unknown>"
+				},
+				"createTime": {
+					"__type": "time",
+					"time": {
+						"__type": "dateAndTime",
+						"dateAndTimeString": "2026-03-23T09:53:11.202356+01:00"
+					}
+				},
+				"editEmail": {
+					"__type": "email",
+					"emailString": "<unknown>"
+				},
+				"editTime": {
+					"__type": "time",
+					"time": {
+						"__type": "dateAndTime",
+						"dateAndTimeString": "2026-03-23T16:19:40.177919+01:00"
+					}
+				},
+				"uid": {
+					"__type": "uid",
+					"uidString": "ktrlLQWEQUK4haCnVgn/QA=="
+				},
+				"paragraphStyle": {
+					"__type": "textStyle"
+				},
+				"string": "### Construir un GtDiffElement para un snippet modificado\n\nPara los snippets con status `#modified`, `GtDiffBuilder` calcula las diferencias palabra a palabra usando `GtCharacterGroupDiffSplitter words`. El resultado es un `GtCompositeDiffChange` que se pasa a `GtDiffElement onChange:`. Con la aptitude `GtDiffFlatAptitude` obtenemos el mismo estilo visual que el diff de código existente."
+			},
+			{
+				"__type": "pharoSnippet",
+				"children": {
+					"__type": "snippets",
+					"items": []
+				},
+				"createEmail": {
+					"__type": "email",
+					"emailString": "<unknown>"
+				},
+				"createTime": {
+					"__type": "time",
+					"time": {
+						"__type": "dateAndTime",
+						"dateAndTimeString": "2026-03-23T09:53:16.343389+01:00"
+					}
+				},
+				"editEmail": {
+					"__type": "email",
+					"emailString": "<unknown>"
+				},
+				"editTime": {
+					"__type": "time",
+					"time": {
+						"__type": "dateAndTime",
+						"dateAndTimeString": "2026-03-23T11:51:42.505031+01:00"
+					}
+				},
+				"uid": {
+					"__type": "uid",
+					"uidString": "Bgeb03koQLOEsujOI3z2uw=="
+				},
+				"code": "| fromText toText change el |\nfromText := 'Texto original del snippet\nsegunda linea igual'.\ntoText := 'Texto modificado del snippet\nsegunda linea igual'.\nchange := GtDiffBuilder\n    computeDifferencesFrom: fromText\n    to: toText\n    using: GtCharacterGroupDiffSplitter words.\nel := GtDiffElement onChange: change.\nel aptitude: GtDiffFlatAptitude.\nel beSmallSize.\nel"
+			},
+			{
+				"__type": "textSnippet",
+				"children": {
+					"__type": "snippets",
+					"items": []
+				},
+				"createEmail": {
+					"__type": "email",
+					"emailString": "<unknown>"
+				},
+				"createTime": {
+					"__type": "time",
+					"time": {
+						"__type": "dateAndTime",
+						"dateAndTimeString": "2026-03-23T09:53:22.251023+01:00"
+					}
+				},
+				"editEmail": {
+					"__type": "email",
+					"emailString": "<unknown>"
+				},
+				"editTime": {
+					"__type": "time",
+					"time": {
+						"__type": "dateAndTime",
+						"dateAndTimeString": "2026-03-23T09:53:22.251023+01:00"
+					}
+				},
+				"uid": {
+					"__type": "uid",
+					"uidString": "YXMGeUWhT5+5Qu5GwG77GQ=="
+				},
+				"paragraphStyle": {
+					"__type": "textStyle"
+				},
+				"string": "## Example-driven Development"
+			},
+			{
+				"__type": "textSnippet",
+				"children": {
+					"__type": "snippets",
+					"items": []
+				},
+				"createEmail": {
+					"__type": "email",
+					"emailString": "<unknown>"
+				},
+				"createTime": {
+					"__type": "time",
+					"time": {
+						"__type": "dateAndTime",
+						"dateAndTimeString": "2026-03-23T09:55:13.362066+01:00"
+					}
+				},
+				"editEmail": {
+					"__type": "email",
+					"emailString": "<unknown>"
+				},
+				"editTime": {
+					"__type": "time",
+					"time": {
+						"__type": "dateAndTime",
+						"dateAndTimeString": "2026-03-23T16:32:16.383697+01:00"
+					}
+				},
+				"uid": {
+					"__type": "uid",
+					"uidString": "iiWJFvy+SoWXYprTr3Pssw=="
+				},
+				"paragraphStyle": {
+					"__type": "textStyle"
+				},
+				"string": "### Una fila con dos snippets de texto diferente tiene estado `#modified`\n\n`exampleModifiedRow` (iteración 1). Construimos `LpLtSnippetDiffRowElement` con dos snippets de texto diferente y verificamos que `status = #modified`, `fromSnippet notNil` y `toSnippet notNil`. Es la primera iteración: crea ambas clases y el punto de entrada `from:to:status:`."
+			},
+			{
+				"__type": "pharoSnippet",
+				"children": {
+					"__type": "snippets",
+					"items": []
+				},
+				"createEmail": {
+					"__type": "email",
+					"emailString": "<unknown>"
+				},
+				"createTime": {
+					"__type": "time",
+					"time": {
+						"__type": "dateAndTime",
+						"dateAndTimeString": "2026-03-23T09:55:16.607245+01:00"
+					}
+				},
+				"editEmail": {
+					"__type": "email",
+					"emailString": "<unknown>"
+				},
+				"editTime": {
+					"__type": "time",
+					"time": {
+						"__type": "dateAndTime",
+						"dateAndTimeString": "2026-03-23T09:55:16.607245+01:00"
+					}
+				},
+				"uid": {
+					"__type": "uid",
+					"uidString": "cP05/KD/SvObbec+EV9wdg=="
+				},
+				"code": "Object subclass: #LpLtLiveDiffExamples\n    instanceVariableNames: ''\n    classVariableNames: ''\n    package: 'Lepiter-Literate-Diff'"
+			},
+			{
+				"__type": "pharoSnippet",
+				"children": {
+					"__type": "snippets",
+					"items": []
+				},
+				"code": "LpLtLiveDiffExamples compile: 'exampleModifiedRow\n    <gtExample>\n    <description: ''Una fila construida con dos snippets de texto diferente tiene status #modified''>\n    <return: #LpLtSnippetDiffRowElement>\n    | from to row |\n    from := LeTextSnippet new updateString: ''Texto original''.\n    to := LeTextSnippet new updateString: ''Texto modificado''.\n    row := LpLtSnippetDiffRowElement from: from to: to status: #modified.\n    self assert: row status equals: #modified.\n    self assert: row fromSnippet notNil.\n    self assert: row toSnippet notNil.\n    ^ row\n' classified: 'examples'."
+			},
+			{
+				"__type": "textSnippet",
+				"children": {
+					"__type": "snippets",
+					"items": []
+				},
+				"editTime": {
+					"__type": "time",
+					"time": {
+						"__type": "dateAndTime",
+						"dateAndTimeString": "2026-03-23T16:41:19.315299+01:00"
+					}
+				},
+				"paragraphStyle": {
+					"__type": "textStyle"
+				},
+				"string": "**Exploración interactiva**\n\nLos fixtures del ejemplo crean snippets de texto con `LeTextSnippet new updateString:`. Verificamos que el snippet creado responde a `string` con el texto pasado."
+			},
+			{
+				"__type": "pharoSnippet",
+				"children": {
+					"__type": "snippets",
+					"items": []
+				},
+				"code": "| snip |\nsnip := LeTextSnippet new updateString: 'Texto de prueba'.\nsnip string"
+			},
+			{
+				"__type": "textSnippet",
+				"children": {
+					"__type": "snippets",
+					"items": []
+				},
+				"editTime": {
+					"__type": "time",
+					"time": {
+						"__type": "dateAndTime",
+						"dateAndTimeString": "2026-03-23T20:15:10.787871+01:00"
+					}
+				},
+				"paragraphStyle": {
+					"__type": "textStyle"
+				},
+				"string": "**Implementación mínima**\n\nEl método de clase `from:to:status:` asigna los tres valores a variables de instancia privadas. Los accessors públicos `status`, `fromSnippet` y `toSnippet` son suficientes para que el ejemplo pase."
+			},
+			{
+				"__type": "pharoSnippet",
+				"children": {
+					"__type": "snippets",
+					"items": []
+				},
+				"createEmail": {
+					"__type": "email",
+					"emailString": "<unknown>"
+				},
+				"createTime": {
+					"__type": "time",
+					"time": {
+						"__type": "dateAndTime",
+						"dateAndTimeString": "2026-03-23T09:55:20.243367+01:00"
+					}
+				},
+				"editEmail": {
+					"__type": "email",
+					"emailString": "<unknown>"
+				},
+				"editTime": {
+					"__type": "time",
+					"time": {
+						"__type": "dateAndTime",
+						"dateAndTimeString": "2026-03-23T09:55:20.243367+01:00"
+					}
+				},
+				"uid": {
+					"__type": "uid",
+					"uidString": "k8MlxvADS/eILEj0lImGzA=="
+				},
+				"code": "BlElement subclass: #LpLtSnippetDiffRowElement\n    instanceVariableNames: 'status fromSnippet toSnippet'\n    classVariableNames: ''\n    package: 'Lepiter-Literate-Diff'"
+			},
+			{
+				"__type": "pharoSnippet",
+				"children": {
+					"__type": "snippets",
+					"items": []
+				},
+				"createEmail": {
+					"__type": "email",
+					"emailString": "<unknown>"
+				},
+				"createTime": {
+					"__type": "time",
+					"time": {
+						"__type": "dateAndTime",
+						"dateAndTimeString": "2026-03-23T09:55:26.376281+01:00"
+					}
+				},
+				"editEmail": {
+					"__type": "email",
+					"emailString": "<unknown>"
+				},
+				"editTime": {
+					"__type": "time",
+					"time": {
+						"__type": "dateAndTime",
+						"dateAndTimeString": "2026-03-23T21:02:31.4464+01:00"
+					}
+				},
+				"uid": {
+					"__type": "uid",
+					"uidString": "Wjj9da3cTv+EX5yOAUBYZw=="
+				},
+				"code": "LpLtSnippetDiffRowElement class compile: 'from: aFromSnippet to: aToSnippet status: aStatus\n    | row |\n    row := self new.\n    row pvtFromSnippet: aFromSnippet.\n    row pvtToSnippet: aToSnippet.\n    row pvtStatus: aStatus.\n    ^ row\n' classified: 'instance creation'.\n\nLpLtSnippetDiffRowElement compile: 'status\n    ^ status\n' classified: 'accessing'.\n\nLpLtSnippetDiffRowElement compile: 'fromSnippet\n    ^ fromSnippet\n' classified: 'accessing'.\n\nLpLtSnippetDiffRowElement compile: 'toSnippet\n    ^ toSnippet\n' classified: 'accessing'.\n\nLpLtSnippetDiffRowElement compile: 'pvtFromSnippet: aSnippet\n    fromSnippet := aSnippet\n' classified: 'private'.\n\nLpLtSnippetDiffRowElement compile: 'pvtToSnippet: aSnippet\n    toSnippet := aSnippet\n' classified: 'private'.\n\nLpLtSnippetDiffRowElement compile: 'pvtStatus: aStatus\n    status := aStatus\n' classified: 'private'."
+			},
+			{
+				"__type": "exampleSnippet",
+				"children": {
+					"__type": "snippets",
+					"items": []
+				},
+				"exampleSelector": "exampleModifiedRow",
+				"previewHeight": 200,
+				"previewShowSelector": "gtViewsFor:",
+				"exampleBehaviorName": "LpLtLiveDiffExamples",
+				"codeExpanded": true,
+				"previewExpanded": false,
+				"noCode": false
+			},
+			{
+				"__type": "textSnippet",
+				"children": {
+					"__type": "snippets",
+					"items": []
+				},
+				"createEmail": {
+					"__type": "email",
+					"emailString": "<unknown>"
+				},
+				"createTime": {
+					"__type": "time",
+					"time": {
+						"__type": "dateAndTime",
+						"dateAndTimeString": "2026-03-23T09:55:49.582453+01:00"
+					}
+				},
+				"editEmail": {
+					"__type": "email",
+					"emailString": "<unknown>"
+				},
+				"editTime": {
+					"__type": "time",
+					"time": {
+						"__type": "dateAndTime",
+						"dateAndTimeString": "2026-03-23T17:13:46.66759+01:00"
+					}
+				},
+				"uid": {
+					"__type": "uid",
+					"uidString": "vRt50oSJTau/P+FKx/qIeg=="
+				},
+				"paragraphStyle": {
+					"__type": "textStyle"
+				},
+				"string": "### Filas para snippets añadidos y eliminados\n\n`exampleAddedRow` y `exampleRemovedRow` (iteración 2). Verificamos que `from:to:status:` acepta `nil` en cualquiera de los dos lados: `fromSnippet isNil` para `#added` y `toSnippet isNil` para `#removed`. No se necesita código de producción adicional."
+			},
+			{
+				"__type": "pharoSnippet",
+				"children": {
+					"__type": "snippets",
+					"items": []
+				},
+				"createEmail": {
+					"__type": "email",
+					"emailString": "<unknown>"
+				},
+				"createTime": {
+					"__type": "time",
+					"time": {
+						"__type": "dateAndTime",
+						"dateAndTimeString": "2026-03-23T09:55:55.928625+01:00"
+					}
+				},
+				"editEmail": {
+					"__type": "email",
+					"emailString": "<unknown>"
+				},
+				"editTime": {
+					"__type": "time",
+					"time": {
+						"__type": "dateAndTime",
+						"dateAndTimeString": "2026-03-23T09:55:55.928625+01:00"
+					}
+				},
+				"uid": {
+					"__type": "uid",
+					"uidString": "Bwj4vOOkRz6cl2TMSTa31A=="
+				},
+				"code": "LpLtLiveDiffExamples compile: 'exampleAddedRow\n    <gtExample>\n    <description: ''Una fila con fromSnippet nil tiene status #added''>\n    <return: #LpLtSnippetDiffRowElement>\n    | to row |\n    to := LeTextSnippet new updateString: ''Snippet anadido''.\n    row := LpLtSnippetDiffRowElement from: nil to: to status: #added.\n    self assert: row status equals: #added.\n    self assert: row fromSnippet isNil.\n    ^ row\n' classified: 'examples'.\n\nLpLtLiveDiffExamples compile: 'exampleRemovedRow\n    <gtExample>\n    <description: ''Una fila con toSnippet nil tiene status #removed''>\n    <return: #LpLtSnippetDiffRowElement>\n    | from row |\n    from := LeTextSnippet new updateString: ''Snippet eliminado''.\n    row := LpLtSnippetDiffRowElement from: from to: nil status: #removed.\n    self assert: row status equals: #removed.\n    self assert: row toSnippet isNil.\n    ^ row\n' classified: 'examples'."
+			},
+			{
+				"__type": "textSnippet",
+				"children": {
+					"__type": "snippets",
+					"items": []
+				},
+				"editTime": {
+					"__type": "time",
+					"time": {
+						"__type": "dateAndTime",
+						"dateAndTimeString": "2026-03-23T20:16:36.564313+01:00"
+					}
+				},
+				"paragraphStyle": {
+					"__type": "textStyle"
+				},
+				"string": "**Exploración interactiva**\n\n`from:to:status:` no restringe los argumentos — simplemente los asigna. Verificamos que pasar `nil` en el primer argumento no produce error y que el accessor devuelve `nil`."
+			},
+			{
+				"__type": "pharoSnippet",
+				"children": {
+					"__type": "snippets",
+					"items": []
+				},
+				"code": "| row |\nrow := LpLtSnippetDiffRowElement from: nil to: (LeTextSnippet new updateString: 'Snippet anadido') status: #added.\nrow fromSnippet"
+			},
+			{
+				"__type": "textSnippet",
+				"children": {
+					"__type": "snippets",
+					"items": []
+				},
+				"editTime": {
+					"__type": "time",
+					"time": {
+						"__type": "dateAndTime",
+						"dateAndTimeString": "2026-03-23T20:16:58.367307+01:00"
+					}
+				},
+				"paragraphStyle": {
+					"__type": "textStyle"
+				},
+				"string": "**Implementación mínima**\n\nNo se requiere código adicional — `pvtFromSnippet:` y `pvtToSnippet:` aceptan cualquier valor incluido `nil`, y `from:to:status:` los asigna sin restricciones."
+			},
+			{
+				"__type": "exampleSnippet",
+				"children": {
+					"__type": "snippets",
+					"items": []
+				},
+				"exampleSelector": "exampleAddedRow",
+				"previewHeight": 200,
+				"previewShowSelector": "gtViewsFor:",
+				"exampleBehaviorName": "LpLtLiveDiffExamples",
+				"codeExpanded": true,
+				"previewExpanded": false,
+				"noCode": false
+			},
+			{
+				"__type": "exampleSnippet",
+				"children": {
+					"__type": "snippets",
+					"items": []
+				},
+				"exampleSelector": "exampleRemovedRow",
+				"previewHeight": 200,
+				"previewShowSelector": "gtViewsFor:",
+				"exampleBehaviorName": "LpLtLiveDiffExamples",
+				"codeExpanded": true,
+				"previewExpanded": false,
+				"noCode": false
+			},
+			{
+				"__type": "textSnippet",
+				"children": {
+					"__type": "snippets",
+					"items": []
+				},
+				"createEmail": {
+					"__type": "email",
+					"emailString": "<unknown>"
+				},
+				"createTime": {
+					"__type": "time",
+					"time": {
+						"__type": "dateAndTime",
+						"dateAndTimeString": "2026-03-23T09:57:00.35115+01:00"
+					}
+				},
+				"editEmail": {
+					"__type": "email",
+					"emailString": "<unknown>"
+				},
+				"editTime": {
+					"__type": "time",
+					"time": {
+						"__type": "dateAndTime",
+						"dateAndTimeString": "2026-03-23T16:15:08.507179+01:00"
+					}
+				},
+				"uid": {
+					"__type": "uid",
+					"uidString": "14EQPZ8dSeSkUyvdKK0o5g=="
+				},
+				"paragraphStyle": {
+					"__type": "textStyle"
+				},
+				"string": "### LpLtPageLiveDiffElement computa las filas de diff correctamente\n\n`LpLtPageLiveDiffElement` recibe dos strings JSON con `fromContents:` y `toContents:`. Cuando se asigna el segundo, se lanza `buildDiff` que llama a `computeDiffRows`. El algoritmo camina `fromPage` en orden, intercalando los eliminados en su posición original e insertando los añadidos de `toPage` antes de cada punto común. Los fixtures `fromJson` y `toJson` tienen los cuatro casos; el orden resultante es `#unchanged, #modified, #removed, #added`."
+			},
+			{
+				"__type": "pharoSnippet",
+				"children": {
+					"__type": "snippets",
+					"items": []
+				},
+				"code": "LpLtLiveDiffExamples compile: 'examplePageDiffComputesRows\n    <gtExample>\n    <description: ''LpLtPageLiveDiffElement computa 4 filas en el orden correcto: unchanged, modified, removed, added''>\n    <return: #LpLtPageLiveDiffElement>\n    | el |\n    el := LpLtPageLiveDiffElement new\n        fromContents: self fromJson;\n        toContents: self toJson.\n    self assert: el diffRows size equals: 4.\n    self assert: (el diffRows collect: #status) asArray\n        equals: #(#unchanged #modified #removed #added).\n    ^ el\n' classified: 'examples'."
+			},
+			{
+				"__type": "textSnippet",
+				"children": {
+					"__type": "snippets",
+					"items": []
+				},
+				"editTime": {
+					"__type": "time",
+					"time": {
+						"__type": "dateAndTime",
+						"dateAndTimeString": "2026-03-23T20:12:40.933627+01:00"
+					}
+				},
+				"paragraphStyle": {
+					"__type": "textStyle"
+				},
+				"string": "**Exploración interactiva**\n\nLa exploración del algoritmo de diff por UID ya está cubierta en la sección interactiva. Aquí verificamos el pipeline completo: `LeJsonV4` parsea el JSON a `LePage` y los snippets tienen `uid printString` como identificador único."
+			},
+			{
+				"__type": "pharoSnippet",
+				"children": {
+					"__type": "snippets",
+					"items": []
+				},
+				"code": "| page |\npage := LeJsonV4 default deserialize: '{\n  \"__schema\": \"4.1\", \"__type\": \"page\",\n  \"children\": { \"__type\": \"snippets\", \"items\": [\n    { \"__type\": \"textSnippet\", \"string\": \"Hola\", \"uid\": { \"__type\": \"uuid\", \"uuid\": \"00000000-0000-0000-0001-000000000001\" },\n      \"editTime\": { \"__type\": \"time\", \"time\": { \"__type\": \"dateAndTime\", \"dateAndTimeString\": \"2024-01-01T00:00:00+00:00\" } },\n      \"createTime\": { \"__type\": \"time\", \"time\": { \"__type\": \"dateAndTime\", \"dateAndTimeString\": \"2024-01-01T00:00:00+00:00\" } } }\n  ] },\n  \"createEmail\": { \"__type\": \"email\", \"emailString\": \"<unknown>\" },\n  \"createTime\": { \"__type\": \"time\", \"time\": { \"__type\": \"dateAndTime\", \"dateAndTimeString\": \"2024-01-01T00:00:00+00:00\" } },\n  \"editEmail\": { \"__type\": \"email\", \"emailString\": \"<unknown>\" },\n  \"editTime\": { \"__type\": \"time\", \"time\": { \"__type\": \"dateAndTime\", \"dateAndTimeString\": \"2024-01-01T00:00:00+00:00\" } },\n  \"pageType\": { \"__type\": \"namedPage\", \"title\": \"Test\" },\n  \"uid\": { \"__type\": \"uuid\", \"uuid\": \"ffff0000-0000-0000-0000-000000000001\" }\n}' readStream.\npage children collect: [:s | s uid printString -> s string]"
+			},
+			{
+				"__type": "textSnippet",
+				"children": {
+					"__type": "snippets",
+					"items": []
+				},
+				"paragraphStyle": {
+					"__type": "textStyle"
+				},
+				"string": "**Implementación mínima**\n\n`LpLtPageLiveDiffElement` orquesta el pipeline: `fromContents:` y `toContents:` parsean el JSON con `LeJsonV4`, y `buildDiff` delega a `computeDiffRows` que aplica el algoritmo de merge por UID. Los fixtures `fromJson` y `toJson` en `LpLtLiveDiffExamples` proporcionan los datos de prueba."
+			},
+			{
+				"__type": "pharoSnippet",
+				"children": {
+					"__type": "snippets",
+					"items": []
+				},
+				"createEmail": {
+					"__type": "email",
+					"emailString": "<unknown>"
+				},
+				"createTime": {
+					"__type": "time",
+					"time": {
+						"__type": "dateAndTime",
+						"dateAndTimeString": "2026-03-23T09:57:05.232199+01:00"
+					}
+				},
+				"editEmail": {
+					"__type": "email",
+					"emailString": "<unknown>"
+				},
+				"editTime": {
+					"__type": "time",
+					"time": {
+						"__type": "dateAndTime",
+						"dateAndTimeString": "2026-03-23T09:57:05.232199+01:00"
+					}
+				},
+				"uid": {
+					"__type": "uid",
+					"uidString": "mLre2PTzRcSaqe6v9yCkkQ=="
+				},
+				"code": "BlElement subclass: #LpLtPageLiveDiffElement\n    instanceVariableNames: 'fromPage toPage showUnchanged diffRows'\n    classVariableNames: ''\n    package: 'Lepiter-Literate-Diff'"
+			},
+			{
+				"__type": "pharoSnippet",
+				"children": {
+					"__type": "snippets",
+					"items": []
+				},
+				"createEmail": {
+					"__type": "email",
+					"emailString": "<unknown>"
+				},
+				"createTime": {
+					"__type": "time",
+					"time": {
+						"__type": "dateAndTime",
+						"dateAndTimeString": "2026-03-23T09:57:12.424937+01:00"
+					}
+				},
+				"editEmail": {
+					"__type": "email",
+					"emailString": "<unknown>"
+				},
+				"editTime": {
+					"__type": "time",
+					"time": {
+						"__type": "dateAndTime",
+						"dateAndTimeString": "2026-03-23T21:02:49.286907+01:00"
+					}
+				},
+				"uid": {
+					"__type": "uid",
+					"uidString": "3JQcSVhERuCp8esd81zG8Q=="
+				},
+				"code": "LpLtPageLiveDiffElement compile: 'fromContents: aString\n    fromPage := LeJsonV4 default deserialize: aString readStream\n' classified: 'accessing'.\n\nLpLtPageLiveDiffElement compile: 'toContents: aString\n    toPage := LeJsonV4 default deserialize: aString readStream.\n    self buildDiff\n' classified: 'accessing'.\n\nLpLtPageLiveDiffElement compile: 'diffRows\n    ^ diffRows\n' classified: 'accessing'.\n\nLpLtPageLiveDiffElement compile: 'snippetTextFor: aSnippet\n    (aSnippet isKindOf: LeTextualSnippet) ifTrue: [ ^ aSnippet string ].\n    (aSnippet isKindOf: LeCodeSnippet) ifTrue: [ ^ aSnippet code ].\n    ^ aSnippet printString\n' classified: 'private'.\n\nLpLtPageLiveDiffElement compile: 'computeDiffRows\n    | fromIndex toIndex fromUIDs toUIDs toSet result toIdx |\n    fromIndex := Dictionary new.\n    fromPage children do: [:s | fromIndex at: s uid printString put: s].\n    toIndex := Dictionary new.\n    toPage children do: [:s | toIndex at: s uid printString put: s].\n    fromUIDs := fromPage children collect: [:s | s uid printString].\n    toUIDs := toPage children collect: [:s | s uid printString].\n    toSet := Set withAll: toUIDs.\n    result := OrderedCollection new.\n    toIdx := 1.\n    fromUIDs do: [:uid |\n        | from to status |\n        (toSet includes: uid)\n            ifTrue: [\n                [toIdx <= toUIDs size and: [(toUIDs at: toIdx) ~= uid]] whileTrue: [\n                    | addedSnippet |\n                    addedSnippet := toIndex at: (toUIDs at: toIdx).\n                    result add: (LpLtSnippetDiffRowElement from: nil to: addedSnippet status: #added).\n                    toIdx := toIdx + 1].\n                from := fromIndex at: uid.\n                to := toIndex at: uid.\n                status := (self snippetTextFor: from) = (self snippetTextFor: to)\n                    ifTrue: [#unchanged] ifFalse: [#modified].\n                result add: (LpLtSnippetDiffRowElement from: from to: to status: status).\n                toIdx := toIdx + 1]\n            ifFalse: [\n                from := fromIndex at: uid.\n                result add: (LpLtSnippetDiffRowElement from: from to: nil status: #removed)]].\n    [toIdx <= toUIDs size] whileTrue: [\n        | addedSnippet |\n        addedSnippet := toIndex at: (toUIDs at: toIdx).\n        result add: (LpLtSnippetDiffRowElement from: nil to: addedSnippet status: #added).\n        toIdx := toIdx + 1].\n    ^ result\n' classified: 'private'.\n\nLpLtPageLiveDiffElement compile: 'buildDiff\n    diffRows := self computeDiffRows\n' classified: 'building'."
+			},
+			{
+				"__type": "pharoSnippet",
+				"children": {
+					"__type": "snippets",
+					"items": []
+				},
+				"createEmail": {
+					"__type": "email",
+					"emailString": "<unknown>"
+				},
+				"createTime": {
+					"__type": "time",
+					"time": {
+						"__type": "dateAndTime",
+						"dateAndTimeString": "2026-03-23T09:57:27.706267+01:00"
+					}
+				},
+				"editEmail": {
+					"__type": "email",
+					"emailString": "<unknown>"
+				},
+				"editTime": {
+					"__type": "time",
+					"time": {
+						"__type": "dateAndTime",
+						"dateAndTimeString": "2026-03-23T09:57:27.706267+01:00"
+					}
+				},
+				"uid": {
+					"__type": "uid",
+					"uidString": "HRQV3ZLsQCmHxTwTYhV6dA=="
+				},
+				"code": "LpLtLiveDiffExamples compile: 'fromJson\n    ^ ''{\n  \"__schema\": \"4.1\", \"__type\": \"page\",\n  \"children\": { \"__type\": \"snippets\", \"items\": [\n    { \"__type\": \"textSnippet\", \"string\": \"Introduccion\", \"uid\": { \"__type\": \"uuid\", \"uuid\": \"00000000-0000-0000-0001-000000000001\" }, \"editTime\": { \"__type\": \"time\", \"time\": { \"__type\": \"dateAndTime\", \"dateAndTimeString\": \"2024-01-01T00:00:00+00:00\" } }, \"createTime\": { \"__type\": \"time\", \"time\": { \"__type\": \"dateAndTime\", \"dateAndTimeString\": \"2024-01-01T00:00:00+00:00\" } } },\n    { \"__type\": \"textSnippet\", \"string\": \"Texto original\", \"uid\": { \"__type\": \"uuid\", \"uuid\": \"00000000-0000-0000-0002-000000000001\" }, \"editTime\": { \"__type\": \"time\", \"time\": { \"__type\": \"dateAndTime\", \"dateAndTimeString\": \"2024-01-01T00:00:00+00:00\" } }, \"createTime\": { \"__type\": \"time\", \"time\": { \"__type\": \"dateAndTime\", \"dateAndTimeString\": \"2024-01-01T00:00:00+00:00\" } } },\n    { \"__type\": \"textSnippet\", \"string\": \"Snippet eliminado\", \"uid\": { \"__type\": \"uuid\", \"uuid\": \"00000000-0000-0000-0003-000000000001\" }, \"editTime\": { \"__type\": \"time\", \"time\": { \"__type\": \"dateAndTime\", \"dateAndTimeString\": \"2024-01-01T00:00:00+00:00\" } }, \"createTime\": { \"__type\": \"time\", \"time\": { \"__type\": \"dateAndTime\", \"dateAndTimeString\": \"2024-01-01T00:00:00+00:00\" } } }\n  ] },\n  \"createEmail\": { \"__type\": \"email\", \"emailString\": \"<unknown>\" },\n  \"createTime\": { \"__type\": \"time\", \"time\": { \"__type\": \"dateAndTime\", \"dateAndTimeString\": \"2024-01-01T00:00:00+00:00\" } },\n  \"editEmail\": { \"__type\": \"email\", \"emailString\": \"<unknown>\" },\n  \"editTime\": { \"__type\": \"time\", \"time\": { \"__type\": \"dateAndTime\", \"dateAndTimeString\": \"2024-01-01T00:00:00+00:00\" } },\n  \"pageType\": { \"__type\": \"namedPage\", \"title\": \"From Version\" },\n  \"uid\": { \"__type\": \"uuid\", \"uuid\": \"ffff0000-0000-0000-0000-000000000001\" }\n}''\n' classified: 'private - fixtures'.\n\nLpLtLiveDiffExamples compile: 'toJson\n    ^ ''{\n  \"__schema\": \"4.1\", \"__type\": \"page\",\n  \"children\": { \"__type\": \"snippets\", \"items\": [\n    { \"__type\": \"textSnippet\", \"string\": \"Introduccion\", \"uid\": { \"__type\": \"uuid\", \"uuid\": \"00000000-0000-0000-0001-000000000001\" }, \"editTime\": { \"__type\": \"time\", \"time\": { \"__type\": \"dateAndTime\", \"dateAndTimeString\": \"2024-01-01T00:00:00+00:00\" } }, \"createTime\": { \"__type\": \"time\", \"time\": { \"__type\": \"dateAndTime\", \"dateAndTimeString\": \"2024-01-01T00:00:00+00:00\" } } },\n    { \"__type\": \"textSnippet\", \"string\": \"Texto modificado\", \"uid\": { \"__type\": \"uuid\", \"uuid\": \"00000000-0000-0000-0002-000000000001\" }, \"editTime\": { \"__type\": \"time\", \"time\": { \"__type\": \"dateAndTime\", \"dateAndTimeString\": \"2024-01-01T00:00:00+00:00\" } }, \"createTime\": { \"__type\": \"time\", \"time\": { \"__type\": \"dateAndTime\", \"dateAndTimeString\": \"2024-01-01T00:00:00+00:00\" } } },\n    { \"__type\": \"textSnippet\", \"string\": \"Snippet anadido\", \"uid\": { \"__type\": \"uuid\", \"uuid\": \"00000000-0000-0000-0004-000000000001\" }, \"editTime\": { \"__type\": \"time\", \"time\": { \"__type\": \"dateAndTime\", \"dateAndTimeString\": \"2024-01-01T00:00:00+00:00\" } }, \"createTime\": { \"__type\": \"time\", \"time\": { \"__type\": \"dateAndTime\", \"dateAndTimeString\": \"2024-01-01T00:00:00+00:00\" } } }\n  ] },\n  \"createEmail\": { \"__type\": \"email\", \"emailString\": \"<unknown>\" },\n  \"createTime\": { \"__type\": \"time\", \"time\": { \"__type\": \"dateAndTime\", \"dateAndTimeString\": \"2024-01-01T00:00:00+00:00\" } },\n  \"editEmail\": { \"__type\": \"email\", \"emailString\": \"<unknown>\" },\n  \"editTime\": { \"__type\": \"time\", \"time\": { \"__type\": \"dateAndTime\", \"dateAndTimeString\": \"2024-01-01T00:00:00+00:00\" } },\n  \"pageType\": { \"__type\": \"namedPage\", \"title\": \"To Version\" },\n  \"uid\": { \"__type\": \"uuid\", \"uuid\": \"ffff0000-0000-0000-0000-000000000002\" }\n}''\n' classified: 'private - fixtures'."
+			},
+			{
+				"__type": "exampleSnippet",
+				"children": {
+					"__type": "snippets",
+					"items": []
+				},
+				"exampleSelector": "examplePageDiffComputesRows",
+				"previewHeight": 200,
+				"previewShowSelector": "gtViewsFor:",
+				"exampleBehaviorName": "LpLtLiveDiffExamples",
+				"codeExpanded": true,
+				"previewExpanded": false,
+				"noCode": false
+			},
+			{
+				"__type": "textSnippet",
+				"children": {
+					"__type": "snippets",
+					"items": []
+				},
+				"createEmail": {
+					"__type": "email",
+					"emailString": "<unknown>"
+				},
+				"createTime": {
+					"__type": "time",
+					"time": {
+						"__type": "dateAndTime",
+						"dateAndTimeString": "2026-03-23T09:58:04.27272+01:00"
+					}
+				},
+				"editEmail": {
+					"__type": "email",
+					"emailString": "<unknown>"
+				},
+				"editTime": {
+					"__type": "time",
+					"time": {
+						"__type": "dateAndTime",
+						"dateAndTimeString": "2026-03-23T20:54:36.180398+01:00"
+					}
+				},
+				"uid": {
+					"__type": "uid",
+					"uidString": "cLt4IEY1TF2Awoq4EQFnbw=="
+				},
+				"paragraphStyle": {
+					"__type": "textStyle"
+				},
+				"string": "### Extensión IceNode: nueva pestaña \"Live Diff (two panes)\"\n\n`exampleIceNodeLiveDiffView` (iteración 4). Verificamos con BlScripter que el inspector de un `IceNode` de fichero `.lepiter` modificado muestra la pestaña \"Live Diff (two panes)\". La extensión `gtViewLiveTwoPanesDiffFor:` (categoría `*Lepiter-Literate-Diff`) añade la pestaña con priority 18 — justo antes que el `Diff (two panes)` existente (priority 19)."
+			},
+			{
+				"__type": "pharoSnippet",
+				"children": {
+					"__type": "snippets",
+					"items": []
+				},
+				"code": "LpLtLiveDiffExamples compile: 'exampleIceNodeLiveDiffView\n    <gtExample>\n    <description: ''El inspector de un IceNode de fichero .lepiter muestra la pestaña Live Diff (two panes)''>\n    <return: #BlScripter>\n    <after: #cleanUpLepiterExamples>\n    | ex gtRepo diff iceNode pager scripter |\n    ex := GtIceLepiterExamples new.\n    gtRepo := ex gitRepositoryAEditExistingPage.\n    diff := gtRepo workingCopyDiff.\n    iceNode := diff tree children first children first children first.\n    pager := GtInspector createOn: iceNode.\n    scripter := BlScripter new element: pager.\n    scripter checkStep: [:s |\n        s label: ''Live Diff tab exists with correct title''.\n        s exists.\n        s // BrTab; @ [:tab | tab label asString = ''Live Diff (two panes)'']].\n    ^ scripter\n' classified: 'examples'."
+			},
+			{
+				"__type": "textSnippet",
+				"children": {
+					"__type": "snippets",
+					"items": []
+				},
+				"editTime": {
+					"__type": "time",
+					"time": {
+						"__type": "dateAndTime",
+						"dateAndTimeString": "2026-03-23T20:45:40.996596+01:00"
+					}
+				},
+				"paragraphStyle": {
+					"__type": "textStyle"
+				},
+				"string": "**Exploración interactiva**\n\n`GtIceLepiterExamples` proporciona un repositorio Iceberg real con una página `.lepiter` modificada. La cadena `diff tree children first children first children first` recorre: nodo raíz → nodo base de datos → nodo páginas → nodo de la página concreta. Este `IceNode` tiene un `IceModification` cuya `key` termina en `.lepiter`."
+			},
+			{
+				"__type": "pharoSnippet",
+				"children": {
+					"__type": "snippets",
+					"items": []
+				},
+				"code": "| repoName repo ex gtRepo diff iceNode |\n\"limpiar por si hay un repo registrado de una exploración anterior\"\nrepoName := GtIceLepiterExamples new repositoryName.\nrepo := IceRepository registry detect: [:r | r name = repoName] ifNone: [nil].\nrepo ifNotNil: [repo forget].\nex := GtIceLepiterExamples new.\ngtRepo := ex gitRepositoryAEditExistingPage.\ndiff := gtRepo workingCopyDiff.\niceNode := diff tree children first children first children first.\nex cleanUpRepositoriesAndDatabases.\n{ iceNode class name. iceNode value class name. iceNode value key }"
+			},
+			{
+				"__type": "textSnippet",
+				"children": {
+					"__type": "snippets",
+					"items": []
+				},
+				"paragraphStyle": {
+					"__type": "textStyle"
+				},
+				"string": "**Implementación mínima**\n\nEl método guarda `LpLtPageLiveDiffElement` con las dos condiciones de guarda: `value isKindOf: IceOperation` y `value key endsWith: '.lepiter'`. El método de cleanup `cleanUpLepiterExamples` delega a `GtIceLepiterExamples new cleanUpRepositoriesAndDatabases`."
+			},
+			{
+				"__type": "pharoSnippet",
+				"children": {
+					"__type": "snippets",
+					"items": []
+				},
+				"createEmail": {
+					"__type": "email",
+					"emailString": "<unknown>"
+				},
+				"createTime": {
+					"__type": "time",
+					"time": {
+						"__type": "dateAndTime",
+						"dateAndTimeString": "2026-03-23T09:58:08.843646+01:00"
+					}
+				},
+				"editEmail": {
+					"__type": "email",
+					"emailString": "<unknown>"
+				},
+				"editTime": {
+					"__type": "time",
+					"time": {
+						"__type": "dateAndTime",
+						"dateAndTimeString": "2026-03-23T09:58:44.458765+01:00"
+					}
+				},
+				"uid": {
+					"__type": "uid",
+					"uidString": "ErwBotSCQrisfBlYJC79vQ=="
+				},
+				"code": "IceNode compile: 'gtViewLiveTwoPanesDiffFor: aView\n    <gtView>\n    (self value isKindOf: IceOperation) ifFalse: [ ^ aView empty ].\n    ([self value key endsWith: ''.lepiter''] on: Error do: [:e | false]) ifFalse: [ ^ aView empty ].\n    ^ aView explicit\n        title: ''Live Diff (two panes)'';\n        priority: 18;\n        stencil: [\n            LpLtPageLiveDiffElement new\n                fromContents: self value rightContents;\n                toContents: self value leftContents ];\n        yourself\n' classified: '*Lepiter-Literate-Diff'."
+			},
+			{
+				"__type": "pharoSnippet",
+				"children": {
+					"__type": "snippets",
+					"items": []
+				},
+				"code": "LpLtLiveDiffExamples compile: 'cleanUpLepiterExamples\n    GtIceLepiterExamples new cleanUpRepositoriesAndDatabases\n' classified: 'private - cleanup'."
+			},
+			{
+				"__type": "exampleSnippet",
+				"children": {
+					"__type": "snippets",
+					"items": []
+				},
+				"exampleSelector": "exampleIceNodeLiveDiffView",
+				"previewHeight": 200,
+				"previewShowSelector": "gtViewsFor:",
+				"exampleBehaviorName": "LpLtLiveDiffExamples",
+				"codeExpanded": true,
+				"previewExpanded": false,
+				"noCode": false
+			},
+			{
+				"__type": "textSnippet",
+				"children": {
+					"__type": "snippets",
+					"items": []
+				},
+				"createEmail": {
+					"__type": "email",
+					"emailString": "<unknown>"
+				},
+				"createTime": {
+					"__type": "time",
+					"time": {
+						"__type": "dateAndTime",
+						"dateAndTimeString": "2026-03-23T10:18:56.432533+01:00"
+					}
+				},
+				"editEmail": {
+					"__type": "email",
+					"emailString": "<unknown>"
+				},
+				"editTime": {
+					"__type": "time",
+					"time": {
+						"__type": "dateAndTime",
+						"dateAndTimeString": "2026-03-23T17:08:35.954216+01:00"
+					}
+				},
+				"uid": {
+					"__type": "uid",
+					"uidString": "fKh1aOfYTEiBOADX4eqRWg=="
+				},
+				"paragraphStyle": {
+					"__type": "textStyle"
+				},
+				"string": "### Fila `:modified` renderiza un `GtDiffElement`\n\nEl método `build` delega a `buildModified` cuando `status = #modified`. `buildModified` usa `GtDiffBuilder` para calcular el diff entre los textos de ambos snippets y lo pasa a un `GtDiffElement` con `GtDiffFlatAptitude`. El elemento recibe id `#diffElement` para que las aserciones de BlScripter puedan localizarlo. El sizing se hace con `constraintsDo:` — `BlElement` puro no responde a `hMatchParent`; esos métodos sólo existen en subclases que usan `BrLayoutResizerAptitude`. En esta iteración también se recompila `from:to:status:` para añadir la llamada a `build` — es aquí donde el primer ejemplo que verifica rendering lo requiere."
+			},
+			{
+				"__type": "pharoSnippet",
+				"children": {
+					"__type": "snippets",
+					"items": []
+				},
+				"createEmail": {
+					"__type": "email",
+					"emailString": "<unknown>"
+				},
+				"createTime": {
+					"__type": "time",
+					"time": {
+						"__type": "dateAndTime",
+						"dateAndTimeString": "2026-03-23T10:19:05.610968+01:00"
+					}
+				},
+				"editEmail": {
+					"__type": "email",
+					"emailString": "<unknown>"
+				},
+				"editTime": {
+					"__type": "time",
+					"time": {
+						"__type": "dateAndTime",
+						"dateAndTimeString": "2026-03-23T21:03:40.362884+01:00"
+					}
+				},
+				"uid": {
+					"__type": "uid",
+					"uidString": "uH8yv8wJQV+u0UcIAXu2Dg=="
+				},
+				"code": "LpLtLiveDiffExamples compile: 'exampleModifiedRowRendering\n    <gtExample>\n    <description: ''Fila :modified renderiza un GtDiffElement con id #diffElement''>\n    <return: #BlScripter>\n    | row scripter |\n    row := self exampleModifiedRow.\n    scripter := BlScripter new element: row.\n    scripter checkStep: [ :s |\n        s label: ''Modified row contains a GtDiffElement''.\n        s satisfies: [ :el | el isKindOf: GtDiffElement ].\n        s id: #diffElement ].\n    ^ scripter\n' classified: 'examples'."
+			},
+			{
+				"__type": "textSnippet",
+				"children": {
+					"__type": "snippets",
+					"items": []
+				},
+				"createTime": {
+					"__type": "time",
+					"time": {
+						"__type": "dateAndTime",
+						"dateAndTimeString": "2026-03-23T21:03:56.216324+01:00"
+					}
+				},
+				"editTime": {
+					"__type": "time",
+					"time": {
+						"__type": "dateAndTime",
+						"dateAndTimeString": "2026-03-23T21:03:56.216324+01:00"
+					}
+				},
+				"paragraphStyle": {
+					"__type": "textStyle"
+				},
+				"string": "**Exploración interactiva**\n\nUn `GtDiffElement` construido con `GtDiffBuilder` y configurado con `aptitude: GtDiffFlatAptitude` es el elemento visual de diff inline. Verificamos que acepta `id:` y que el id queda accesible para BlScripter."
+			},
+			{
+				"__type": "pharoSnippet",
+				"children": {
+					"__type": "snippets",
+					"items": []
+				},
+				"code": "| change diffEl |\nchange := GtDiffBuilder\n    computeDifferencesFrom: 'Texto original'\n    to: 'Texto modificado'\n    using: GtCharacterGroupDiffSplitter words.\ndiffEl := GtDiffElement onChange: change.\ndiffEl aptitude: GtDiffFlatAptitude.\ndiffEl beSmallSize.\ndiffEl id: #diffElement.\ndiffEl class name , ' - id: ' , diffEl id printString"
+			},
+			{
+				"__type": "textSnippet",
+				"children": {
+					"__type": "snippets",
+					"items": []
+				},
+				"createTime": {
+					"__type": "time",
+					"time": {
+						"__type": "dateAndTime",
+						"dateAndTimeString": "2026-03-23T21:03:56.221215+01:00"
+					}
+				},
+				"editTime": {
+					"__type": "time",
+					"time": {
+						"__type": "dateAndTime",
+						"dateAndTimeString": "2026-03-23T21:03:56.221215+01:00"
+					}
+				},
+				"paragraphStyle": {
+					"__type": "textStyle"
+				},
+				"string": "**Implementación mínima**\n\n`snippetTextFor:` extrae el texto de cualquier subclase de snippet. `build` despacha por `status` — para `#modified` delega a `buildModified`, que construye el `GtDiffElement` con id `#diffElement`. `buildSingleSide` queda como stub para la siguiente iteración. En esta iteración también se recompila `from:to:status:` para añadir la llamada a `build` — es aquí donde el primer ejemplo que verifica rendering lo requiere."
+			},
+			{
+				"__type": "pharoSnippet",
+				"children": {
+					"__type": "snippets",
+					"items": []
+				},
+				"createEmail": {
+					"__type": "email",
+					"emailString": "<unknown>"
+				},
+				"createTime": {
+					"__type": "time",
+					"time": {
+						"__type": "dateAndTime",
+						"dateAndTimeString": "2026-03-23T10:20:08.18316+01:00"
+					}
+				},
+				"editEmail": {
+					"__type": "email",
+					"emailString": "<unknown>"
+				},
+				"editTime": {
+					"__type": "time",
+					"time": {
+						"__type": "dateAndTime",
+						"dateAndTimeString": "2026-03-23T21:03:40.367109+01:00"
+					}
+				},
+				"uid": {
+					"__type": "uid",
+					"uidString": "4y+CORyNSFiwM2Wg4yakOQ=="
+				},
+				"code": "LpLtSnippetDiffRowElement class compile: 'from: aFromSnippet to: aToSnippet status: aStatus\n    | row |\n    row := self new.\n    row pvtFromSnippet: aFromSnippet.\n    row pvtToSnippet: aToSnippet.\n    row pvtStatus: aStatus.\n    row build.\n    ^ row\n' classified: 'instance creation'.\n\nLpLtSnippetDiffRowElement compile: 'snippetTextFor: aSnippet\n    (aSnippet isKindOf: LeTextualSnippet) ifTrue: [ ^ aSnippet string ].\n    (aSnippet isKindOf: LeCodeSnippet) ifTrue: [ ^ aSnippet code ].\n    ^ aSnippet printString\n' classified: 'private'.\n\nLpLtSnippetDiffRowElement compile: 'build\n    self layout: BlLinearLayout horizontal.\n    self constraintsDo: [:c | c horizontal matchParent. c vertical fitContent].\n    status = #modified ifTrue: [ ^ self buildModified ].\n    self buildSingleSide\n' classified: 'building'.\n\nLpLtSnippetDiffRowElement compile: 'buildModified\n    | change diffEl |\n    change := GtDiffBuilder\n        computeDifferencesFrom: (self snippetTextFor: fromSnippet)\n        to: (self snippetTextFor: toSnippet)\n        using: GtCharacterGroupDiffSplitter words.\n    diffEl := GtDiffElement onChange: change.\n    diffEl aptitude: GtDiffFlatAptitude.\n    diffEl beSmallSize.\n    diffEl constraintsDo: [:c | c horizontal matchParent].\n    diffEl id: #diffElement.\n    self addChild: diffEl\n' classified: 'building'.\n\nLpLtSnippetDiffRowElement compile: 'buildSingleSide\n    \"Stub — implemented in next iteration\"\n' classified: 'building'."
+			},
+			{
+				"__type": "exampleSnippet",
+				"children": {
+					"__type": "snippets",
+					"items": []
+				},
+				"exampleSelector": "exampleModifiedRowRendering",
+				"previewHeight": 200,
+				"previewShowSelector": "gtViewsFor:",
+				"exampleBehaviorName": "LpLtLiveDiffExamples",
+				"codeExpanded": true,
+				"previewExpanded": false,
+				"noCode": false
+			},
+			{
+				"__type": "textSnippet",
+				"children": {
+					"__type": "snippets",
+					"items": []
+				},
+				"createEmail": {
+					"__type": "email",
+					"emailString": "<unknown>"
+				},
+				"createTime": {
+					"__type": "time",
+					"time": {
+						"__type": "dateAndTime",
+						"dateAndTimeString": "2026-03-23T10:20:16.173231+01:00"
+					}
+				},
+				"editEmail": {
+					"__type": "email",
+					"emailString": "<unknown>"
+				},
+				"editTime": {
+					"__type": "time",
+					"time": {
+						"__type": "dateAndTime",
+						"dateAndTimeString": "2026-03-23T10:20:16.173231+01:00"
+					}
+				},
+				"uid": {
+					"__type": "uid",
+					"uidString": "h+49fdPcRlC+ocMKydvIPQ=="
+				},
+				"paragraphStyle": {
+					"__type": "textStyle"
+				},
+				"string": "### Filas `:added` y `:removed` tienen colores y paneles correctos\n\n`buildSingleSide` asigna el color de fondo según status (`Color r: 0.9 g: 1.0 b: 0.9` para `:added`, `Color r: 1.0 g: 0.9 b: 0.9` para `:removed`, gris muy claro para `:unchanged`) y construye dos paneles `#leftPanel` y `#rightPanel`. El panel del lado del snippet ausente queda vacío; el del lado presente contiene un `BrLabel` con el texto del snippet."
+			},
+			{
+				"__type": "pharoSnippet",
+				"children": {
+					"__type": "snippets",
+					"items": []
+				},
+				"createEmail": {
+					"__type": "email",
+					"emailString": "<unknown>"
+				},
+				"createTime": {
+					"__type": "time",
+					"time": {
+						"__type": "dateAndTime",
+						"dateAndTimeString": "2026-03-23T10:20:23.005053+01:00"
+					}
+				},
+				"editEmail": {
+					"__type": "email",
+					"emailString": "<unknown>"
+				},
+				"editTime": {
+					"__type": "time",
+					"time": {
+						"__type": "dateAndTime",
+						"dateAndTimeString": "2026-03-23T21:07:30.038905+01:00"
+					}
+				},
+				"uid": {
+					"__type": "uid",
+					"uidString": "hMbNJ9ruQliv7Sp6kbW68Q=="
+				},
+				"code": "LpLtLiveDiffExamples compile: 'exampleAddedRowRendering\n    <gtExample>\n    <description: ''Fila :added tiene fondo verde, panel izquierdo vacio y panel derecho con texto''>\n    <return: #BlScripter>\n    | row scripter |\n    row := self exampleAddedRow.\n    scripter := BlScripter new element: row.\n    scripter checkStep: [ :s |\n        s label: ''Added row has green background''.\n        s value: [ :el | el background paint color ]\n            equals: [ Color r: 0.9 g: 1.0 b: 0.9 ] ].\n    scripter checkStep: [ :s |\n        s label: ''Left panel is empty''.\n        s value: [ :el | el children size ] equals: [ 0 ].\n        s id: #leftPanel ].\n    scripter checkStep: [ :s |\n        s label: ''Right panel has one child''.\n        s value: [ :el | el children size ] equals: [ 1 ].\n        s id: #rightPanel ].\n    ^ scripter\n' classified: 'examples'.\n\nLpLtLiveDiffExamples compile: 'exampleRemovedRowRendering\n    <gtExample>\n    <description: ''Fila :removed tiene fondo rojo, panel izquierdo con texto y panel derecho vacio''>\n    <return: #BlScripter>\n    | row scripter |\n    row := self exampleRemovedRow.\n    scripter := BlScripter new element: row.\n    scripter checkStep: [ :s |\n        s label: ''Removed row has red background''.\n        s value: [ :el | el background paint color ]\n            equals: [ Color r: 1.0 g: 0.9 b: 0.9 ] ].\n    scripter checkStep: [ :s |\n        s label: ''Left panel has one child''.\n        s value: [ :el | el children size ] equals: [ 1 ].\n        s id: #leftPanel ].\n    scripter checkStep: [ :s |\n        s label: ''Right panel is empty''.\n        s value: [ :el | el children size ] equals: [ 0 ].\n        s id: #rightPanel ].\n    ^ scripter\n' classified: 'examples'."
+			},
+			{
+				"__type": "textSnippet",
+				"children": {
+					"__type": "snippets",
+					"items": []
+				},
+				"createTime": {
+					"__type": "time",
+					"time": {
+						"__type": "dateAndTime",
+						"dateAndTimeString": "2026-03-23T21:07:30.044416+01:00"
+					}
+				},
+				"editTime": {
+					"__type": "time",
+					"time": {
+						"__type": "dateAndTime",
+						"dateAndTimeString": "2026-03-23T21:07:30.044416+01:00"
+					}
+				},
+				"paragraphStyle": {
+					"__type": "textStyle"
+				},
+				"string": "**Exploración interactiva**\n\nEl método `buildSingleSide` construye dos paneles con ids `#leftPanel` y `#rightPanel`. El color de fondo se aplica al elemento raíz. Verificamos que `background:` acepta un `Color` y que el valor es recuperable via `background paint color`."
+			},
+			{
+				"__type": "pharoSnippet",
+				"children": {
+					"__type": "snippets",
+					"items": []
+				},
+				"code": "| el |\nel := BlElement new.\nel background: (Color r: 0.9 g: 1.0 b: 0.9).\nel background paint color"
+			},
+			{
+				"__type": "textSnippet",
+				"children": {
+					"__type": "snippets",
+					"items": []
+				},
+				"createTime": {
+					"__type": "time",
+					"time": {
+						"__type": "dateAndTime",
+						"dateAndTimeString": "2026-03-23T21:07:30.047693+01:00"
+					}
+				},
+				"editTime": {
+					"__type": "time",
+					"time": {
+						"__type": "dateAndTime",
+						"dateAndTimeString": "2026-03-23T21:07:30.047693+01:00"
+					}
+				},
+				"paragraphStyle": {
+					"__type": "textStyle"
+				},
+				"string": "**Implementación mínima**\n\n`buildSingleSide` usa `BlElement` puro para los paneles con `constraintsDo:` para el sizing, y aplica el color de fondo al propio elemento fila según `status`. Los paneles del lado ausente (`fromSnippet` o `toSnippet` nil) se dejan vacíos."
+			},
+			{
+				"__type": "pharoSnippet",
+				"children": {
+					"__type": "snippets",
+					"items": []
+				},
+				"createEmail": {
+					"__type": "email",
+					"emailString": "<unknown>"
+				},
+				"createTime": {
+					"__type": "time",
+					"time": {
+						"__type": "dateAndTime",
+						"dateAndTimeString": "2026-03-23T10:20:33.864753+01:00"
+					}
+				},
+				"editEmail": {
+					"__type": "email",
+					"emailString": "<unknown>"
+				},
+				"editTime": {
+					"__type": "time",
+					"time": {
+						"__type": "dateAndTime",
+						"dateAndTimeString": "2026-03-23T21:07:30.042615+01:00"
+					}
+				},
+				"uid": {
+					"__type": "uid",
+					"uidString": "LjiREzNfRzGKVZC+//9srQ=="
+				},
+				"code": "LpLtSnippetDiffRowElement compile: 'buildSingleSide\n    | leftPanel rightPanel bgColor |\n    bgColor := status = #added\n        ifTrue: [ Color r: 0.9 g: 1.0 b: 0.9 ]\n        ifFalse: [ status = #removed\n            ifTrue: [ Color r: 1.0 g: 0.9 b: 0.9 ]\n            ifFalse: [ Color veryLightGray ] ].\n    self background: bgColor.\n\n    leftPanel := BlElement new.\n    leftPanel id: #leftPanel.\n    leftPanel constraintsDo: [:c | c horizontal matchParent. c vertical fitContent].\n    fromSnippet ifNotNil: [\n        leftPanel addChild: (BrLabel new text: (self snippetTextFor: fromSnippet)) ].\n\n    rightPanel := BlElement new.\n    rightPanel id: #rightPanel.\n    rightPanel constraintsDo: [:c | c horizontal matchParent. c vertical fitContent].\n    toSnippet ifNotNil: [\n        rightPanel addChild: (BrLabel new text: (self snippetTextFor: toSnippet)) ].\n\n    self addChild: leftPanel.\n    self addChild: rightPanel\n' classified: 'building'."
+			},
+			{
+				"__type": "exampleSnippet",
+				"children": {
+					"__type": "snippets",
+					"items": []
+				},
+				"exampleSelector": "exampleAddedRowRendering",
+				"previewHeight": 200,
+				"previewShowSelector": "gtViewsFor:",
+				"exampleBehaviorName": "LpLtLiveDiffExamples",
+				"codeExpanded": true,
+				"previewExpanded": false,
+				"noCode": false
+			},
+			{
+				"__type": "exampleSnippet",
+				"children": {
+					"__type": "snippets",
+					"items": []
+				},
+				"exampleSelector": "exampleRemovedRowRendering",
+				"previewHeight": 200,
+				"previewShowSelector": "gtViewsFor:",
+				"exampleBehaviorName": "LpLtLiveDiffExamples",
+				"codeExpanded": true,
+				"previewExpanded": false,
+				"noCode": false
+			},
+			{
+				"__type": "textSnippet",
+				"children": {
+					"__type": "snippets",
+					"items": []
+				},
+				"createEmail": {
+					"__type": "email",
+					"emailString": "<unknown>"
+				},
+				"createTime": {
+					"__type": "time",
+					"time": {
+						"__type": "dateAndTime",
+						"dateAndTimeString": "2026-03-23T10:20:41.187769+01:00"
+					}
+				},
+				"editEmail": {
+					"__type": "email",
+					"emailString": "<unknown>"
+				},
+				"editTime": {
+					"__type": "time",
+					"time": {
+						"__type": "dateAndTime",
+						"dateAndTimeString": "2026-03-23T10:20:41.187769+01:00"
+					}
+				},
+				"uid": {
+					"__type": "uid",
+					"uidString": "c1QjA5r5Si2+mj1U3i5MyQ=="
+				},
+				"paragraphStyle": {
+					"__type": "textStyle"
+				},
+				"string": "### `LpLtPageLiveDiffElement` renderiza header, toolbar y lista de filas\n\n`buildDiff` ahora construye tres zonas además de calcular `diffRows`: un `#header` con dos `BrLabel` (\"Repository:\" y \"Working Copy (local):\"), un `#toolbar` con un `BrButton` que llama a `toggleUnchanged`, y un `#rowsPane` `BrVerticalPane` que contiene todas las filas. `showUnchanged` se inicializa a `true`."
+			},
+			{
+				"__type": "pharoSnippet",
+				"children": {
+					"__type": "snippets",
+					"items": []
+				},
+				"createEmail": {
+					"__type": "email",
+					"emailString": "<unknown>"
+				},
+				"createTime": {
+					"__type": "time",
+					"time": {
+						"__type": "dateAndTime",
+						"dateAndTimeString": "2026-03-23T10:20:49.876382+01:00"
+					}
+				},
+				"editEmail": {
+					"__type": "email",
+					"emailString": "<unknown>"
+				},
+				"editTime": {
+					"__type": "time",
+					"time": {
+						"__type": "dateAndTime",
+						"dateAndTimeString": "2026-03-23T21:10:51.682713+01:00"
+					}
+				},
+				"uid": {
+					"__type": "uid",
+					"uidString": "S9924szASHO2X8155tPUJQ=="
+				},
+				"code": "LpLtLiveDiffExamples compile: 'examplePageDiffRendering\n    <gtExample>\n    <description: ''LpLtPageLiveDiffElement renderiza header con 2 labels, toolbar con BrButton y rowsPane con 4 filas''>\n    <return: #BlScripter>\n    | el scripter |\n    el := self examplePageDiffComputesRows.\n    scripter := BlScripter new element: el.\n    scripter checkStep: [ :s |\n        s label: ''Header has 2 label children''.\n        s value: [ :h | h children size ] equals: [ 2 ].\n        s id: #header ].\n    scripter checkStep: [ :s |\n        s label: ''Toolbar contains a BrButton''.\n        s satisfies: [ :btn | btn isKindOf: BrButton ].\n        s id: #toolbar; / BrButton ].\n    scripter checkStep: [ :s |\n        s label: ''Rows pane has 4 rows''.\n        s value: [ :pane | pane children size ] equals: [ 4 ].\n        s id: #rowsPane ].\n    ^ scripter\n' classified: 'examples'."
+			},
+			{
+				"__type": "textSnippet",
+				"children": {
+					"__type": "snippets",
+					"items": []
+				},
+				"createTime": {
+					"__type": "time",
+					"time": {
+						"__type": "dateAndTime",
+						"dateAndTimeString": "2026-03-23T21:10:51.689872+01:00"
+					}
+				},
+				"editTime": {
+					"__type": "time",
+					"time": {
+						"__type": "dateAndTime",
+						"dateAndTimeString": "2026-03-23T21:10:51.689872+01:00"
+					}
+				},
+				"paragraphStyle": {
+					"__type": "textStyle"
+				},
+				"string": "**Exploración interactiva**\n\n`buildDiff` construye tres zonas: header, toolbar y rowsPane. Verificamos que `BrHorizontalPane` acepta hijos `BrLabel` y que el conteo de hijos es correcto — la misma estructura que usará `buildDiff` para el header."
+			},
+			{
+				"__type": "pharoSnippet",
+				"children": {
+					"__type": "snippets",
+					"items": []
+				},
+				"code": "| header |\nheader := BrHorizontalPane new hMatchParent; vFitContent.\nheader addChild: (BrLabel new text: 'Repository:').\nheader addChild: (BrLabel new text: 'Working Copy (local):').\nheader children size"
+			},
+			{
+				"__type": "textSnippet",
+				"children": {
+					"__type": "snippets",
+					"items": []
+				},
+				"createTime": {
+					"__type": "time",
+					"time": {
+						"__type": "dateAndTime",
+						"dateAndTimeString": "2026-03-23T21:10:51.692704+01:00"
+					}
+				},
+				"editTime": {
+					"__type": "time",
+					"time": {
+						"__type": "dateAndTime",
+						"dateAndTimeString": "2026-03-23T21:10:51.692704+01:00"
+					}
+				},
+				"paragraphStyle": {
+					"__type": "textStyle"
+				},
+				"string": "**Implementación mínima**\n\n`buildDiff` construye el `#header` con dos `BrLabel`, el `#toolbar` con un `BrButton` cuya acción llama a `toggleUnchanged`, y el `#rowsPane` que contiene todas las filas. `toggleUnchanged` alterna `showUnchanged` y aplica `BlVisibility gone` / `visible` a las filas `:unchanged`."
+			},
+			{
+				"__type": "pharoSnippet",
+				"children": {
+					"__type": "snippets",
+					"items": []
+				},
+				"createEmail": {
+					"__type": "email",
+					"emailString": "<unknown>"
+				},
+				"createTime": {
+					"__type": "time",
+					"time": {
+						"__type": "dateAndTime",
+						"dateAndTimeString": "2026-03-23T10:20:56.888662+01:00"
+					}
+				},
+				"editEmail": {
+					"__type": "email",
+					"emailString": "<unknown>"
+				},
+				"editTime": {
+					"__type": "time",
+					"time": {
+						"__type": "dateAndTime",
+						"dateAndTimeString": "2026-03-23T21:10:51.68775+01:00"
+					}
+				},
+				"uid": {
+					"__type": "uid",
+					"uidString": "H3ChMpQwQWaqLcJpQ1AB5Q=="
+				},
+				"code": "LpLtPageLiveDiffElement compile: 'buildDiff\n    | header toolbar rowsPane |\n    diffRows := self computeDiffRows.\n\n    header := BrHorizontalPane new.\n    header id: #header.\n    header hMatchParent; vFitContent.\n    header addChild: (BrLabel new text: ''Repository:'').\n    header addChild: (BrLabel new text: ''Working Copy (local):'').\n\n    toolbar := BrHorizontalPane new.\n    toolbar id: #toolbar.\n    toolbar hMatchParent; vFitContent.\n    toolbar addChild: (BrButton new\n        label: ''Hide unchanged'';\n        action: [ self toggleUnchanged ];\n        yourself).\n\n    rowsPane := BrVerticalPane new.\n    rowsPane id: #rowsPane.\n    rowsPane hMatchParent; vFitContent.\n    diffRows do: [:row | rowsPane addChild: row].\n\n    self layout: BlLinearLayout vertical.\n    self constraintsDo: [:c | c horizontal matchParent. c vertical fitContent].\n    self addChildren: { header. toolbar. rowsPane }.\n    showUnchanged := true\n' classified: 'building'.\n\nLpLtPageLiveDiffElement compile: 'toggleUnchanged\n    showUnchanged := showUnchanged not.\n    diffRows do: [:row |\n        row status = #unchanged ifTrue: [\n            row visibility: (showUnchanged\n                ifTrue: [ BlVisibility visible ]\n                ifFalse: [ BlVisibility gone ]) ] ]\n' classified: 'building'."
+			},
+			{
+				"__type": "exampleSnippet",
+				"children": {
+					"__type": "snippets",
+					"items": []
+				},
+				"exampleSelector": "examplePageDiffRendering",
+				"previewHeight": 200,
+				"previewShowSelector": "gtViewsFor:",
+				"exampleBehaviorName": "LpLtLiveDiffExamples",
+				"codeExpanded": true,
+				"previewExpanded": false,
+				"noCode": false
+			},
+			{
+				"__type": "textSnippet",
+				"children": {
+					"__type": "snippets",
+					"items": []
+				},
+				"createEmail": {
+					"__type": "email",
+					"emailString": "<unknown>"
+				},
+				"createTime": {
+					"__type": "time",
+					"time": {
+						"__type": "dateAndTime",
+						"dateAndTimeString": "2026-03-23T10:21:02.499514+01:00"
+					}
+				},
+				"editEmail": {
+					"__type": "email",
+					"emailString": "<unknown>"
+				},
+				"editTime": {
+					"__type": "time",
+					"time": {
+						"__type": "dateAndTime",
+						"dateAndTimeString": "2026-03-23T10:21:02.499514+01:00"
+					}
+				},
+				"uid": {
+					"__type": "uid",
+					"uidString": "f9kKmEaQSnu5GuTvhPfiAg=="
+				},
+				"paragraphStyle": {
+					"__type": "textStyle"
+				},
+				"string": "### `toggleUnchanged` oculta las filas sin cambios\n\n`toggleUnchanged` alterna `showUnchanged` y actualiza la visibilidad de todas las filas con status `:unchanged` usando `BlVisibility gone` (desaparecen sin dejar hueco) o `BlVisibility visible`. La primera fila de nuestro fixture (`#unchanged`) es la que cambia de visibilidad."
+			},
+			{
+				"__type": "pharoSnippet",
+				"children": {
+					"__type": "snippets",
+					"items": []
+				},
+				"createEmail": {
+					"__type": "email",
+					"emailString": "<unknown>"
+				},
+				"createTime": {
+					"__type": "time",
+					"time": {
+						"__type": "dateAndTime",
+						"dateAndTimeString": "2026-03-23T10:21:08.547016+01:00"
+					}
+				},
+				"editEmail": {
+					"__type": "email",
+					"emailString": "<unknown>"
+				},
+				"editTime": {
+					"__type": "time",
+					"time": {
+						"__type": "dateAndTime",
+						"dateAndTimeString": "2026-03-23T10:21:08.547016+01:00"
+					}
+				},
+				"uid": {
+					"__type": "uid",
+					"uidString": "43/7sITzQr6H6qd/guLRmw=="
+				},
+				"code": "LpLtLiveDiffExamples compile: 'examplePageDiffToggleUnchanged\n    <gtExample>\n    <description: ''Tras toggleUnchanged las filas :unchanged tienen visibilidad gone''>\n    <return: #BlScripter>\n    | el scripter |\n    el := self examplePageDiffComputesRows.\n    scripter := BlScripter new element: el.\n    scripter doStep: [ :s |\n        s label: ''Toggle unchanged rows''.\n        s block: [ el toggleUnchanged ] ].\n    scripter checkStep: [ :s |\n        s label: ''Unchanged row (first) has visibility gone''.\n        s value: [ :row | row visibility ]\n            equals: [ BlVisibility gone ].\n        s id: #rowsPane; onChildAt: 1 ].\n    ^ scripter\n' classified: 'examples'."
+			},
+			{
+				"__type": "textSnippet",
+				"children": {
+					"__type": "snippets",
+					"items": []
+				},
+				"createEmail": {
+					"__type": "email",
+					"emailString": "<unknown>"
+				},
+				"createTime": {
+					"__type": "time",
+					"time": {
+						"__type": "dateAndTime",
+						"dateAndTimeString": "2026-03-24T10:30:00.000000+01:00"
+					}
+				},
+				"editEmail": {
+					"__type": "email",
+					"emailString": "<unknown>"
+				},
+				"editTime": {
+					"__type": "time",
+					"time": {
+						"__type": "dateAndTime",
+						"dateAndTimeString": "2026-03-24T10:30:00.000000+01:00"
+					}
+				},
+				"uid": {
+					"__type": "uid",
+					"uidString": "hf6f0ZXrNU836dEOfsFCWA=="
+				},
+				"paragraphStyle": {
+					"__type": "textStyle"
+				},
+				"string": "**Exploración interactiva**\n\n`BlVisibility gone` hace que un elemento desaparezca sin dejar hueco (no ocupa espacio en el layout), a diferencia de `BlVisibility hidden` que lo oculta pero reserva el espacio. Verificamos el comportamiento directamente."
+			},
+			{
+				"__type": "pharoSnippet",
+				"children": {
+					"__type": "snippets",
+					"items": []
+				},
+				"code": "| el |\nel := BlElement new size: 100@50.\nel visibility: BlVisibility gone.\nel visibility = BlVisibility gone"
+			},
+			{
+				"__type": "textSnippet",
+				"children": {
+					"__type": "snippets",
+					"items": []
+				},
+				"createEmail": {
+					"__type": "email",
+					"emailString": "<unknown>"
+				},
+				"createTime": {
+					"__type": "time",
+					"time": {
+						"__type": "dateAndTime",
+						"dateAndTimeString": "2026-03-24T10:30:00.000000+01:00"
+					}
+				},
+				"editEmail": {
+					"__type": "email",
+					"emailString": "<unknown>"
+				},
+				"editTime": {
+					"__type": "time",
+					"time": {
+						"__type": "dateAndTime",
+						"dateAndTimeString": "2026-03-24T10:30:00.000000+01:00"
+					}
+				},
+				"uid": {
+					"__type": "uid",
+					"uidString": "yVY8UBrgkjQ9tJ6N0UOyLQ=="
+				},
+				"paragraphStyle": {
+					"__type": "textStyle"
+				},
+				"string": "**Implementación mínima**\n\nNo se requiere código adicional — `toggleUnchanged` fue implementado junto con `buildDiff` en la iteración anterior. Accede a `diffRows`, filtra las filas con `status = #unchanged` y alterna su visibilidad entre `BlVisibility gone` y `BlVisibility visible`."
+			},
+			{
+				"__type": "exampleSnippet",
+				"children": {
+					"__type": "snippets",
+					"items": []
+				},
+				"exampleSelector": "examplePageDiffToggleUnchanged",
+				"previewHeight": 200,
+				"previewShowSelector": "gtViewsFor:",
+				"exampleBehaviorName": "LpLtLiveDiffExamples",
+				"codeExpanded": true,
+				"previewExpanded": false,
+				"noCode": false
+			}
+		]
+	},
+	"createEmail": {
+		"__type": "email",
+		"emailString": "<unknown>"
+	},
+	"createTime": {
+		"__type": "time",
+		"time": {
+			"__type": "dateAndTime",
+			"dateAndTimeString": "2026-03-23T09:51:46.080079+01:00"
+		}
+	},
+	"editEmail": {
+		"__type": "email",
+		"emailString": "<unknown>"
+	},
+	"editTime": {
+		"__type": "time",
+		"time": {
+			"__type": "dateAndTime",
+			"dateAndTimeString": "2026-03-23T09:51:46.080079+01:00"
+		}
+	},
+	"pageType": {
+		"__type": "namedPage",
+		"title": "Live Diff (two panes) para páginas Lepiter"
+	},
+	"uid": {
+		"__type": "uuid",
+		"uuid": "49549058-82ac-4b6c-aa90-da4fb20c8468"
+	}
+}
