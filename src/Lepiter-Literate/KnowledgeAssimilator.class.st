@@ -30,8 +30,10 @@ KnowledgeAssimilator class >> knowledgeSnippetsInPage: aLePage [
 
 { #category : 'processing knowledge' }
 KnowledgeAssimilator class >> processChangesSnippet: aChangesSnippet [
-	aChangesSnippet asSnippetViewModel changes
-		ifNotNil: [ :someChanges | someChanges applyChanges ]
+	LeLiterateProvenance default
+		capturingFor: aChangesSnippet
+		during: [ aChangesSnippet asSnippetViewModel changes
+			ifNotNil: [ :someChanges | someChanges applyChanges ] ]
 ]
 
 { #category : 'processing knowledge' }
@@ -55,7 +57,9 @@ KnowledgeAssimilator class >> processPharoSnippet: aSnippet [
 	bindingsToAdd := sharedBindingsToAdd copyWithAll: localBindingsToAdd.
 	context := aSnippet coder evaluationContext.
 	bindingsToAdd do: [ :aBindingToAdd | context addBindings: aBindingToAdd ].
-	snippetEvaluationResult := aSnippet coder doItInContext: context.
+	LeLiterateProvenance default
+		capturingFor: aSnippet
+		during: [ snippetEvaluationResult := aSnippet coder doItInContext: context ].
 	^ sharedBindingsToAdd := snippetEvaluationResult evaluationContext
 			bindingStrategy bindings
 			select: [ :aBinding | aBinding isKindOf: GtSharedVariablesBindings ]
