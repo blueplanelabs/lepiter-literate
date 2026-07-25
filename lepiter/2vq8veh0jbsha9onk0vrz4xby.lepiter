@@ -282,14 +282,14 @@
 					"__type" : "time",
 					"time" : {
 						"__type" : "dateAndTime",
-						"dateAndTimeString" : "2026-07-26T00:57:26.551653+02:00"
+						"dateAndTimeString" : "2026-07-26T01:18:59.855336+02:00"
 					}
 				},
 				"uid" : {
 					"__type" : "uid",
 					"uidString" : "ZuWtyJWLS8i4hvEseG+1UQ=="
 				},
-				"code" : "Object subclass: #LeLiterateProvenanceExamples\n\tinstanceVariableNames: ''\n\tclassVariableNames: ''\n\tcategory: 'Lepiter-Literate-Examples'"
+				"code" : "Object subclass: #LeLiterateProvenanceExamples\n\tinstanceVariableNames: ''\n\tclassVariableNames: ''\n\tcategory: 'Lepiter-Literate-Examples'.\n\"En imágenes donde ya existe un paquete con ese nombre de categoría, la clase caería\n en un paquete propio; la movemos explícitamente al tag Examples del paquete Lepiter-Literate.\"\n(RPackageOrganizer default packageNamed: 'Lepiter-Literate')\n\tmoveClass: (Smalltalk classNamed: #LeLiterateProvenanceExamples) toTag: 'Examples'\r"
 			},
 			{
 				"__type" : "pharoSnippet",
