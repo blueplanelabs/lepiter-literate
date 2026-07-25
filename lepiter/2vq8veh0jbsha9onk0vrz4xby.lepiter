@@ -1,0 +1,1594 @@
+{
+	"__schema" : "4.1",
+	"__type" : "page",
+	"children" : {
+		"__type" : "snippets",
+		"items" : [
+			{
+				"__type" : "textSnippet",
+				"children" : {
+					"__type" : "snippets",
+					"items" : [ ]
+				},
+				"createEmail" : {
+					"__type" : "email",
+					"emailString" : "<unknown>"
+				},
+				"createTime" : {
+					"__type" : "time",
+					"time" : {
+						"__type" : "dateAndTime",
+						"dateAndTimeString" : "2026-07-26T00:55:33.402683+02:00"
+					}
+				},
+				"editEmail" : {
+					"__type" : "email",
+					"emailString" : "<unknown>"
+				},
+				"editTime" : {
+					"__type" : "time",
+					"time" : {
+						"__type" : "dateAndTime",
+						"dateAndTimeString" : "2026-07-26T00:55:33.402683+02:00"
+					}
+				},
+				"uid" : {
+					"__type" : "uid",
+					"uidString" : "qGKA+O5SRXGY+60imFXluQ=="
+				},
+				"paragraphStyle" : {
+					"__type" : "textStyle"
+				},
+				"string" : "## Introducción\n\nEn Moldable Literate Programming el código fuente se genera (*tangle*) a partir de las descripciones de diseño en páginas Lepiter. Una clase o un método puede nacer en un snippet de una página y ser modificado después por snippets de otras páginas. Esta página construye la infraestructura de **provenance**: un registro que, para cada clase o método generado, mantiene la lista ordenada de snippets (y sus páginas) que lo han creado o modificado.\n\nEl diseño se apoya en tres decisiones:\n\n1. **Captura por observación**: durante la evaluación de cada snippet nos suscribimos a los announcements del sistema (`ClassAdded`, `MethodAdded`, `MethodModified`, …) y atribuimos al snippet todo lo anunciado en esa ventana. Los snippets no declaran nada.\n2. **Registro único global con referencias por UID**: la fuente de verdad es un registro lateral (`LeLiterateProvenance default`) con claves por nombre (`'MiClase'`, `'MiClase>>#selector'`) y entradas que referencian los snippets por su `LeUID`, de modo que la traza sobrevive a recompilaciones y recargas de la base Lepiter. La resolución al snippet vivo es perezosa.\n3. **Filtro explícito de paquetes**: sólo se registran los artefactos de los paquetes declarados como interesantes. Con el filtro vacío no se registra nada — así un snippet que carga un baseline completo no atribuye cientos de clases a una explicación.\n\nLa metainformación se expone después mediante vistas moldables bidireccionales: al inspeccionar una clase o método generado se ve su origen literate, y al inspeccionar un snippet se ve el código que ha generado."
+			},
+			{
+				"__type" : "textSnippet",
+				"children" : {
+					"__type" : "snippets",
+					"items" : [ ]
+				},
+				"createEmail" : {
+					"__type" : "email",
+					"emailString" : "<unknown>"
+				},
+				"createTime" : {
+					"__type" : "time",
+					"time" : {
+						"__type" : "dateAndTime",
+						"dateAndTimeString" : "2026-07-26T00:55:39.734474+02:00"
+					}
+				},
+				"editEmail" : {
+					"__type" : "email",
+					"emailString" : "<unknown>"
+				},
+				"editTime" : {
+					"__type" : "time",
+					"time" : {
+						"__type" : "dateAndTime",
+						"dateAndTimeString" : "2026-07-26T00:55:39.734474+02:00"
+					}
+				},
+				"uid" : {
+					"__type" : "uid",
+					"uidString" : "yuxPr6Y7R8Oth0L367/DbA=="
+				},
+				"paragraphStyle" : {
+					"__type" : "textStyle"
+				},
+				"string" : "## Exploración interactiva\n\nLa pieza clave es `SystemAnnouncer`: cualquier definición o modificación de clases y métodos emite announcements de forma síncrona. Si nos suscribimos justo antes de evaluar un snippet y nos desuscribimos justo después, todo lo capturado en esa ventana pertenece a ese snippet. Observa que al compilar un método de lado clase el `classAffected` es el metaclass (`'X class'`), y que redefinir una clase existente emite `ClassAdded` de nuevo además de `ClassModificationApplied` — por eso la distinción created/modified no puede basarse en el tipo de announcement, sino en si el registro ya conocía la clave."
+			},
+			{
+				"__type" : "pharoSnippet",
+				"children" : {
+					"__type" : "snippets",
+					"items" : [ ]
+				},
+				"createEmail" : {
+					"__type" : "email",
+					"emailString" : "<unknown>"
+				},
+				"createTime" : {
+					"__type" : "time",
+					"time" : {
+						"__type" : "dateAndTime",
+						"dateAndTimeString" : "2026-07-26T00:55:46.927555+02:00"
+					}
+				},
+				"editEmail" : {
+					"__type" : "email",
+					"emailString" : "<unknown>"
+				},
+				"editTime" : {
+					"__type" : "time",
+					"time" : {
+						"__type" : "dateAndTime",
+						"dateAndTimeString" : "2026-07-26T00:55:46.927555+02:00"
+					}
+				},
+				"uid" : {
+					"__type" : "uid",
+					"uidString" : "YpiiW4/RQlW/AHKS4v6y3g=="
+				},
+				"code" : "| captured subscriber |\ncaptured := OrderedCollection new.\nsubscriber := Object new.\n[ SystemAnnouncer uniqueInstance\n\twhen: ClassAdded, ClassModificationApplied, MethodAdded, MethodModified\n\tdo: [ :ann |\n\t\tcaptured add: ann class name , ' | class: '\n\t\t\t, ([ ann classAffected name ] on: Error do: [ :e | '?' ])\n\t\t\t, ' | selector: '\n\t\t\t, ([ ann methodAffected selector ] on: Error do: [ :e | '-' ]) printString ]\n\tfor: subscriber.\n  Object subclass: #LeLiterateAnnouncementProbe\n\tinstanceVariableNames: '' classVariableNames: '' category: 'LeLiterateProvenanceProbe'.\n  (Smalltalk classNamed: #LeLiterateAnnouncementProbe) compile: 'answer ^ 42' classified: 'accessing'.\n  (Smalltalk classNamed: #LeLiterateAnnouncementProbe) class compile: 'defaultAnswer ^ 42' classified: 'accessing' ]\n\tensure: [ SystemAnnouncer uniqueInstance unsubscribe: subscriber ].\n(Smalltalk classNamed: #LeLiterateAnnouncementProbe) removeFromSystem.\ncaptured"
+			},
+			{
+				"__type" : "textSnippet",
+				"children" : {
+					"__type" : "snippets",
+					"items" : [ ]
+				},
+				"createEmail" : {
+					"__type" : "email",
+					"emailString" : "<unknown>"
+				},
+				"createTime" : {
+					"__type" : "time",
+					"time" : {
+						"__type" : "dateAndTime",
+						"dateAndTimeString" : "2026-07-26T00:55:51.526143+02:00"
+					}
+				},
+				"editEmail" : {
+					"__type" : "email",
+					"emailString" : "<unknown>"
+				},
+				"editTime" : {
+					"__type" : "time",
+					"time" : {
+						"__type" : "dateAndTime",
+						"dateAndTimeString" : "2026-07-26T00:55:51.526143+02:00"
+					}
+				},
+				"uid" : {
+					"__type" : "uid",
+					"uidString" : "xK2RTP5pTtuTzlYiS5dW6w=="
+				},
+				"paragraphStyle" : {
+					"__type" : "textStyle"
+				},
+				"string" : "La otra pieza es la identidad estable de los snippets. Un `LeSnippet` recibe su `LeUID` al añadirse a una página, y `LeDatabase>>blockWithUID:` permite recuperarlo después a partir del UID (el argumento debe ser el `LeUID`, no su representación como string). Las entradas del registro guardarán el `LeUID` y compararán por `uidString`."
+			},
+			{
+				"__type" : "pharoSnippet",
+				"children" : {
+					"__type" : "snippets",
+					"items" : [ ]
+				},
+				"createEmail" : {
+					"__type" : "email",
+					"emailString" : "<unknown>"
+				},
+				"createTime" : {
+					"__type" : "time",
+					"time" : {
+						"__type" : "dateAndTime",
+						"dateAndTimeString" : "2026-07-26T00:55:55.705241+02:00"
+					}
+				},
+				"editEmail" : {
+					"__type" : "email",
+					"emailString" : "<unknown>"
+				},
+				"editTime" : {
+					"__type" : "time",
+					"time" : {
+						"__type" : "dateAndTime",
+						"dateAndTimeString" : "2026-07-26T00:55:55.705241+02:00"
+					}
+				},
+				"uid" : {
+					"__type" : "uid",
+					"uidString" : "qyiShtJ4QX+ZEDJx7gobBQ=="
+				},
+				"code" : "| db page snippet |\ndb := LeDatabase new.\npage := db pageBuilder title: 'Página de prueba de UID'; add.\nsnippet := LePharoSnippet new code: '1 + 1'.\npage addSnippet: snippet.\n{ 'uid' -> snippet uid.\n  'uidString' -> snippet uid uidString.\n  'resuelto por UID' -> ((db blockWithUID: snippet uid) == snippet) }"
+			},
+			{
+				"__type" : "textSnippet",
+				"children" : {
+					"__type" : "snippets",
+					"items" : [ ]
+				},
+				"createEmail" : {
+					"__type" : "email",
+					"emailString" : "<unknown>"
+				},
+				"createTime" : {
+					"__type" : "time",
+					"time" : {
+						"__type" : "dateAndTime",
+						"dateAndTimeString" : "2026-07-26T00:57:18.036183+02:00"
+					}
+				},
+				"editEmail" : {
+					"__type" : "email",
+					"emailString" : "<unknown>"
+				},
+				"editTime" : {
+					"__type" : "time",
+					"time" : {
+						"__type" : "dateAndTime",
+						"dateAndTimeString" : "2026-07-26T00:57:18.036183+02:00"
+					}
+				},
+				"uid" : {
+					"__type" : "uid",
+					"uidString" : "2xhRs/9XS8WQU5MHhHNfHg=="
+				},
+				"paragraphStyle" : {
+					"__type" : "textStyle"
+				},
+				"string" : "## Example-driven Development"
+			},
+			{
+				"__type" : "textSnippet",
+				"children" : {
+					"__type" : "snippets",
+					"items" : [ ]
+				},
+				"createEmail" : {
+					"__type" : "email",
+					"emailString" : "<unknown>"
+				},
+				"createTime" : {
+					"__type" : "time",
+					"time" : {
+						"__type" : "dateAndTime",
+						"dateAndTimeString" : "2026-07-26T00:57:23.263801+02:00"
+					}
+				},
+				"editEmail" : {
+					"__type" : "email",
+					"emailString" : "<unknown>"
+				},
+				"editTime" : {
+					"__type" : "time",
+					"time" : {
+						"__type" : "dateAndTime",
+						"dateAndTimeString" : "2026-07-26T00:57:23.263801+02:00"
+					}
+				},
+				"uid" : {
+					"__type" : "uid",
+					"uidString" : "t/H5ALVRQ/GVbHVe11aoVw=="
+				},
+				"paragraphStyle" : {
+					"__type" : "textStyle"
+				},
+				"string" : "### Una entrada de procedencia registra su origen\n\nIteración 1 (`entryRecordsItsOrigin`). La unidad mínima de trazabilidad es la entrada: qué snippet actuó (por `LeUID`), desde qué página y base de datos, con qué acción (`#created`, `#modified`, `#removed`), en qué posición global (`sequence`) y cuándo se aplicó por última vez. El ejemplo verifica que una entrada construida a partir de un snippet real captura todos esos datos."
+			},
+			{
+				"__type" : "pharoSnippet",
+				"children" : {
+					"__type" : "snippets",
+					"items" : [ ]
+				},
+				"createEmail" : {
+					"__type" : "email",
+					"emailString" : "<unknown>"
+				},
+				"createTime" : {
+					"__type" : "time",
+					"time" : {
+						"__type" : "dateAndTime",
+						"dateAndTimeString" : "2026-07-26T00:57:26.551653+02:00"
+					}
+				},
+				"editEmail" : {
+					"__type" : "email",
+					"emailString" : "<unknown>"
+				},
+				"editTime" : {
+					"__type" : "time",
+					"time" : {
+						"__type" : "dateAndTime",
+						"dateAndTimeString" : "2026-07-26T00:57:26.551653+02:00"
+					}
+				},
+				"uid" : {
+					"__type" : "uid",
+					"uidString" : "ZuWtyJWLS8i4hvEseG+1UQ=="
+				},
+				"code" : "Object subclass: #LeLiterateProvenanceExamples\n\tinstanceVariableNames: ''\n\tclassVariableNames: ''\n\tcategory: 'Lepiter-Literate-Examples'"
+			},
+			{
+				"__type" : "pharoSnippet",
+				"children" : {
+					"__type" : "snippets",
+					"items" : [ ]
+				},
+				"createEmail" : {
+					"__type" : "email",
+					"emailString" : "<unknown>"
+				},
+				"createTime" : {
+					"__type" : "time",
+					"time" : {
+						"__type" : "dateAndTime",
+						"dateAndTimeString" : "2026-07-26T00:57:31.879168+02:00"
+					}
+				},
+				"editEmail" : {
+					"__type" : "email",
+					"emailString" : "<unknown>"
+				},
+				"editTime" : {
+					"__type" : "time",
+					"time" : {
+						"__type" : "dateAndTime",
+						"dateAndTimeString" : "2026-07-26T00:57:31.879168+02:00"
+					}
+				},
+				"uid" : {
+					"__type" : "uid",
+					"uidString" : "XlFgWR19QvyNk9iIG61ygw=="
+				},
+				"code" : "LeLiterateProvenanceExamples compile: 'entryRecordsItsOrigin\n\t<gtExample>\n\t| db page snippet entry |\n\tdb := LeDatabase new.\n\tpage := db pageBuilder title: ''Página de origen''; add.\n\tsnippet := LePharoSnippet new code: ''1 + 1''.\n\tpage addSnippet: snippet.\n\tentry := LeLiterateProvenanceEntry forSnippet: snippet action: #created sequence: 1.\n\tself assert: entry snippetUid equals: snippet uid.\n\tself assert: entry pageTitle equals: ''Página de origen''.\n\tself assert: entry action equals: #created.\n\tself assert: entry sequence equals: 1.\n\tself assert: entry lastAppliedAt notNil.\n\t^ entry' classified: 'examples'"
+			},
+			{
+				"__type" : "textSnippet",
+				"children" : {
+					"__type" : "snippets",
+					"items" : [ ]
+				},
+				"createEmail" : {
+					"__type" : "email",
+					"emailString" : "<unknown>"
+				},
+				"createTime" : {
+					"__type" : "time",
+					"time" : {
+						"__type" : "dateAndTime",
+						"dateAndTimeString" : "2026-07-26T00:57:35.960629+02:00"
+					}
+				},
+				"editEmail" : {
+					"__type" : "email",
+					"emailString" : "<unknown>"
+				},
+				"editTime" : {
+					"__type" : "time",
+					"time" : {
+						"__type" : "dateAndTime",
+						"dateAndTimeString" : "2026-07-26T00:57:35.960629+02:00"
+					}
+				},
+				"uid" : {
+					"__type" : "uid",
+					"uidString" : "bHrJjKMvQ6ewNCxPx4Wk5g=="
+				},
+				"paragraphStyle" : {
+					"__type" : "textStyle"
+				},
+				"string" : "**Implementación mínima**: la clase `LeLiterateProvenanceEntry` es un objeto de datos con un constructor de clase que extrae del snippet su `uid`, el título de su página y el nombre de su base (ambos tolerantes a `nil` para snippets aún no anclados a una base registrada)."
+			},
+			{
+				"__type" : "pharoSnippet",
+				"children" : {
+					"__type" : "snippets",
+					"items" : [ ]
+				},
+				"createEmail" : {
+					"__type" : "email",
+					"emailString" : "<unknown>"
+				},
+				"createTime" : {
+					"__type" : "time",
+					"time" : {
+						"__type" : "dateAndTime",
+						"dateAndTimeString" : "2026-07-26T00:57:39.429632+02:00"
+					}
+				},
+				"editEmail" : {
+					"__type" : "email",
+					"emailString" : "<unknown>"
+				},
+				"editTime" : {
+					"__type" : "time",
+					"time" : {
+						"__type" : "dateAndTime",
+						"dateAndTimeString" : "2026-07-26T00:57:39.429632+02:00"
+					}
+				},
+				"uid" : {
+					"__type" : "uid",
+					"uidString" : "6vN6Yw/IR2WCqBf1q2e+fQ=="
+				},
+				"code" : "Object subclass: #LeLiterateProvenanceEntry\n\tinstanceVariableNames: 'snippetUid pageTitle databaseName action sequence lastAppliedAt'\n\tclassVariableNames: ''\n\tcategory: 'Lepiter-Literate-Provenance'"
+			},
+			{
+				"__type" : "pharoSnippet",
+				"children" : {
+					"__type" : "snippets",
+					"items" : [ ]
+				},
+				"createEmail" : {
+					"__type" : "email",
+					"emailString" : "<unknown>"
+				},
+				"createTime" : {
+					"__type" : "time",
+					"time" : {
+						"__type" : "dateAndTime",
+						"dateAndTimeString" : "2026-07-26T00:57:49.601523+02:00"
+					}
+				},
+				"editEmail" : {
+					"__type" : "email",
+					"emailString" : "<unknown>"
+				},
+				"editTime" : {
+					"__type" : "time",
+					"time" : {
+						"__type" : "dateAndTime",
+						"dateAndTimeString" : "2026-07-26T00:57:49.601523+02:00"
+					}
+				},
+				"uid" : {
+					"__type" : "uid",
+					"uidString" : "t3yjHfT0RoGK4z0b5GFBrg=="
+				},
+				"code" : "LeLiterateProvenanceEntry class compile: 'forSnippet: aSnippet action: anAction sequence: aNumber\n\t^ self new\n\t\tsnippetUid: aSnippet uid;\n\t\tpageTitle: (aSnippet page ifNotNil: [ :aPage | aPage title ]);\n\t\tdatabaseName: (aSnippet database ifNotNil: [ :aDatabase | aDatabase databaseName ]);\n\t\taction: anAction;\n\t\tsequence: aNumber;\n\t\tlastAppliedAt: DateAndTime now;\n\t\tyourself' classified: 'instance creation'.\nLeLiterateProvenanceEntry compile: 'snippetUid\n\t^ snippetUid' classified: 'accessing'.\nLeLiterateProvenanceEntry compile: 'snippetUid: aLeUID\n\tsnippetUid := aLeUID' classified: 'accessing'.\nLeLiterateProvenanceEntry compile: 'pageTitle\n\t^ pageTitle' classified: 'accessing'.\nLeLiterateProvenanceEntry compile: 'pageTitle: aString\n\tpageTitle := aString' classified: 'accessing'.\nLeLiterateProvenanceEntry compile: 'databaseName\n\t^ databaseName' classified: 'accessing'.\nLeLiterateProvenanceEntry compile: 'databaseName: aString\n\tdatabaseName := aString' classified: 'accessing'.\nLeLiterateProvenanceEntry compile: 'action\n\t^ action' classified: 'accessing'.\nLeLiterateProvenanceEntry compile: 'action: aSymbol\n\taction := aSymbol' classified: 'accessing'.\nLeLiterateProvenanceEntry compile: 'sequence\n\t^ sequence' classified: 'accessing'.\nLeLiterateProvenanceEntry compile: 'sequence: aNumber\n\tsequence := aNumber' classified: 'accessing'.\nLeLiterateProvenanceEntry compile: 'lastAppliedAt\n\t^ lastAppliedAt' classified: 'accessing'.\nLeLiterateProvenanceEntry compile: 'lastAppliedAt: aDateAndTime\n\tlastAppliedAt := aDateAndTime' classified: 'accessing'.\nLeLiterateProvenanceEntry compile: 'printOn: aStream\n\tsuper printOn: aStream.\n\taStream\n\t\tnextPutAll: '' ('';\n\t\tnextPutAll: self action asString;\n\t\tnextPutAll: '' por snippet de la página: '';\n\t\tnextPutAll: (self pageTitle ifNil: [ ''?'' ]);\n\t\tnextPutAll: '')''' classified: 'printing'"
+			},
+			{
+				"__type" : "exampleSnippet",
+				"children" : {
+					"__type" : "snippets",
+					"items" : [ ]
+				},
+				"createEmail" : {
+					"__type" : "email",
+					"emailString" : "<unknown>"
+				},
+				"createTime" : {
+					"__type" : "time",
+					"time" : {
+						"__type" : "dateAndTime",
+						"dateAndTimeString" : "2026-07-26T00:57:52.545563+02:00"
+					}
+				},
+				"editEmail" : {
+					"__type" : "email",
+					"emailString" : "<unknown>"
+				},
+				"editTime" : {
+					"__type" : "time",
+					"time" : {
+						"__type" : "dateAndTime",
+						"dateAndTimeString" : "2026-07-26T00:57:52.545563+02:00"
+					}
+				},
+				"uid" : {
+					"__type" : "uid",
+					"uidString" : "yoH3c3VSSDqintEy2AZocw=="
+				},
+				"exampleSelector" : "entryRecordsItsOrigin",
+				"previewHeight" : 200,
+				"previewShowSelector" : "gtViewsFor:",
+				"exampleBehaviorName" : "LeLiterateProvenanceExamples",
+				"codeExpanded" : true,
+				"previewExpanded" : false,
+				"noCode" : false
+			},
+			{
+				"__type" : "textSnippet",
+				"children" : {
+					"__type" : "snippets",
+					"items" : [ ]
+				},
+				"createEmail" : {
+					"__type" : "email",
+					"emailString" : "<unknown>"
+				},
+				"createTime" : {
+					"__type" : "time",
+					"time" : {
+						"__type" : "dateAndTime",
+						"dateAndTimeString" : "2026-07-26T00:57:59.103493+02:00"
+					}
+				},
+				"editEmail" : {
+					"__type" : "email",
+					"emailString" : "<unknown>"
+				},
+				"editTime" : {
+					"__type" : "time",
+					"time" : {
+						"__type" : "dateAndTime",
+						"dateAndTimeString" : "2026-07-26T00:57:59.103493+02:00"
+					}
+				},
+				"uid" : {
+					"__type" : "uid",
+					"uidString" : "qiNUFuJLSw2rsuAyFMu5Kg=="
+				},
+				"paragraphStyle" : {
+					"__type" : "textStyle"
+				},
+				"string" : "### La historia de un artefacto es ordenada e idempotente\n\nIteración 2 (`historyKeepsOrderAndIsIdempotent`). Cada clase o método tiene una historia: la lista de entradas en el orden en que los snippets actuaron sobre él. Dos propiedades importan aquí: el **orden** se conserva, y volver a aplicar el mismo snippet (cosa que ocurre en cada re-tangle de la base) **no duplica** su entrada — la refresca, conservando la acción y la posición originales. Así la historia refleja la narrativa (quién lo creó, quién lo modificó después) y no el número de veces que se ha ejecutado el tangle."
+			},
+			{
+				"__type" : "pharoSnippet",
+				"children" : {
+					"__type" : "snippets",
+					"items" : [ ]
+				},
+				"createEmail" : {
+					"__type" : "email",
+					"emailString" : "<unknown>"
+				},
+				"createTime" : {
+					"__type" : "time",
+					"time" : {
+						"__type" : "dateAndTime",
+						"dateAndTimeString" : "2026-07-26T00:58:07.702809+02:00"
+					}
+				},
+				"editEmail" : {
+					"__type" : "email",
+					"emailString" : "<unknown>"
+				},
+				"editTime" : {
+					"__type" : "time",
+					"time" : {
+						"__type" : "dateAndTime",
+						"dateAndTimeString" : "2026-07-26T00:58:07.702809+02:00"
+					}
+				},
+				"uid" : {
+					"__type" : "uid",
+					"uidString" : "mEEhmEOPSBmYzC7dSb9hsQ=="
+				},
+				"code" : "LeLiterateProvenanceExamples compile: 'historyKeepsOrderAndIsIdempotent\n\t<gtExample>\n\t| db page snippetA snippetB history entryA entryB refreshedA |\n\tdb := LeDatabase new.\n\tpage := db pageBuilder title: ''Página de origen''; add.\n\tsnippetA := LePharoSnippet new code: ''1 + 1''.\n\tsnippetB := LePharoSnippet new code: ''2 + 2''.\n\tpage addSnippet: snippetA.\n\tpage addSnippet: snippetB.\n\thistory := LeLiterateCodeHistory new.\n\tentryA := LeLiterateProvenanceEntry forSnippet: snippetA action: #created sequence: 1.\n\tentryB := LeLiterateProvenanceEntry forSnippet: snippetB action: #modified sequence: 2.\n\thistory addEntry: entryA.\n\thistory addEntry: entryB.\n\tself assert: history size equals: 2.\n\tself assert: history entries first action equals: #created.\n\tself assert: history entries second action equals: #modified.\n\t\"Volver a aplicar el mismo snippet no duplica la entrada: la refresca\"\n\trefreshedA := LeLiterateProvenanceEntry forSnippet: snippetA action: #modified sequence: 3.\n\thistory addEntry: refreshedA.\n\tself assert: history size equals: 2.\n\tself assert: history entries first snippetUid equals: snippetA uid.\n\tself assert: history entries first action equals: #created.\n\tself assert: history entries first lastAppliedAt equals: refreshedA lastAppliedAt.\n\t^ history' classified: 'examples'"
+			},
+			{
+				"__type" : "textSnippet",
+				"children" : {
+					"__type" : "snippets",
+					"items" : [ ]
+				},
+				"createEmail" : {
+					"__type" : "email",
+					"emailString" : "<unknown>"
+				},
+				"createTime" : {
+					"__type" : "time",
+					"time" : {
+						"__type" : "dateAndTime",
+						"dateAndTimeString" : "2026-07-26T00:58:11.690622+02:00"
+					}
+				},
+				"editEmail" : {
+					"__type" : "email",
+					"emailString" : "<unknown>"
+				},
+				"editTime" : {
+					"__type" : "time",
+					"time" : {
+						"__type" : "dateAndTime",
+						"dateAndTimeString" : "2026-07-26T00:58:11.690622+02:00"
+					}
+				},
+				"uid" : {
+					"__type" : "uid",
+					"uidString" : "qv+YuCoDTwejWxnrnl3n0A=="
+				},
+				"paragraphStyle" : {
+					"__type" : "textStyle"
+				},
+				"string" : "**Implementación mínima**: `LeLiterateCodeHistory` envuelve una `OrderedCollection` y concentra la regla de idempotencia en `addEntry:` — la identidad de una entrada es el `uidString` del snippet que la produjo."
+			},
+			{
+				"__type" : "pharoSnippet",
+				"children" : {
+					"__type" : "snippets",
+					"items" : [ ]
+				},
+				"createEmail" : {
+					"__type" : "email",
+					"emailString" : "<unknown>"
+				},
+				"createTime" : {
+					"__type" : "time",
+					"time" : {
+						"__type" : "dateAndTime",
+						"dateAndTimeString" : "2026-07-26T00:58:16.302451+02:00"
+					}
+				},
+				"editEmail" : {
+					"__type" : "email",
+					"emailString" : "<unknown>"
+				},
+				"editTime" : {
+					"__type" : "time",
+					"time" : {
+						"__type" : "dateAndTime",
+						"dateAndTimeString" : "2026-07-26T00:58:16.302451+02:00"
+					}
+				},
+				"uid" : {
+					"__type" : "uid",
+					"uidString" : "1EhjfYDSQ4yGiLrJpwBJmw=="
+				},
+				"code" : "Object subclass: #LeLiterateCodeHistory\n\tinstanceVariableNames: 'entries'\n\tclassVariableNames: ''\n\tcategory: 'Lepiter-Literate-Provenance'"
+			},
+			{
+				"__type" : "pharoSnippet",
+				"children" : {
+					"__type" : "snippets",
+					"items" : [ ]
+				},
+				"createEmail" : {
+					"__type" : "email",
+					"emailString" : "<unknown>"
+				},
+				"createTime" : {
+					"__type" : "time",
+					"time" : {
+						"__type" : "dateAndTime",
+						"dateAndTimeString" : "2026-07-26T00:58:23.620752+02:00"
+					}
+				},
+				"editEmail" : {
+					"__type" : "email",
+					"emailString" : "<unknown>"
+				},
+				"editTime" : {
+					"__type" : "time",
+					"time" : {
+						"__type" : "dateAndTime",
+						"dateAndTimeString" : "2026-07-26T00:58:23.620752+02:00"
+					}
+				},
+				"uid" : {
+					"__type" : "uid",
+					"uidString" : "Kv3z+FfiQaivg9sw64uP1g=="
+				},
+				"code" : "LeLiterateCodeHistory compile: 'initialize\n\tsuper initialize.\n\tentries := OrderedCollection new' classified: 'initialization'.\nLeLiterateCodeHistory compile: 'entries\n\t^ entries' classified: 'accessing'.\nLeLiterateCodeHistory compile: 'size\n\t^ entries size' classified: 'accessing'.\nLeLiterateCodeHistory compile: 'isEmpty\n\t^ entries isEmpty' classified: 'testing'.\nLeLiterateCodeHistory compile: 'notEmpty\n\t^ entries notEmpty' classified: 'testing'.\nLeLiterateCodeHistory compile: 'addEntry: anEntry\n\t\"Idempotente por snippet: si ya hay una entrada del mismo snippet, se refresca\n\tsu marca de tiempo conservando la acción y la posición originales.\"\n\t| existing |\n\texisting := entries\n\t\tdetect: [ :each | each snippetUid uidString = anEntry snippetUid uidString ]\n\t\tifNone: [ nil ].\n\texisting\n\t\tifNil: [ entries add: anEntry. ^ anEntry ]\n\t\tifNotNil: [ existing lastAppliedAt: anEntry lastAppliedAt. ^ existing ]' classified: 'adding'.\nLeLiterateCodeHistory compile: 'printOn: aStream\n\tsuper printOn: aStream.\n\taStream nextPutAll: '' (''; print: entries size; nextPutAll: '' entradas)''' classified: 'printing'"
+			},
+			{
+				"__type" : "exampleSnippet",
+				"children" : {
+					"__type" : "snippets",
+					"items" : [ ]
+				},
+				"createEmail" : {
+					"__type" : "email",
+					"emailString" : "<unknown>"
+				},
+				"createTime" : {
+					"__type" : "time",
+					"time" : {
+						"__type" : "dateAndTime",
+						"dateAndTimeString" : "2026-07-26T00:58:26.853285+02:00"
+					}
+				},
+				"editEmail" : {
+					"__type" : "email",
+					"emailString" : "<unknown>"
+				},
+				"editTime" : {
+					"__type" : "time",
+					"time" : {
+						"__type" : "dateAndTime",
+						"dateAndTimeString" : "2026-07-26T00:58:26.853285+02:00"
+					}
+				},
+				"uid" : {
+					"__type" : "uid",
+					"uidString" : "3phnbp8xRO2VHNjWKIV9Rw=="
+				},
+				"exampleSelector" : "historyKeepsOrderAndIsIdempotent",
+				"previewHeight" : 200,
+				"previewShowSelector" : "gtViewsFor:",
+				"exampleBehaviorName" : "LeLiterateProvenanceExamples",
+				"codeExpanded" : true,
+				"previewExpanded" : false,
+				"noCode" : false
+			},
+			{
+				"__type" : "textSnippet",
+				"children" : {
+					"__type" : "snippets",
+					"items" : [ ]
+				},
+				"createEmail" : {
+					"__type" : "email",
+					"emailString" : "<unknown>"
+				},
+				"createTime" : {
+					"__type" : "time",
+					"time" : {
+						"__type" : "dateAndTime",
+						"dateAndTimeString" : "2026-07-26T00:59:35.708951+02:00"
+					}
+				},
+				"editEmail" : {
+					"__type" : "email",
+					"emailString" : "<unknown>"
+				},
+				"editTime" : {
+					"__type" : "time",
+					"time" : {
+						"__type" : "dateAndTime",
+						"dateAndTimeString" : "2026-07-26T00:59:35.708951+02:00"
+					}
+				},
+				"uid" : {
+					"__type" : "uid",
+					"uidString" : "JFJYWnKCSe66lHlOuyUWkw=="
+				},
+				"paragraphStyle" : {
+					"__type" : "textStyle"
+				},
+				"string" : "### El registro atribuye las definiciones al snippet en evaluación\n\nIteración 3 (`registryAttributesDefinitionsToTheSnippet`). El corazón del diseño: `LeLiterateProvenance>>capturingFor:during:` abre la ventana de observación — se suscribe a los announcements del sistema, evalúa el bloque, y se desuscribe siempre (`ensure:`). Todo lo anunciado dentro de la ventana se atribuye al snippet en curso. El ejemplo verifica que definir una clase y compilar un método dentro de la ventana produce dos historias (la de la clase y la del método) con entradas `#created` que apuntan al snippet y a su página. Como los ejemplos usan instancias nuevas del registro (no el singleton), son independientes entre sí."
+			},
+			{
+				"__type" : "pharoSnippet",
+				"children" : {
+					"__type" : "snippets",
+					"items" : [ ]
+				},
+				"createEmail" : {
+					"__type" : "email",
+					"emailString" : "<unknown>"
+				},
+				"createTime" : {
+					"__type" : "time",
+					"time" : {
+						"__type" : "dateAndTime",
+						"dateAndTimeString" : "2026-07-26T00:59:44.638902+02:00"
+					}
+				},
+				"editEmail" : {
+					"__type" : "email",
+					"emailString" : "<unknown>"
+				},
+				"editTime" : {
+					"__type" : "time",
+					"time" : {
+						"__type" : "dateAndTime",
+						"dateAndTimeString" : "2026-07-26T00:59:44.638902+02:00"
+					}
+				},
+				"uid" : {
+					"__type" : "uid",
+					"uidString" : "SDuWYXrXRYO0ZfoJZ4/Ojw=="
+				},
+				"code" : "LeLiterateProvenanceExamples compile: 'removeProbeClasses\n\t(Smalltalk classNamed: #LeLiterateProbeSubject) ifNotNil: [ :aClass | aClass removeFromSystem ].\n\t(Smalltalk classNamed: #LeLiterateOtherProbeSubject) ifNotNil: [ :aClass | aClass removeFromSystem ]' classified: 'support'.\nLeLiterateProvenanceExamples compile: 'registryAttributesDefinitionsToTheSnippet\n\t<gtExample>\n\t| registry db page snippet classHistory methodHistory |\n\tself removeProbeClasses.\n\tregistry := LeLiterateProvenance new.\n\tregistry addInterestingPackageNamed: ''LeLiterateProvenanceProbe''.\n\tdb := LeDatabase new.\n\tpage := db pageBuilder title: ''Página que define la clase''; add.\n\tsnippet := LePharoSnippet new code: ''\"define la clase de prueba\"''.\n\tpage addSnippet: snippet.\n\tregistry\n\t\tcapturingFor: snippet\n\t\tduring: [\n\t\t\tObject subclass: #LeLiterateProbeSubject\n\t\t\t\tinstanceVariableNames: '''' classVariableNames: '''' category: ''LeLiterateProvenanceProbe''.\n\t\t\t(Smalltalk classNamed: #LeLiterateProbeSubject) compile: ''answer ^ 42'' classified: ''accessing'' ].\n\tclassHistory := registry historyForKey: ''LeLiterateProbeSubject''.\n\tmethodHistory := registry historyForKey: ''LeLiterateProbeSubject>>#answer''.\n\tself assert: classHistory size equals: 1.\n\tself assert: classHistory entries first action equals: #created.\n\tself assert: classHistory entries first snippetUid equals: snippet uid.\n\tself assert: classHistory entries first pageTitle equals: ''Página que define la clase''.\n\tself assert: methodHistory size equals: 1.\n\tself assert: methodHistory entries first action equals: #created.\n\t^ registry' classified: 'examples'"
+			},
+			{
+				"__type" : "textSnippet",
+				"children" : {
+					"__type" : "snippets",
+					"items" : [ ]
+				},
+				"createEmail" : {
+					"__type" : "email",
+					"emailString" : "<unknown>"
+				},
+				"createTime" : {
+					"__type" : "time",
+					"time" : {
+						"__type" : "dateAndTime",
+						"dateAndTimeString" : "2026-07-26T00:59:50.132148+02:00"
+					}
+				},
+				"editEmail" : {
+					"__type" : "email",
+					"emailString" : "<unknown>"
+				},
+				"editTime" : {
+					"__type" : "time",
+					"time" : {
+						"__type" : "dateAndTime",
+						"dateAndTimeString" : "2026-07-26T00:59:50.132148+02:00"
+					}
+				},
+				"uid" : {
+					"__type" : "uid",
+					"uidString" : "yPdvSHUOSjis2scqOsQGUg=="
+				},
+				"paragraphStyle" : {
+					"__type" : "textStyle"
+				},
+				"string" : "**Implementación mínima**: el registro guarda un `Dictionary` de historias con claves por nombre (`'Clase'` y `'Clase>>#selector'`), un contador global de secuencia y el snippet en curso. `recordAnnouncement:` normaliza cada announcement (clase afectada, selector si es de método, paquete relevante), aplica el filtro y delega en la historia correspondiente. La acción se decide mirando si el registro ya conocía la clave — no el tipo de announcement, que como vimos en la exploración es ambiguo al redefinir clases."
+			},
+			{
+				"__type" : "pharoSnippet",
+				"children" : {
+					"__type" : "snippets",
+					"items" : [ ]
+				},
+				"createEmail" : {
+					"__type" : "email",
+					"emailString" : "<unknown>"
+				},
+				"createTime" : {
+					"__type" : "time",
+					"time" : {
+						"__type" : "dateAndTime",
+						"dateAndTimeString" : "2026-07-26T00:59:54.095247+02:00"
+					}
+				},
+				"editEmail" : {
+					"__type" : "email",
+					"emailString" : "<unknown>"
+				},
+				"editTime" : {
+					"__type" : "time",
+					"time" : {
+						"__type" : "dateAndTime",
+						"dateAndTimeString" : "2026-07-26T00:59:54.095247+02:00"
+					}
+				},
+				"uid" : {
+					"__type" : "uid",
+					"uidString" : "1SyTs6Y1QletdkCSfDVFqQ=="
+				},
+				"code" : "Object subclass: #LeLiterateProvenance\n\tinstanceVariableNames: 'histories interestingPackageNames sequenceCounter currentSnippet'\n\tclassVariableNames: 'Default'\n\tcategory: 'Lepiter-Literate-Provenance'"
+			},
+			{
+				"__type" : "pharoSnippet",
+				"children" : {
+					"__type" : "snippets",
+					"items" : [ ]
+				},
+				"createEmail" : {
+					"__type" : "email",
+					"emailString" : "<unknown>"
+				},
+				"createTime" : {
+					"__type" : "time",
+					"time" : {
+						"__type" : "dateAndTime",
+						"dateAndTimeString" : "2026-07-26T01:00:11.713151+02:00"
+					}
+				},
+				"editEmail" : {
+					"__type" : "email",
+					"emailString" : "<unknown>"
+				},
+				"editTime" : {
+					"__type" : "time",
+					"time" : {
+						"__type" : "dateAndTime",
+						"dateAndTimeString" : "2026-07-26T01:00:11.713151+02:00"
+					}
+				},
+				"uid" : {
+					"__type" : "uid",
+					"uidString" : "1f9hy77iQdCOW5r2TDY1Gw=="
+				},
+				"code" : "LeLiterateProvenance compile: 'initialize\n\tsuper initialize.\n\thistories := Dictionary new.\n\tinterestingPackageNames := Set new.\n\tsequenceCounter := 0' classified: 'initialization'.\nLeLiterateProvenance compile: 'addInterestingPackageNamed: aPackageName\n\tinterestingPackageNames add: aPackageName' classified: 'configuration'.\nLeLiterateProvenance compile: 'interestingPackageNames\n\t^ interestingPackageNames' classified: 'configuration'.\nLeLiterateProvenance compile: 'isInterestingPackageNamed: aPackageName\n\t\"Filtro explícito: con el filtro vacío no se registra nada.\"\n\t^ aPackageName notNil and: [ interestingPackageNames includes: aPackageName ]' classified: 'configuration'.\nLeLiterateProvenance compile: 'artifactKeys\n\t^ histories keys' classified: 'accessing'.\nLeLiterateProvenance compile: 'historyForKey: aKey\n\t^ histories at: aKey ifAbsent: [ LeLiterateCodeHistory new ]' classified: 'accessing'.\nLeLiterateProvenance compile: 'nextSequence\n\t^ sequenceCounter := sequenceCounter + 1' classified: 'private'.\nLeLiterateProvenance compile: 'keyForClass: aClass\n\t^ aClass name asString' classified: 'private'.\nLeLiterateProvenance compile: 'keyForClass: aClass selector: aSelector\n\t^ aClass name asString , ''>>#'' , aSelector asString' classified: 'private'.\nLeLiterateProvenance compile: 'capturingFor: aSnippet during: aBlock\n\tcurrentSnippet := aSnippet.\n\tSystemAnnouncer uniqueInstance\n\t\twhen: ClassAdded , ClassModificationApplied , ClassRemoved , MethodAdded , MethodModified , MethodRemoved\n\t\tdo: [ :anAnnouncement | self recordAnnouncement: anAnnouncement ]\n\t\tfor: self.\n\t^ aBlock ensure: [\n\t\tSystemAnnouncer uniqueInstance unsubscribe: self.\n\t\tcurrentSnippet := nil ]' classified: 'capturing'.\nLeLiterateProvenance compile: 'recordAnnouncement: anAnnouncement\n\t| affectedClass selector packageName key |\n\tcurrentSnippet ifNil: [ ^ self ].\n\taffectedClass := [ anAnnouncement classAffected ] on: Error do: [ :e | nil ].\n\taffectedClass ifNil: [ ^ self ].\n\tselector := [ anAnnouncement methodAffected ifNotNil: [ :aMethod | aMethod selector ] ]\n\t\ton: Error do: [ :e | nil ].\n\tpackageName := [ selector\n\t\tifNil: [ affectedClass package name ]\n\t\tifNotNil: [ anAnnouncement methodAffected package name ] ] on: Error do: [ :e | nil ].\n\t(self isInterestingPackageNamed: packageName) ifFalse: [ ^ self ].\n\tkey := selector\n\t\tifNil: [ self keyForClass: affectedClass ]\n\t\tifNotNil: [ self keyForClass: affectedClass selector: selector ].\n\tself recordKey: key action: (self actionForKey: key announcement: anAnnouncement)' classified: 'capturing'.\nLeLiterateProvenance compile: 'actionForKey: aKey announcement: anAnnouncement\n\t((anAnnouncement isKindOf: ClassRemoved) or: [ anAnnouncement isKindOf: MethodRemoved ])\n\t\tifTrue: [ ^ #removed ].\n\t^ (histories includesKey: aKey) ifTrue: [ #modified ] ifFalse: [ #created ]' classified: 'private'.\nLeLiterateProvenance compile: 'recordKey: aKey action: anAction\n\t| history entry |\n\thistory := histories at: aKey ifAbsentPut: [ LeLiterateCodeHistory new ].\n\tentry := LeLiterateProvenanceEntry\n\t\tforSnippet: currentSnippet\n\t\taction: anAction\n\t\tsequence: self nextSequence.\n\thistory addEntry: entry' classified: 'capturing'.\nLeLiterateProvenance compile: 'printOn: aStream\n\tsuper printOn: aStream.\n\taStream nextPutAll: '' (''; print: histories size; nextPutAll: '' artefactos)''' classified: 'printing'"
+			},
+			{
+				"__type" : "exampleSnippet",
+				"children" : {
+					"__type" : "snippets",
+					"items" : [ ]
+				},
+				"createEmail" : {
+					"__type" : "email",
+					"emailString" : "<unknown>"
+				},
+				"createTime" : {
+					"__type" : "time",
+					"time" : {
+						"__type" : "dateAndTime",
+						"dateAndTimeString" : "2026-07-26T01:00:15.120111+02:00"
+					}
+				},
+				"editEmail" : {
+					"__type" : "email",
+					"emailString" : "<unknown>"
+				},
+				"editTime" : {
+					"__type" : "time",
+					"time" : {
+						"__type" : "dateAndTime",
+						"dateAndTimeString" : "2026-07-26T01:00:15.120111+02:00"
+					}
+				},
+				"uid" : {
+					"__type" : "uid",
+					"uidString" : "oKX492v1TsiKfUdfEKVMqQ=="
+				},
+				"exampleSelector" : "registryAttributesDefinitionsToTheSnippet",
+				"previewHeight" : 200,
+				"previewShowSelector" : "gtViewsFor:",
+				"exampleBehaviorName" : "LeLiterateProvenanceExamples",
+				"codeExpanded" : true,
+				"previewExpanded" : false,
+				"noCode" : false
+			},
+			{
+				"__type" : "textSnippet",
+				"children" : {
+					"__type" : "snippets",
+					"items" : [ ]
+				},
+				"createEmail" : {
+					"__type" : "email",
+					"emailString" : "<unknown>"
+				},
+				"createTime" : {
+					"__type" : "time",
+					"time" : {
+						"__type" : "dateAndTime",
+						"dateAndTimeString" : "2026-07-26T01:00:21.541593+02:00"
+					}
+				},
+				"editEmail" : {
+					"__type" : "email",
+					"emailString" : "<unknown>"
+				},
+				"editTime" : {
+					"__type" : "time",
+					"time" : {
+						"__type" : "dateAndTime",
+						"dateAndTimeString" : "2026-07-26T01:00:21.541593+02:00"
+					}
+				},
+				"uid" : {
+					"__type" : "uid",
+					"uidString" : "bGwoxIQ9SUKRRqIQ8Agx+w=="
+				},
+				"paragraphStyle" : {
+					"__type" : "textStyle"
+				},
+				"string" : "### Sólo se registran los paquetes de interés\n\nIteración 4 (`registryIgnoresPackagesOutsideTheFilter`). Un snippet puede cargar un baseline entero vía Metacello; sin filtro, esa evaluación atribuiría cientos de clases a una sola explicación. La decisión de diseño es un filtro **explícito**: sólo los paquetes declarados con `addInterestingPackageNamed:` generan entradas, y con el filtro vacío no se registra nada (el enganche al tangle es inocuo hasta que un proyecto lo configura). El ejemplo fija esa propiedad: una clase definida en un paquete fuera del filtro no deja rastro alguno en el registro."
+			},
+			{
+				"__type" : "pharoSnippet",
+				"children" : {
+					"__type" : "snippets",
+					"items" : [ ]
+				},
+				"createEmail" : {
+					"__type" : "email",
+					"emailString" : "<unknown>"
+				},
+				"createTime" : {
+					"__type" : "time",
+					"time" : {
+						"__type" : "dateAndTime",
+						"dateAndTimeString" : "2026-07-26T01:00:28.299237+02:00"
+					}
+				},
+				"editEmail" : {
+					"__type" : "email",
+					"emailString" : "<unknown>"
+				},
+				"editTime" : {
+					"__type" : "time",
+					"time" : {
+						"__type" : "dateAndTime",
+						"dateAndTimeString" : "2026-07-26T01:00:28.299237+02:00"
+					}
+				},
+				"uid" : {
+					"__type" : "uid",
+					"uidString" : "cYiNaKxmRjmckmai9NAxXQ=="
+				},
+				"code" : "LeLiterateProvenanceExamples compile: 'registryIgnoresPackagesOutsideTheFilter\n\t<gtExample>\n\t| registry db page snippet |\n\tself removeProbeClasses.\n\tregistry := LeLiterateProvenance new.\n\tregistry addInterestingPackageNamed: ''LeLiterateProvenanceProbe''.\n\tdb := LeDatabase new.\n\tpage := db pageBuilder title: ''Página con código ajeno''; add.\n\tsnippet := LePharoSnippet new code: ''\"define una clase fuera del filtro\"''.\n\tpage addSnippet: snippet.\n\tregistry\n\t\tcapturingFor: snippet\n\t\tduring: [\n\t\t\tObject subclass: #LeLiterateOtherProbeSubject\n\t\t\t\tinstanceVariableNames: '''' classVariableNames: '''' category: ''LeLiterateProvenanceOtherProbe'' ].\n\tself assert: (registry historyForKey: ''LeLiterateOtherProbeSubject'') isEmpty.\n\tself assert: registry artifactKeys isEmpty.\n\t^ registry' classified: 'examples'"
+			},
+			{
+				"__type" : "exampleSnippet",
+				"children" : {
+					"__type" : "snippets",
+					"items" : [ ]
+				},
+				"createEmail" : {
+					"__type" : "email",
+					"emailString" : "<unknown>"
+				},
+				"createTime" : {
+					"__type" : "time",
+					"time" : {
+						"__type" : "dateAndTime",
+						"dateAndTimeString" : "2026-07-26T01:00:31.676967+02:00"
+					}
+				},
+				"editEmail" : {
+					"__type" : "email",
+					"emailString" : "<unknown>"
+				},
+				"editTime" : {
+					"__type" : "time",
+					"time" : {
+						"__type" : "dateAndTime",
+						"dateAndTimeString" : "2026-07-26T01:00:31.676967+02:00"
+					}
+				},
+				"uid" : {
+					"__type" : "uid",
+					"uidString" : "EK9BMFnTSOaRgJ+UW8tioQ=="
+				},
+				"exampleSelector" : "registryIgnoresPackagesOutsideTheFilter",
+				"previewHeight" : 200,
+				"previewShowSelector" : "gtViewsFor:",
+				"exampleBehaviorName" : "LeLiterateProvenanceExamples",
+				"codeExpanded" : true,
+				"previewExpanded" : false,
+				"noCode" : false
+			},
+			{
+				"__type" : "textSnippet",
+				"children" : {
+					"__type" : "snippets",
+					"items" : [ ]
+				},
+				"createEmail" : {
+					"__type" : "email",
+					"emailString" : "<unknown>"
+				},
+				"createTime" : {
+					"__type" : "time",
+					"time" : {
+						"__type" : "dateAndTime",
+						"dateAndTimeString" : "2026-07-26T01:00:55.847001+02:00"
+					}
+				},
+				"editEmail" : {
+					"__type" : "email",
+					"emailString" : "<unknown>"
+				},
+				"editTime" : {
+					"__type" : "time",
+					"time" : {
+						"__type" : "dateAndTime",
+						"dateAndTimeString" : "2026-07-26T01:00:55.847001+02:00"
+					}
+				},
+				"uid" : {
+					"__type" : "uid",
+					"uidString" : "0WDT2YAKQxCdlzFHiavpsA=="
+				},
+				"paragraphStyle" : {
+					"__type" : "textStyle"
+				},
+				"string" : "### La historia refleja el orden de modificaciones entre snippets\n\nIteración 5 (`registryTracksModificationOrderAcrossSnippets`). El escenario que motiva todo el diseño: un snippet crea una clase y su método en una página, y otro snippet — típicamente de otra página, más adelante en la narrativa — modifica ese mismo método. La historia del método debe contar exactamente eso: primero `#created` por el snippet creador, después `#modified` por el modificador, con secuencias crecientes. Este comportamiento emerge de las piezas anteriores (acción según clave conocida + orden de inserción), y este ejemplo lo fija como contrato."
+			},
+			{
+				"__type" : "pharoSnippet",
+				"children" : {
+					"__type" : "snippets",
+					"items" : [ ]
+				},
+				"createEmail" : {
+					"__type" : "email",
+					"emailString" : "<unknown>"
+				},
+				"createTime" : {
+					"__type" : "time",
+					"time" : {
+						"__type" : "dateAndTime",
+						"dateAndTimeString" : "2026-07-26T01:01:05.064684+02:00"
+					}
+				},
+				"editEmail" : {
+					"__type" : "email",
+					"emailString" : "<unknown>"
+				},
+				"editTime" : {
+					"__type" : "time",
+					"time" : {
+						"__type" : "dateAndTime",
+						"dateAndTimeString" : "2026-07-26T01:01:05.064684+02:00"
+					}
+				},
+				"uid" : {
+					"__type" : "uid",
+					"uidString" : "nHP1bVWFSyOEFCMJgmG3eg=="
+				},
+				"code" : "LeLiterateProvenanceExamples compile: 'registryTracksModificationOrderAcrossSnippets\n\t<gtExample>\n\t| registry db page creatorSnippet modifierSnippet methodHistory |\n\tself removeProbeClasses.\n\tregistry := LeLiterateProvenance new.\n\tregistry addInterestingPackageNamed: ''LeLiterateProvenanceProbe''.\n\tdb := LeDatabase new.\n\tpage := db pageBuilder title: ''Página que crea la clase''; add.\n\tcreatorSnippet := LePharoSnippet new code: ''\"crea la clase y el método\"''.\n\tmodifierSnippet := LePharoSnippet new code: ''\"modifica el método\"''.\n\tpage addSnippet: creatorSnippet.\n\tpage addSnippet: modifierSnippet.\n\tregistry\n\t\tcapturingFor: creatorSnippet\n\t\tduring: [\n\t\t\tObject subclass: #LeLiterateProbeSubject\n\t\t\t\tinstanceVariableNames: '''' classVariableNames: '''' category: ''LeLiterateProvenanceProbe''.\n\t\t\t(Smalltalk classNamed: #LeLiterateProbeSubject) compile: ''answer ^ 42'' classified: ''accessing'' ].\n\tregistry\n\t\tcapturingFor: modifierSnippet\n\t\tduring: [\n\t\t\t(Smalltalk classNamed: #LeLiterateProbeSubject) compile: ''answer ^ 43'' classified: ''accessing'' ].\n\tmethodHistory := registry historyForKey: ''LeLiterateProbeSubject>>#answer''.\n\tself assert: methodHistory size equals: 2.\n\tself assert: methodHistory entries first action equals: #created.\n\tself assert: methodHistory entries first snippetUid equals: creatorSnippet uid.\n\tself assert: methodHistory entries second action equals: #modified.\n\tself assert: methodHistory entries second snippetUid equals: modifierSnippet uid.\n\tself assert: methodHistory entries first sequence < methodHistory entries second sequence.\n\t^ methodHistory' classified: 'examples'"
+			},
+			{
+				"__type" : "exampleSnippet",
+				"children" : {
+					"__type" : "snippets",
+					"items" : [ ]
+				},
+				"createEmail" : {
+					"__type" : "email",
+					"emailString" : "<unknown>"
+				},
+				"createTime" : {
+					"__type" : "time",
+					"time" : {
+						"__type" : "dateAndTime",
+						"dateAndTimeString" : "2026-07-26T01:01:08.007257+02:00"
+					}
+				},
+				"editEmail" : {
+					"__type" : "email",
+					"emailString" : "<unknown>"
+				},
+				"editTime" : {
+					"__type" : "time",
+					"time" : {
+						"__type" : "dateAndTime",
+						"dateAndTimeString" : "2026-07-26T01:01:08.007257+02:00"
+					}
+				},
+				"uid" : {
+					"__type" : "uid",
+					"uidString" : "JynkRuyMSRu2arVPZKxkVg=="
+				},
+				"exampleSelector" : "registryTracksModificationOrderAcrossSnippets",
+				"previewHeight" : 200,
+				"previewShowSelector" : "gtViewsFor:",
+				"exampleBehaviorName" : "LeLiterateProvenanceExamples",
+				"codeExpanded" : true,
+				"previewExpanded" : false,
+				"noCode" : false
+			},
+			{
+				"__type" : "textSnippet",
+				"children" : {
+					"__type" : "snippets",
+					"items" : [ ]
+				},
+				"createEmail" : {
+					"__type" : "email",
+					"emailString" : "<unknown>"
+				},
+				"createTime" : {
+					"__type" : "time",
+					"time" : {
+						"__type" : "dateAndTime",
+						"dateAndTimeString" : "2026-07-26T01:01:46.198829+02:00"
+					}
+				},
+				"editEmail" : {
+					"__type" : "email",
+					"emailString" : "<unknown>"
+				},
+				"editTime" : {
+					"__type" : "time",
+					"time" : {
+						"__type" : "dateAndTime",
+						"dateAndTimeString" : "2026-07-26T01:01:46.198829+02:00"
+					}
+				},
+				"uid" : {
+					"__type" : "uid",
+					"uidString" : "9PNpHjVSQJqfWl7wYH+qag=="
+				},
+				"paragraphStyle" : {
+					"__type" : "textStyle"
+				},
+				"string" : "### El tangle registra la procedencia automáticamente\n\nIteración 6 (`tangleRecordsProvenanceThroughTheAssimilator`). Todo el tangle pasa por dos métodos de `KnowledgeAssimilator`: `processPharoSnippet:` (evalúa snippets Pharo vía su coder) y `processChangesSnippet:` (aplica snippets de cambios). Basta envolver ambas evaluaciones con `capturingFor:during:` sobre el registro por defecto — `LeLiterateProvenance default`, el registro único global — para que cada tangle deje su traza sin que las páginas ni los snippets tengan que hacer nada. El ejemplo construye una página con un snippet que define una clase, la procesa con el `KnowledgeAssimilator` real y comprueba que el registro por defecto atribuye la creación a ese snippet.\n\n**Atención**: los dos snippets de implementación siguientes **modifican métodos existentes** de `KnowledgeAssimilator`; el resto de su comportamiento se conserva literalmente."
+			},
+			{
+				"__type" : "pharoSnippet",
+				"children" : {
+					"__type" : "snippets",
+					"items" : [ ]
+				},
+				"createEmail" : {
+					"__type" : "email",
+					"emailString" : "<unknown>"
+				},
+				"createTime" : {
+					"__type" : "time",
+					"time" : {
+						"__type" : "dateAndTime",
+						"dateAndTimeString" : "2026-07-26T01:01:53.223544+02:00"
+					}
+				},
+				"editEmail" : {
+					"__type" : "email",
+					"emailString" : "<unknown>"
+				},
+				"editTime" : {
+					"__type" : "time",
+					"time" : {
+						"__type" : "dateAndTime",
+						"dateAndTimeString" : "2026-07-26T01:01:53.223544+02:00"
+					}
+				},
+				"uid" : {
+					"__type" : "uid",
+					"uidString" : "g9hlg5oyR8GMJNFtqPR68A=="
+				},
+				"code" : "LeLiterateProvenanceExamples compile: 'tangleRecordsProvenanceThroughTheAssimilator\n\t<gtExample>\n\t| quote db page snippet registry |\n\tself removeProbeClasses.\n\tLeLiterateProvenance resetDefault.\n\tLeLiterateProvenance default addInterestingPackageNamed: ''LeLiterateProvenanceProbe''.\n\tquote := String with: $''.\n\tdb := LeDatabase new.\n\tpage := db pageBuilder title: ''Página tangleada''; add.\n\tsnippet := LePharoSnippet new\n\t\tcode: (''Object subclass: #LeLiterateProbeSubject instanceVariableNames: {q}{q} classVariableNames: {q}{q} category: {q}LeLiterateProvenanceProbe{q}''\n\t\t\tcopyReplaceAll: ''{q}'' with: quote).\n\tpage addSnippet: snippet.\n\tKnowledgeAssimilator processPage: page.\n\tregistry := LeLiterateProvenance default.\n\tself assert: (registry historyForKey: ''LeLiterateProbeSubject'') size equals: 1.\n\tself assert: (registry historyForKey: ''LeLiterateProbeSubject'') entries first action equals: #created.\n\tself assert: (registry historyForKey: ''LeLiterateProbeSubject'') entries first snippetUid equals: snippet uid.\n\t^ registry' classified: 'examples'"
+			},
+			{
+				"__type" : "pharoSnippet",
+				"children" : {
+					"__type" : "snippets",
+					"items" : [ ]
+				},
+				"createEmail" : {
+					"__type" : "email",
+					"emailString" : "<unknown>"
+				},
+				"createTime" : {
+					"__type" : "time",
+					"time" : {
+						"__type" : "dateAndTime",
+						"dateAndTimeString" : "2026-07-26T01:01:57.49441+02:00"
+					}
+				},
+				"editEmail" : {
+					"__type" : "email",
+					"emailString" : "<unknown>"
+				},
+				"editTime" : {
+					"__type" : "time",
+					"time" : {
+						"__type" : "dateAndTime",
+						"dateAndTimeString" : "2026-07-26T01:01:57.49441+02:00"
+					}
+				},
+				"uid" : {
+					"__type" : "uid",
+					"uidString" : "x0Igc6QdSW6tL6q0FnrYvw=="
+				},
+				"code" : "LeLiterateProvenance class compile: 'default\n\t^ Default ifNil: [ Default := self new ]' classified: 'accessing'.\nLeLiterateProvenance class compile: 'resetDefault\n\tDefault := nil' classified: 'accessing'"
+			},
+			{
+				"__type" : "pharoSnippet",
+				"children" : {
+					"__type" : "snippets",
+					"items" : [ ]
+				},
+				"createEmail" : {
+					"__type" : "email",
+					"emailString" : "<unknown>"
+				},
+				"createTime" : {
+					"__type" : "time",
+					"time" : {
+						"__type" : "dateAndTime",
+						"dateAndTimeString" : "2026-07-26T01:02:05.17311+02:00"
+					}
+				},
+				"editEmail" : {
+					"__type" : "email",
+					"emailString" : "<unknown>"
+				},
+				"editTime" : {
+					"__type" : "time",
+					"time" : {
+						"__type" : "dateAndTime",
+						"dateAndTimeString" : "2026-07-26T01:02:05.17311+02:00"
+					}
+				},
+				"uid" : {
+					"__type" : "uid",
+					"uidString" : "6eM2tFvWS52S5EyA86YWhQ=="
+				},
+				"code" : "\"Modifica KnowledgeAssimilator class>>processPharoSnippet: y processChangesSnippet:\n envolviendo la evaluación con la captura de provenance del registro por defecto.\"\nKnowledgeAssimilator class compile: 'processPharoSnippet: aSnippet\n\t| context localBindingsToAdd bindingsToAdd snippetEvaluationResult |\n\tlocalBindingsToAdd := OrderedCollection\n\t\t\twith: (GtLocalVariablesBindings new localAt: #thisSnippet put: aSnippet).\n\tbindingsToAdd := sharedBindingsToAdd copyWithAll: localBindingsToAdd.\n\tcontext := aSnippet coder evaluationContext.\n\tbindingsToAdd do: [ :aBindingToAdd | context addBindings: aBindingToAdd ].\n\tLeLiterateProvenance default\n\t\tcapturingFor: aSnippet\n\t\tduring: [ snippetEvaluationResult := aSnippet coder doItInContext: context ].\n\t^ sharedBindingsToAdd := snippetEvaluationResult evaluationContext\n\t\t\tbindingStrategy bindings\n\t\t\tselect: [ :aBinding | aBinding isKindOf: GtSharedVariablesBindings ]' classified: 'processing knowledge'.\nKnowledgeAssimilator class compile: 'processChangesSnippet: aChangesSnippet\n\tLeLiterateProvenance default\n\t\tcapturingFor: aChangesSnippet\n\t\tduring: [ aChangesSnippet asSnippetViewModel changes\n\t\t\tifNotNil: [ :someChanges | someChanges applyChanges ] ]' classified: 'processing knowledge'"
+			},
+			{
+				"__type" : "exampleSnippet",
+				"children" : {
+					"__type" : "snippets",
+					"items" : [ ]
+				},
+				"createEmail" : {
+					"__type" : "email",
+					"emailString" : "<unknown>"
+				},
+				"createTime" : {
+					"__type" : "time",
+					"time" : {
+						"__type" : "dateAndTime",
+						"dateAndTimeString" : "2026-07-26T01:02:09.471853+02:00"
+					}
+				},
+				"editEmail" : {
+					"__type" : "email",
+					"emailString" : "<unknown>"
+				},
+				"editTime" : {
+					"__type" : "time",
+					"time" : {
+						"__type" : "dateAndTime",
+						"dateAndTimeString" : "2026-07-26T01:02:09.471853+02:00"
+					}
+				},
+				"uid" : {
+					"__type" : "uid",
+					"uidString" : "r5rTG4CzSG2ud+a6wjiiTg=="
+				},
+				"exampleSelector" : "tangleRecordsProvenanceThroughTheAssimilator",
+				"previewHeight" : 200,
+				"previewShowSelector" : "gtViewsFor:",
+				"exampleBehaviorName" : "LeLiterateProvenanceExamples",
+				"codeExpanded" : true,
+				"previewExpanded" : false,
+				"noCode" : false
+			},
+			{
+				"__type" : "textSnippet",
+				"children" : {
+					"__type" : "snippets",
+					"items" : [ ]
+				},
+				"createEmail" : {
+					"__type" : "email",
+					"emailString" : "<unknown>"
+				},
+				"createTime" : {
+					"__type" : "time",
+					"time" : {
+						"__type" : "dateAndTime",
+						"dateAndTimeString" : "2026-07-26T01:04:13.077808+02:00"
+					}
+				},
+				"editEmail" : {
+					"__type" : "email",
+					"emailString" : "<unknown>"
+				},
+				"editTime" : {
+					"__type" : "time",
+					"time" : {
+						"__type" : "dateAndTime",
+						"dateAndTimeString" : "2026-07-26T01:04:13.077808+02:00"
+					}
+				},
+				"uid" : {
+					"__type" : "uid",
+					"uidString" : "fG9hpvvLRc29RLsA4Q3vcQ=="
+				},
+				"paragraphStyle" : {
+					"__type" : "textStyle"
+				},
+				"string" : "### Vistas moldables: del código a la narrativa y viceversa\n\nIteración 7 (`classAnswersItsLiterateOriginView` y `snippetAnswersItsGeneratedCodeView`). La metainformación se materializa como vistas moldables sobre los propios artefactos:\n\n- **`ClassDescription>>gtLiterateOriginFor:`** — al inspeccionar cualquier clase generada, la pestaña *Literate origin* lista en orden global la historia de la clase, sus métodos de instancia y sus métodos de lado clase; cada fila navega al snippet vivo (resuelto perezosamente por UID con `blockWithUID:` sobre las bases registradas).\n- **`CompiledMethod>>gtLiterateOriginFor:`** — lo mismo para un método concreto. Como el `CompiledMethod` se sustituye en cada recompilación, la vista no guarda nada en el método: consulta el registro por clave en el momento de mostrarse — por eso el almacenamiento lateral era la decisión correcta.\n- **`LeSnippet>>gtGeneratedCodeFor:`** — la dirección inversa: al inspeccionar un snippet, la pestaña *Generated code* lista los artefactos que ese snippet creó o modificó, y cada fila navega a la clase o método vivo (`artifactForKey:`).\n\nLos artefactos sin traza (o los snippets sin código asociado) responden la vista vacía, de modo que estas pestañas sólo aparecen donde aportan información."
+			},
+			{
+				"__type" : "pharoSnippet",
+				"children" : {
+					"__type" : "snippets",
+					"items" : [ ]
+				},
+				"createEmail" : {
+					"__type" : "email",
+					"emailString" : "<unknown>"
+				},
+				"createTime" : {
+					"__type" : "time",
+					"time" : {
+						"__type" : "dateAndTime",
+						"dateAndTimeString" : "2026-07-26T01:04:29.572444+02:00"
+					}
+				},
+				"editEmail" : {
+					"__type" : "email",
+					"emailString" : "<unknown>"
+				},
+				"editTime" : {
+					"__type" : "time",
+					"time" : {
+						"__type" : "dateAndTime",
+						"dateAndTimeString" : "2026-07-26T01:04:29.572444+02:00"
+					}
+				},
+				"uid" : {
+					"__type" : "uid",
+					"uidString" : "Auzc03F3QtGT5vgkz+SSOw=="
+				},
+				"code" : "LeLiterateProvenanceExamples compile: 'classAnswersItsLiterateOriginView\n\t<gtExample>\n\t| db page creatorSnippet modifierSnippet related view |\n\tself removeProbeClasses.\n\tLeLiterateProvenance resetDefault.\n\tLeLiterateProvenance default addInterestingPackageNamed: ''LeLiterateProvenanceProbe''.\n\tdb := LeDatabase new.\n\tpage := db pageBuilder title: ''Página que crea la clase''; add.\n\tcreatorSnippet := LePharoSnippet new code: ''\"crea la clase y el método\"''.\n\tmodifierSnippet := LePharoSnippet new code: ''\"modifica el método\"''.\n\tpage addSnippet: creatorSnippet.\n\tpage addSnippet: modifierSnippet.\n\tLeLiterateProvenance default\n\t\tcapturingFor: creatorSnippet\n\t\tduring: [\n\t\t\tObject subclass: #LeLiterateProbeSubject\n\t\t\t\tinstanceVariableNames: '''' classVariableNames: '''' category: ''LeLiterateProvenanceProbe''.\n\t\t\t(Smalltalk classNamed: #LeLiterateProbeSubject) compile: ''answer ^ 42'' classified: ''accessing'' ].\n\tLeLiterateProvenance default\n\t\tcapturingFor: modifierSnippet\n\t\tduring: [\n\t\t\t(Smalltalk classNamed: #LeLiterateProbeSubject) compile: ''answer ^ 43'' classified: ''accessing'' ].\n\trelated := LeLiterateProvenance default entriesRelatedToClassNamed: ''LeLiterateProbeSubject''.\n\tself assert: related size equals: 3.\n\tself assert: (related collect: [ :each | each value sequence ]) asArray isSorted.\n\tview := (Smalltalk classNamed: #LeLiterateProbeSubject) gtLiterateOriginFor: GtPhlowView empty.\n\tself assert: view class equals: GtPhlowColumnedListView.\n\t\"Una clase sin traza responde la vista vacía\"\n\tself assert: (LeLiterateProvenanceExamples gtLiterateOriginFor: GtPhlowView empty) class\n\t\tequals: GtPhlowEmptyView.\n\t^ view' classified: 'examples'.\nLeLiterateProvenanceExamples compile: 'snippetAnswersItsGeneratedCodeView\n\t<gtExample>\n\t| db page creatorSnippet inverse view |\n\tself removeProbeClasses.\n\tLeLiterateProvenance resetDefault.\n\tLeLiterateProvenance default addInterestingPackageNamed: ''LeLiterateProvenanceProbe''.\n\tdb := LeDatabase new.\n\tpage := db pageBuilder title: ''Página que crea la clase''; add.\n\tcreatorSnippet := LePharoSnippet new code: ''\"crea la clase y el método\"''.\n\tpage addSnippet: creatorSnippet.\n\tLeLiterateProvenance default\n\t\tcapturingFor: creatorSnippet\n\t\tduring: [\n\t\t\tObject subclass: #LeLiterateProbeSubject\n\t\t\t\tinstanceVariableNames: '''' classVariableNames: '''' category: ''LeLiterateProvenanceProbe''.\n\t\t\t(Smalltalk classNamed: #LeLiterateProbeSubject) compile: ''answer ^ 42'' classified: ''accessing'' ].\n\tinverse := LeLiterateProvenance default entriesForSnippetUidString: creatorSnippet uid uidString.\n\tself assert: (inverse collect: [ :each | each key ]) asArray\n\t\tequals: { ''LeLiterateProbeSubject''. ''LeLiterateProbeSubject>>#answer'' }.\n\tview := creatorSnippet gtGeneratedCodeFor: GtPhlowView empty.\n\tself assert: view class equals: GtPhlowColumnedListView.\n\t\"Las claves se resuelven a los artefactos vivos\"\n\tself assert: (LeLiterateProvenance default artifactForKey: ''LeLiterateProbeSubject'')\n\t\tequals: (Smalltalk classNamed: #LeLiterateProbeSubject).\n\tself assert: (LeLiterateProvenance default artifactForKey: ''LeLiterateProbeSubject>>#answer'') selector\n\t\tequals: #answer.\n\t^ view' classified: 'examples'"
+			},
+			{
+				"__type" : "textSnippet",
+				"children" : {
+					"__type" : "snippets",
+					"items" : [ ]
+				},
+				"createEmail" : {
+					"__type" : "email",
+					"emailString" : "<unknown>"
+				},
+				"createTime" : {
+					"__type" : "time",
+					"time" : {
+						"__type" : "dateAndTime",
+						"dateAndTimeString" : "2026-07-26T01:04:34.56145+02:00"
+					}
+				},
+				"editEmail" : {
+					"__type" : "email",
+					"emailString" : "<unknown>"
+				},
+				"editTime" : {
+					"__type" : "time",
+					"time" : {
+						"__type" : "dateAndTime",
+						"dateAndTimeString" : "2026-07-26T01:04:34.56145+02:00"
+					}
+				},
+				"uid" : {
+					"__type" : "uid",
+					"uidString" : "KELGkjSoR4qjh+P06NWsTg=="
+				},
+				"paragraphStyle" : {
+					"__type" : "textStyle"
+				},
+				"string" : "**Implementación mínima**: las consultas del registro (`historyForClass:`, `historyForMethod:`, `entriesRelatedToClassNamed:`, `entriesForSnippetUidString:`, `artifactForKey:`), la resolución perezosa `LeLiterateProvenanceEntry>>resolvedSnippet`, y las tres extensiones `<gtView>`."
+			},
+			{
+				"__type" : "pharoSnippet",
+				"children" : {
+					"__type" : "snippets",
+					"items" : [ ]
+				},
+				"createEmail" : {
+					"__type" : "email",
+					"emailString" : "<unknown>"
+				},
+				"createTime" : {
+					"__type" : "time",
+					"time" : {
+						"__type" : "dateAndTime",
+						"dateAndTimeString" : "2026-07-26T01:04:48.688491+02:00"
+					}
+				},
+				"editEmail" : {
+					"__type" : "email",
+					"emailString" : "<unknown>"
+				},
+				"editTime" : {
+					"__type" : "time",
+					"time" : {
+						"__type" : "dateAndTime",
+						"dateAndTimeString" : "2026-07-26T01:04:48.688491+02:00"
+					}
+				},
+				"uid" : {
+					"__type" : "uid",
+					"uidString" : "YFPUiauZQUibKphsFhrhZQ=="
+				},
+				"code" : "LeLiterateProvenance compile: 'historyForClass: aClass\n\t^ self historyForKey: (self keyForClass: aClass)' classified: 'accessing'.\nLeLiterateProvenance compile: 'historyForMethod: aCompiledMethod\n\t^ self historyForKey: (self keyForClass: aCompiledMethod methodClass selector: aCompiledMethod selector)' classified: 'accessing'.\nLeLiterateProvenance compile: 'entriesRelatedToClassNamed: aClassName\n\t\"Todas las entradas de la clase, sus métodos de instancia y sus métodos de lado clase,\n\tcomo asociaciones clave -> entrada ordenadas por secuencia global.\"\n\t| result |\n\tresult := OrderedCollection new.\n\thistories keysAndValuesDo: [ :key :history |\n\t\t(key = aClassName\n\t\t\tor: [ (key beginsWith: aClassName , ''>>#'')\n\t\t\t\tor: [ key beginsWith: aClassName , '' class'' ] ])\n\t\t\tifTrue: [ history entries do: [ :entry | result add: key -> entry ] ] ].\n\t^ result asSortedCollection: [ :a :b | a value sequence <= b value sequence ]' classified: 'accessing'.\nLeLiterateProvenance compile: 'entriesForSnippetUidString: aUidString\n\t\"Índice inverso: todas las asociaciones clave -> entrada producidas por un snippet.\"\n\t| result |\n\tresult := OrderedCollection new.\n\thistories keysAndValuesDo: [ :key :history |\n\t\thistory entries do: [ :entry |\n\t\t\tentry snippetUid uidString = aUidString ifTrue: [ result add: key -> entry ] ] ].\n\t^ result asSortedCollection: [ :a :b | a value sequence <= b value sequence ]' classified: 'accessing'.\nLeLiterateProvenance compile: 'artifactForKey: aKey\n\t\"Resuelve una clave a su artefacto vivo: la clase, o el CompiledMethod si aún existe.\"\n\t| index classPart selectorPart behavior |\n\tindex := aKey indexOfSubCollection: ''>>#''.\n\tindex = 0 ifTrue: [ ^ Smalltalk classNamed: aKey ].\n\tclassPart := aKey copyFrom: 1 to: index - 1.\n\tselectorPart := (aKey copyFrom: index + 3 to: aKey size) asSymbol.\n\tbehavior := (classPart endsWith: '' class'')\n\t\tifTrue: [ (Smalltalk classNamed: (classPart withoutSuffix: '' class'')) ifNotNil: [ :aClass | aClass class ] ]\n\t\tifFalse: [ Smalltalk classNamed: classPart ].\n\tbehavior ifNil: [ ^ nil ].\n\t^ behavior compiledMethodAt: selectorPart ifAbsent: [ behavior ]' classified: 'accessing'.\nLeLiterateProvenanceEntry compile: 'resolvedSnippet\n\t\"Resuelve perezosamente el snippet vivo por su UID en las bases registradas.\"\n\tself snippetUid ifNil: [ ^ nil ].\n\tLeDatabasesRegistry default currentLoadedDefaultLogicalDatabase databases\n\t\tdo: [ :aDatabase |\n\t\t\t(aDatabase blockWithUID: self snippetUid ifPresent: [ :aSnippet | aSnippet ] ifAbsent: [ nil ])\n\t\t\t\tifNotNil: [ :aSnippet | ^ aSnippet ] ].\n\t^ nil' classified: 'accessing'"
+			},
+			{
+				"__type" : "pharoSnippet",
+				"children" : {
+					"__type" : "snippets",
+					"items" : [ ]
+				},
+				"createEmail" : {
+					"__type" : "email",
+					"emailString" : "<unknown>"
+				},
+				"createTime" : {
+					"__type" : "time",
+					"time" : {
+						"__type" : "dateAndTime",
+						"dateAndTimeString" : "2026-07-26T01:05:00.49858+02:00"
+					}
+				},
+				"editEmail" : {
+					"__type" : "email",
+					"emailString" : "<unknown>"
+				},
+				"editTime" : {
+					"__type" : "time",
+					"time" : {
+						"__type" : "dateAndTime",
+						"dateAndTimeString" : "2026-07-26T01:05:00.49858+02:00"
+					}
+				},
+				"uid" : {
+					"__type" : "uid",
+					"uidString" : "emcFsXdkRBOYp2JCvFrGOw=="
+				},
+				"code" : "\"Extensiones moldables: las tres vistas <gtView> quedan en el paquete Lepiter-Literate\n mediante el protocolo de extensión *Lepiter-Literate.\"\nClassDescription compile: 'gtLiterateOriginFor: aView\n\t<gtView>\n\t| related |\n\trelated := LeLiterateProvenance default entriesRelatedToClassNamed: self instanceSide name asString.\n\trelated isEmpty ifTrue: [ ^ aView empty ].\n\t^ aView columnedList\n\t\ttitle: ''Literate origin'';\n\t\tpriority: 60;\n\t\titems: [ (LeLiterateProvenance default entriesRelatedToClassNamed: self instanceSide name asString) asOrderedCollection ];\n\t\tcolumn: ''Seq'' text: [ :each | each value sequence ] width: 50;\n\t\tcolumn: ''Artifact'' text: [ :each | each key ];\n\t\tcolumn: ''Action'' text: [ :each | each value action ];\n\t\tcolumn: ''Page'' text: [ :each | each value pageTitle ifNil: [ '''' ] ];\n\t\tcolumn: ''Applied'' text: [ :each | each value lastAppliedAt printString ];\n\t\tsend: [ :each | each value resolvedSnippet ifNil: [ each value ] ]' classified: '*Lepiter-Literate'.\nCompiledMethod compile: 'gtLiterateOriginFor: aView\n\t<gtView>\n\t| history |\n\thistory := LeLiterateProvenance default historyForMethod: self.\n\thistory isEmpty ifTrue: [ ^ aView empty ].\n\t^ aView columnedList\n\t\ttitle: ''Literate origin'';\n\t\tpriority: 60;\n\t\titems: [ (LeLiterateProvenance default historyForMethod: self) entries ];\n\t\tcolumn: ''Seq'' text: [ :each | each sequence ] width: 50;\n\t\tcolumn: ''Action'' text: [ :each | each action ];\n\t\tcolumn: ''Page'' text: [ :each | each pageTitle ifNil: [ '''' ] ];\n\t\tcolumn: ''Applied'' text: [ :each | each lastAppliedAt printString ];\n\t\tsend: [ :each | each resolvedSnippet ifNil: [ each ] ]' classified: '*Lepiter-Literate'.\nLeSnippet compile: 'gtGeneratedCodeFor: aView\n\t<gtView>\n\t| associations |\n\tself uid ifNil: [ ^ aView empty ].\n\tassociations := LeLiterateProvenance default entriesForSnippetUidString: self uid uidString.\n\tassociations isEmpty ifTrue: [ ^ aView empty ].\n\t^ aView columnedList\n\t\ttitle: ''Generated code'';\n\t\tpriority: 60;\n\t\titems: [ (LeLiterateProvenance default entriesForSnippetUidString: self uid uidString) asOrderedCollection ];\n\t\tcolumn: ''Seq'' text: [ :each | each value sequence ] width: 50;\n\t\tcolumn: ''Artifact'' text: [ :each | each key ];\n\t\tcolumn: ''Action'' text: [ :each | each value action ];\n\t\tsend: [ :each | (LeLiterateProvenance default artifactForKey: each key) ifNil: [ each value ] ]' classified: '*Lepiter-Literate'"
+			},
+			{
+				"__type" : "exampleSnippet",
+				"children" : {
+					"__type" : "snippets",
+					"items" : [ ]
+				},
+				"createEmail" : {
+					"__type" : "email",
+					"emailString" : "<unknown>"
+				},
+				"createTime" : {
+					"__type" : "time",
+					"time" : {
+						"__type" : "dateAndTime",
+						"dateAndTimeString" : "2026-07-26T01:05:04.373614+02:00"
+					}
+				},
+				"editEmail" : {
+					"__type" : "email",
+					"emailString" : "<unknown>"
+				},
+				"editTime" : {
+					"__type" : "time",
+					"time" : {
+						"__type" : "dateAndTime",
+						"dateAndTimeString" : "2026-07-26T01:05:04.373614+02:00"
+					}
+				},
+				"uid" : {
+					"__type" : "uid",
+					"uidString" : "wc+L3ihbQt6oXxhAkejD7Q=="
+				},
+				"exampleSelector" : "classAnswersItsLiterateOriginView",
+				"previewHeight" : 200,
+				"previewShowSelector" : "gtViewsFor:",
+				"exampleBehaviorName" : "LeLiterateProvenanceExamples",
+				"codeExpanded" : true,
+				"previewExpanded" : false,
+				"noCode" : false
+			},
+			{
+				"__type" : "exampleSnippet",
+				"children" : {
+					"__type" : "snippets",
+					"items" : [ ]
+				},
+				"createEmail" : {
+					"__type" : "email",
+					"emailString" : "<unknown>"
+				},
+				"createTime" : {
+					"__type" : "time",
+					"time" : {
+						"__type" : "dateAndTime",
+						"dateAndTimeString" : "2026-07-26T01:05:13.107655+02:00"
+					}
+				},
+				"editEmail" : {
+					"__type" : "email",
+					"emailString" : "<unknown>"
+				},
+				"editTime" : {
+					"__type" : "time",
+					"time" : {
+						"__type" : "dateAndTime",
+						"dateAndTimeString" : "2026-07-26T01:05:13.107655+02:00"
+					}
+				},
+				"uid" : {
+					"__type" : "uid",
+					"uidString" : "wt4mgnD6SUCLKjLu9sdpaw=="
+				},
+				"exampleSelector" : "snippetAnswersItsGeneratedCodeView",
+				"previewHeight" : 200,
+				"previewShowSelector" : "gtViewsFor:",
+				"exampleBehaviorName" : "LeLiterateProvenanceExamples",
+				"codeExpanded" : true,
+				"previewExpanded" : false,
+				"noCode" : false
+			}
+		]
+	},
+	"createEmail" : {
+		"__type" : "email",
+		"emailString" : "<unknown>"
+	},
+	"createTime" : {
+		"__type" : "time",
+		"time" : {
+			"__type" : "dateAndTime",
+			"dateAndTimeString" : "2026-07-26T00:55:20.948798+02:00"
+		}
+	},
+	"editEmail" : {
+		"__type" : "email",
+		"emailString" : "<unknown>"
+	},
+	"editTime" : {
+		"__type" : "time",
+		"time" : {
+			"__type" : "dateAndTime",
+			"dateAndTimeString" : "2026-07-26T00:55:20.948798+02:00"
+		}
+	},
+	"pageType" : {
+		"__type" : "namedPage",
+		"title" : "Provenance: trazabilidad entre snippets y código generado"
+	},
+	"uid" : {
+		"__type" : "uuid",
+		"uuid" : "bec006e2-18d1-4386-b4e9-461f5270ab30"
+	}
+}
